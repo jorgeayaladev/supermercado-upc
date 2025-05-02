@@ -130,6 +130,7 @@
     <ClCompile Include="SupermercadoUPC.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cliente.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="Nodo.h" />
   </ItemGroup>
