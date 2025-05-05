@@ -19,6 +19,7 @@ public:
 	}
 	Cliente(T nombre, T apellido, T codigoCLiente, T CMR);
 	~Cliente(){}
+	//METODOS SETTER Y GETTER
 	//Set
 	void setNombre(T pnombre);
 	void setApellido(T papellido);
@@ -37,17 +38,17 @@ public:
 		cout << "Nombre: " << this->nombre << endl;
 		cout << "Apellido: " << this->apellido << endl;
 		cout << "Codigo de Cliente: " << this->codigoCliente << endl;
-		cout << "Tiene tarjeta CMR (S:si o N:no): " << this->CMR << endl;
+		cout << "¿Tiene tarjeta CMR? (S o N): " << this->CMR << endl;
 		cout << endl;
 	}
 };
 
 //Implementacion
 template<typename T>
-Cliente<T>::Cliente(T nombre, T apellido, T codigoCLiente, T CMR) {
+Cliente<T>::Cliente(T pnombre, T papellido, T pcodigoCLiente, T pCMR) {
 	this->nombre = pnombre;
 	this->apellido = papellido;
-	this->codigoCLiente = pcodigoCliente;
+	this->codigoCLiente = pcodigoCLiente;
 	this->CMR= pCMR;
 }
 //MetodosSETTER/GETTER
@@ -60,6 +61,18 @@ template<typename T>
 void Cliente<T>::setCodigoCliente(T pcodigoCLiente);
 template<typename T>
 void Cliente<T>::setCMR(T pCMR);
+//GET
+template<typename T>
+T Cliente<T>::getNombre() { return this - nombre; }
+template<typename T>
+T Cliente<T>::getApellido() { return this - apellido; }
+template<typename T>
+T Cliente<T>::getCodigoCliente() { return this - codigoCliente; }
+template<typename T>
+T Cliente<T>::getCMR() { return this - CMR; }
+
+
+
 //XXXXXXXXXXXXXXXXXXXXXXXXXXX--Luego lo termino, ya comenzará mi siguiente clase:c, masomenos tenia planeado hacer el del cliente porque creo que seria
 //buena idea implementar si esque el cliente cuenta con tarjeta CMR para descuento en algunos productos. Ya que estamos haciendo sobre Tottus :D
 //y el codigo del cliente, como si se tratase del DNI, Cambiare eso del Codigo del cliente por DNI mejor 
