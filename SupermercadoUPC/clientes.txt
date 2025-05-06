@@ -1,0 +1,10 @@
+cliente1|abc123|98765432A|Juan López|cliente1@email.com|912345678|Lima|1995-06-10|img5.jpg|CLI001|Premium|Tarjeta|1500|5000
+cliente2|def456|87654321B|María García|cliente2@email.com|923456789|Arequipa|1992-04-15|img6.jpg|CLI002|Regular|Efectivo|300|0
+cliente3|ghi789|76543210C|Pedro Sánchez|cliente3@email.com|934567890|Cusco|1990-12-20|img7.jpg|CLI003|VIP|Yape|5000|15000
+cliente4|jkl012|65432109D|Luisa Fernández|cliente4@email.com|945678901|Puno|1993-01-05|img8.jpg|CLI004|Regular|Plin|800|0
+cliente5|mno345|54321098E|Carlos Ruiz|cliente5@email.com|956789012|Lima|1991-10-30|img9.jpg|CLI005|Premium|Tarjeta|2200|6000
+cliente6|pqr678|43210987F|Ana Rivas|cliente6@email.com|967890123|Ica|1994-09-25|img10.jpg|CLI006|VIP|Yape|4700|12000
+cliente7|stu901|32109876G|Luis Mendoza|cliente7@email.com|978901234|Tacna|1989-07-07|img11.jpg|CLI007|Regular|Efectivo|100|0
+cliente8|vwx234|21098765H|Elena Chávez|cliente8@email.com|989012345|Lambayeque|1996-02-18|img12.jpg|CLI008|Regular|Plin|500|0
+cliente9|yz1234|10987654I|Marco Paredes|cliente9@email.com|990123456|Junín|1990-11-11|img13.jpg|CLI009|Premium|Tarjeta|1800|5500
+cliente10|abc567|09876543J|Carmen Vega|cliente10@email.com|901234567|Huánuco|1997-08-08|img14.jpg|CLI010|VIP|Yape|5200|14000

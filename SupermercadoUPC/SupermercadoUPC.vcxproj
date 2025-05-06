@@ -130,9 +130,18 @@
     <ClCompile Include="SupermercadoUPC.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Administrador.h" />
     <ClInclude Include="Cliente.h" />
+    <ClInclude Include="Cola.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="Nodo.h" />
+    <ClInclude Include="Pila.h" />
+    <ClInclude Include="Supermercado.h" />
+    <ClInclude Include="Usuario.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="administradores.txt" />
+    <Text Include="clientes.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

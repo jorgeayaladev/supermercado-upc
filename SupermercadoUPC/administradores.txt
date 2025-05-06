@@ -1,0 +1,4 @@
+admin1|pass123|12345678A|Carlos Ramírez|admin1@email.com|999888777|Lima|1980-05-10|img1.jpg|ADM001|alto|Finanzas|Mañana|5500.50
+admin2|pass456|87654321B|Lucía Torres|admin2@email.com|988776655|Arequipa|1985-03-22|img2.jpg|ADM002|medio|Recursos Humanos|Tarde|4800.00
+admin3|admin789|11223344C|José Pérez|admin3@email.com|977665544|Cusco|1990-07-15|img3.jpg|ADM003|alto|Logística|Noche|5200.75
+admin4|clave321|44332211D|Ana Flores|admin4@email.com|966554433|Trujillo|1988-11-05|img4.jpg|ADM004|bajo|TI|Mañana|4600.25

@@ -1,11 +1,33 @@
 #include <iostream>
 
+#include "Supermercado.h"
+
 using namespace std;
 
+// Hola Erick :D, en este avance he implementado la clase Supermercado con las dos listas tanto 
+// de administradores como de clientes, además de los métodos para cargar los datos desde 
+// archivos y mostrarlos en consola.
+// He usado la clase Cliente que me dejaste para agregarle los atributos adicionales a esa clase :D
+// El día miercoles vamos a presentar nuestro avance al profesor de 4pm a 6pm.
+// el día de mañana continuaré con el avance de las demás clases faltantes.
+
 int main() {
-    cout << "A empezar con el proyecto!!" << endl;
-    cout << "Si lees esto es porque ya aprendi a enviar :D"<<endl;
-    cout << "Muy bien hecho!" << endl;
+    Supermercado<string, float> supermercado;
+
+    supermercado.cargarAdministradores("administradores.txt");
+    supermercado.cargarClientes("clientes.txt");
+
+    cout << "|| ========================================== ||" << endl;
+    cout << "||               ADMINISTRADORES              ||" << endl;
+    cout << "|| ========================================== ||" << endl;
+    supermercado.mostrarAdministradores();
+    cout << endl;
+
+    cout << "|| ========================================== ||" << endl;
+    cout << "||                  CLIENTES                  ||" << endl;
+    cout << "|| ========================================== ||" << endl;
+    supermercado.mostrarClientes();
+    cout << endl;
 
     return 0;
 }

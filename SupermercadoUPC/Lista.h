@@ -1,211 +1,107 @@
-﻿#pragma once
+﻿#ifndef LISTA_H
+#define LISTA_H
 
 #include <iostream>
 #include "Nodo.h"
 
 using namespace std;
 
-// Clase Lista enlazada simple
 template <typename T>
 class Lista {
 private:
     Nodo<T>* cabeza;
-    Nodo<T>* cola;
-    int tamano;
 
 public:
-    // Constructor
-    Lista() : cabeza(nullptr), cola(nullptr), tamano(0) {}
+    Lista() : cabeza(nullptr) {}
+    ~Lista() { this->eliminarTodo(); }
 
-    // Destructor
-    ~Lista() { vaciar(); }
+	void agregarInicio(const T& valor); // Agregar al inicio
+	void agregarFinal(const T& valor); // Agregar al final
+	bool eliminar(const T& valor); // Eliminar un nodo
+	Nodo<T>* buscar(const T& valor); // Buscar un nodo
+	void eliminarTodo() const; // Eliminar todos los nodos
+	void mostrar() const; // Mostrar la lista
+	bool estaVacia() const; // Verificar si la lista está vacía
+};
 
-    // Métodos básicos
-    bool estaVacia() const { return cabeza == nullptr; }
-    int getTamano() const { return tamano; }
+template <typename T>
+void Lista<T>::agregarInicio(const T& valor) {
+    Nodo<T>* nuevo = new Nodo<T>(valor);
+    nuevo->setSiguiente(cabeza);
+    cabeza = nuevo;
+}
 
-    // Insertar elementos
-    void insertarAlInicio(T valor) {
-        Nodo<T>* nuevoNodo = new Nodo<T>(valor);
-
-        if (estaVacia()) {
-            cabeza = cola = nuevoNodo;
-        }
-        else {
-            nuevoNodo->setSiguiente(cabeza);
-            cabeza = nuevoNodo;
-        }
-        tamano++;
+template <typename T>
+void Lista<T>::agregarFinal(const T& valor) {
+    Nodo<T>* nuevo = new Nodo<T>(valor);
+    if (cabeza == nullptr) {
+        cabeza = nuevo;
+        return;
     }
-
-    void insertarAlFinal(T valor) {
-        Nodo<T>* nuevoNodo = new Nodo<T>(valor);
-
-        if (estaVacia()) {
-            cabeza = cola = nuevoNodo;
-        }
-        else {
-            cola->setSiguiente(nuevoNodo);
-            cola = nuevoNodo;
-        }
-        tamano++;
+    Nodo<T>* actual = cabeza;
+    while (actual->getSiguiente() != nullptr) {
+        actual = actual->getSiguiente();
     }
+    actual->setSiguiente(nuevo);
+}
 
-    void insertarEnPosicion(T valor, int posicion) {
-        if (posicion < 0 || posicion > tamano) {
-            throw out_of_range("Posición fuera de rango");
-        }
+template <typename T>
+bool Lista<T>::eliminar(const T& valor) {
+    if (cabeza == nullptr) return false;
 
-        if (posicion == 0) {
-            insertarAlInicio(valor);
-        }
-        else if (posicion == tamano) {
-            insertarAlFinal(valor);
-        }
-        else {
-            Nodo<T>* nuevoNodo = new Nodo<T>(valor);
-            Nodo<T>* actual = cabeza;
-
-            for (int i = 0; i < posicion - 1; i++) {
-                actual = actual->getSiguiente();
-            }
-
-            nuevoNodo->setSiguiente(actual->getSiguiente());
-            actual->setSiguiente(nuevoNodo);
-            tamano++;
-        }
-    }
-
-    // Eliminar elementos
-    void eliminarAlInicio() {
-        if (estaVacia()) {
-            throw runtime_error("La lista está vacía");
-        }
-
+    if (cabeza->getDato() == valor) {
         Nodo<T>* temp = cabeza;
         cabeza = cabeza->getSiguiente();
         delete temp;
-        tamano--;
-
-        if (cabeza == nullptr) {
-            cola = nullptr;
-        }
+        return true;
     }
 
-    void eliminarAlFinal() {
-        if (estaVacia()) {
-            throw runtime_error("La lista está vacía");
-        }
-
-        if (tamano == 1) {
-            eliminarAlInicio();
-            return;
-        }
-
-        Nodo<T>* actual = cabeza;
-        while (actual->getSiguiente() != cola) {
-            actual = actual->getSiguiente();
-        }
-
-        delete cola;
-        cola = actual;
-        cola->setSiguiente(nullptr);
-        tamano--;
+    Nodo<T>* actual = cabeza;
+    while (actual->getSiguiente() != nullptr && actual->getSiguiente()->getDato() != valor) {
+        actual = actual->getSiguiente();
     }
 
-    void eliminarEnPosicion(int posicion) {
-        if (posicion < 0 || posicion >= tamano) {
-            throw out_of_range("Posición fuera de rango");
-        }
+    if (actual->getSiguiente() == nullptr) return false;
 
-        if (posicion == 0) {
-            eliminarAlInicio();
-        }
-        else if (posicion == tamano - 1) {
-            eliminarAlFinal();
-        }
-        else {
-            Nodo<T>* actual = cabeza;
-            Nodo<T>* anterior = nullptr;
+    Nodo<T>* temp = actual->getSiguiente();
+    actual->setSiguiente(temp->getSiguiente());
+    delete temp;
+    return true;
+}
 
-            for (int i = 0; i < posicion; i++) {
-                anterior = actual;
-                actual = actual->getSiguiente();
-            }
-
-            anterior->setSiguiente(actual->getSiguiente());
-            delete actual;
-            tamano--;
-        }
+template <typename T>
+void Lista<T>::eliminarTodo() const {
+    Nodo<T>* actual = cabeza;
+    while (actual != nullptr) {
+        Nodo<T>* temp = actual;
+        actual = actual->getSiguiente();
+        delete temp;
     }
+}
 
-    // Buscar elementos
-    int buscar(T valor) const {
-        Nodo<T>* actual = cabeza;
-        int posicion = 0;
-
-        while (actual != nullptr) {
-            if (actual->getDato() == valor) {
-                return posicion;
-            }
-            actual = actual->getSiguiente();
-            posicion++;
-        }
-
-        return -1; // No encontrado
+template <typename T>
+Nodo<T>* Lista<T>::buscar(const T& valor) {
+    Nodo<T>* actual = cabeza;
+    while (actual != nullptr) {
+        if (actual->getDato() == valor)
+            return actual;
+        actual = actual->getSiguiente();
     }
+    return nullptr;
+}
 
-    T obtenerElemento(int posicion) const {
-        if (posicion < 0 || posicion >= tamano) {
-            throw out_of_range("Posición fuera de rango");
-        }
-
-        Nodo<T>* actual = cabeza;
-        for (int i = 0; i < posicion; i++) {
-            actual = actual->getSiguiente();
-        }
-
-        return actual->getDato();
+template <typename T>
+void Lista<T>::mostrar() const {
+    Nodo<T>* actual = cabeza;
+    while (actual != nullptr) {
+        cout << actual->getDato() << endl;
+        actual = actual->getSiguiente();
     }
+}
 
-    // Modificar elementos
-    void modificarElemento(T valor, int posicion) {
-        if (posicion < 0 || posicion >= tamano) {
-            throw out_of_range("Posición fuera de rango");
-        }
+template <typename T>
+bool Lista<T>::estaVacia() const {
+    return cabeza == nullptr;
+}
 
-        Nodo<T>* actual = cabeza;
-        for (int i = 0; i < posicion; i++) {
-            actual = actual->getSiguiente();
-        }
-
-        actual->setDato(valor);
-    }
-
-    // Vaciar la lista
-    void vaciar() {
-        while (!estaVacia()) {
-            eliminarAlInicio();
-        }
-    }
-
-    // Mostrar la lista
-    void mostrar() const {
-        Nodo<T>* actual = cabeza;
-
-        cout << "[";
-        while (actual != nullptr) {
-            cout << actual->getDato();
-            if (actual->getSiguiente() != nullptr) {
-                cout << ", ";
-            }
-            actual = actual->getSiguiente();
-        }
-        cout << "]" << endl;
-    }
-
-    // Sobrecarga del operador [] para acceso por índice
-    T operator[](int indice) const {
-        return obtenerElemento(indice);
-    }
-};
+#endif // LISTA_H
