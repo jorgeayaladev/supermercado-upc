@@ -74,7 +74,6 @@ public:
 		strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", &tiempoStruct);
 		return std::string(buffer);
 	}
-
 };
 
 #endif // USUARIO_H

@@ -46,7 +46,7 @@ public:
 // Sobrecarga del operador << para imprimir el objeto Cliente
 template <typename S, typename F>
 ostream& operator<<(ostream& os, const Cliente<S, F>& cliente) {
-	os << "|| ID: " << cliente.getIdCliente() << "\n"
+	os  << "|| ID: " << cliente.getIdCliente() << "\n"
 		<< "|| Usuario: " << cliente.getUsername() << "\n"
 		<< "|| Contrasena: " << cliente.getPassword() << "\n"
 		<< "|| DNI: " << cliente.getDni() << "\n"

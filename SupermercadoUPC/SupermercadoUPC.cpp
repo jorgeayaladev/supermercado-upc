@@ -14,9 +14,6 @@ using namespace std;
 int main() {
     Supermercado<string, float> supermercado;
 
-    supermercado.cargarAdministradores("administradores.txt");
-    supermercado.cargarClientes("clientes.txt");
-
     cout << "|| ========================================== ||" << endl;
     cout << "||               ADMINISTRADORES              ||" << endl;
     cout << "|| ========================================== ||" << endl;
