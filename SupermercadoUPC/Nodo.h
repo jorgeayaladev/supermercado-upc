@@ -3,12 +3,11 @@
 
 template <typename T>
 class Nodo {
-private:
+public:
 	T dato;
 	Nodo<T>* siguiente;
 
-public:
-	Nodo(const T& dato) : dato(dato), siguiente(nullptr) {}
+	Nodo(const T& valor) : dato(valor), siguiente(nullptr) {}
 
 	void setDato(const T& valor) { dato = valor; }
 	T getDato() const { return dato; }

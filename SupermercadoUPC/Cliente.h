@@ -17,14 +17,25 @@ public:
 	Cliente(
 		const S & username, const S & password, const S & dni, const S & nombre, const S & email, const S & telefono,
 		const S & direccion, const S & fechaNacimiento, const S & imagen, const S & fechaRegistro,
-		const S & idCliente, const S & tipoCliente = "Regular", const S & metodoPago = "Efectivo",
-		const F & puntosCMR = 0, const F & limiteCredito = 0
+		const S & idCliente, const S & tipoCliente, const S & metodoPago,
+		const F & puntosCMR, const F & limiteCredito
 	) : Usuario<S>(username, password, dni, nombre, email, telefono, direccion, fechaNacimiento, imagen, fechaRegistro) {
 		this->idCliente = idCliente;
 		this->tipoCliente = tipoCliente;
 		this->metodoPago = metodoPago;
 		this->puntosCMR = puntosCMR;
 		this->limiteCredito = limiteCredito;
+	}
+	Cliente(
+		const S& username, const S& password, const S& dni, const S& nombre, const S& email, const S& telefono,
+		const S& direccion, const S& fechaNacimiento, const S& imagen, const S& fechaRegistro,
+		const S& idCliente
+	) : Usuario<S>(username, password, dni, nombre, email, telefono, direccion, fechaNacimiento, imagen, fechaRegistro) {
+		this->idCliente = idCliente;
+		this->tipoCliente = "Regular";
+		this->metodoPago = "Efectivo";
+		this->puntosCMR = 0;
+		this->limiteCredito = 1000;
 	}
 	~Cliente() {}
 

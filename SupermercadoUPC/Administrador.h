@@ -47,27 +47,6 @@ public:
 };
 
 // Sobrecarga del operador << para imprimir el objeto Administrador
-/*
-template <typename S, typename F>
-ostream& operator<<(ostream& os, const Administrador<S, F>& admin) {
-	os  << "|| ID: " << admin.getIdAdministrador() << "\n"
-		<< "|| Usuario: " << admin.getUsername() << "\n"
-		<< "|| Contrasena: " << admin.getPassword() << "\n"
-		<< "|| DNI: " << admin.getDni() << "\n"
-		<< "|| Nombre: " << admin.getNombre() << "\n"
-		<< "|| Email: " << admin.getEmail() << "\n"
-		<< "|| Telefono: " << admin.getTelefono() << "\n"
-		<< "|| Direccion: " << admin.getDireccion() << "\n"
-		<< "|| Fecha de Nacimiento: " << admin.getFechaNacimiento() << "\n"
-		<< "|| Imagen: " << admin.getImagen() << "\n"
-		<< "|| Fecha de Registro: " << admin.getFechaRegistro() << "\n"
-		<< "|| Departamento: " << admin.getDepartamento() << "\n"
-		<< "|| Nivel de Acceso: " << admin.getNivelAcceso() << "\n"
-		<< "|| Horario: " << admin.getHorario() << "\n"
-		<< "|| Salario: S/." << admin.getSalario() << "\n"
-        << "|| ========================================== ||";
-    return os;
-}*/
 template <typename S, typename F>
 ostream& operator<<(ostream& os, const Administrador<S, F>& admin) {
 	os  << "|| ID: " << admin.getIdAdministrador() << "\n"

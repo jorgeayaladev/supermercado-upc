@@ -17,14 +17,19 @@ int main() {
     cout << "|| ========================================== ||" << endl;
     cout << "||               ADMINISTRADORES              ||" << endl;
     cout << "|| ========================================== ||" << endl;
-    supermercado.mostrarAdministradores();
+    supermercado.mostrarUsuarios("A");
     cout << endl;
 
     cout << "|| ========================================== ||" << endl;
     cout << "||                  CLIENTES                  ||" << endl;
     cout << "|| ========================================== ||" << endl;
-    supermercado.mostrarClientes();
+    supermercado.mostrarUsuarios("C");
     cout << endl;
+
+	supermercado.registrarCliente();
+    cout << endl;
+
+    supermercado.mostrarUsuarios("C");
 
     return 0;
 }

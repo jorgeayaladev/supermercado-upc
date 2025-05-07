@@ -24,7 +24,7 @@ private:
 public:
     // Constructor
 	Usuario(const S& username, const S& password, const S& dni, const S& nombre, const S& email,
-		const S& telefono, const S& direccion, const S& fechaNacimiento, const S& imagen, 
+		const S& telefono, const S& direccion, const S& fechaNacimiento, const S& imagen = "",
 		const S& fechaRegistro = obtenerFechaHoraActual()) {
 		this->username = username;
 		this->password = password;
@@ -35,7 +35,7 @@ public:
 		this->direccion = direccion;
 		this->fechaNacimiento = fechaNacimiento;
 		this->imagen = imagen;
-		this->fechaRegistro = obtenerFechaHoraActual();
+		this->fechaRegistro = fechaRegistro;
 	}
     ~Usuario() {}
 
