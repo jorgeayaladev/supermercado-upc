@@ -37,6 +37,7 @@ public:
 		this->puntosCMR = 0;
 		this->limiteCredito = 1000;
 	}
+	Cliente() {}
 	~Cliente() {}
 
 	// Getters

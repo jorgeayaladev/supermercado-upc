@@ -37,6 +37,7 @@ public:
 		this->imagen = imagen;
 		this->fechaRegistro = fechaRegistro;
 	}
+	Usuario() {}
     ~Usuario() {}
 
     // Getters

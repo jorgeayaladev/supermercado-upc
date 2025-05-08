@@ -14,18 +14,28 @@
 template <typename S, typename F>
 class Supermercado {
 private:
+	// Usuario activo
+	Cliente<string, float> clienteActivo;
+	Administrador<string, float> adminActivo;
+	// Listas de usuarios
     Lista<Cliente<S, F>> clientes;
     Lista<Administrador<S, F>> administradores;
 
 public:
-    Supermercado() {
+	Supermercado() {
+		// Cargar datos por defecto
 		this->cargarUsuarios({ "clientes.txt", "administradores.txt" });
     }
     ~Supermercado() {}
 
 	// Getters
+	Cliente<S, F> getClienteActivo() { return clienteActivo; }
+	Administrador<S, F> getAdminActivo() { return adminActivo; }
 	Lista<Cliente<S, F>> getClientes() { return clientes; }
 	Lista<Administrador<S, F>> getAdministradores() { return administradores; }
+	// Setters
+	void setClienteActivo(Cliente<S, F> cliente) { clienteActivo = cliente; }
+	void setAdminActivo(Administrador<S, F> admin) { adminActivo = admin; }
 
     // Métodos para cargar datos por defecto
     void cargarUsuarios(vector<S> archivos);
@@ -33,6 +43,7 @@ public:
 	// Métodos de vista general
 	S iniciarSesion();
 	void crearCuentaCliente();
+	void modificarCuentaUsuario(S tipoUsuario);
 
     // Métodos para mostrar datos
     void mostrarUsuarios(S tipo);
@@ -118,6 +129,7 @@ void Supermercado<S, F>::agregarAlFichero(S archivoPath, vector<S> datos) {
 	}
 	archivo.close();
 }
+// Falta para modificar una linea de dato en el fichero
 
 // Métodos para mostrar datos
 template <typename S, typename F>
@@ -128,6 +140,7 @@ void Supermercado<S, F>::mostrarUsuarios(S tipo) {
         administradores.mostrar([](const Administrador<S, F>& admin) { cout << admin << endl; });
     else cout << "Tipo de usuario no válido." << endl;
 }
+
 
 // Inicio de sesión
 template <typename S, typename F>
@@ -140,13 +153,19 @@ S Supermercado<S, F>::iniciarSesion() {
 		return (admin.getUsername() == username && admin.getPassword() == password);
 		});
 	// Si el administrador existe, se obtiene su ID
-	if (administrador != nullptr) { return administrador->getIdAdministrador(); }
+	if (administrador != nullptr) {
+		this->adminActivo = *administrador;
+		return administrador->getIdAdministrador(); 
+	}
 
 	auto cliente = clientes.buscar([username, password](const Cliente<S, F>& cliente) {
 		return (cliente.getUsername() == username && cliente.getPassword() == password);
 		});
 	// Si el cliente existe, se obtiene su ID
-	if (cliente != nullptr) { return cliente->getIdCliente(); }
+	if (cliente != nullptr) { 
+		this->clienteActivo = *cliente;
+		return cliente->getIdCliente(); 
+	}
 
 	return "No encontrado";
 }
@@ -236,6 +255,154 @@ void Supermercado<S, F>::crearCuentaCliente() {
 		cliente.getTipoCliente(), cliente.getMetodoPago(), to_string(cliente.getPuntosCMR()),
 		to_string(cliente.getLimiteCredito())
 		});
+}
+template <typename S, typename F>
+void Supermercado<S, F>::modificarCuentaUsuario(S tipoUsuario) {
+	int opcion;
+	string password, nombre, email, telefono, direccion, fechaNacimiento, imagen;
+	// Validaciones
+	bool vPassword = false, vNombre = false, vEmail = false, vTelefono = false, vFecha = false;
+	regex patronPassword("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$");
+	regex patronNombre("^[a-zA-Z ]{3,}$");
+	regex patronEmail("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+	regex patronTelefono("^[0-9]{9}$");
+	regex patronFecha("^(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-[0-9]{4}$");
+
+	// Implementar la modificación de la cuenta de un usuario
+	std::cout << "||=================================================||" << std::endl;
+	std::cout << "|| MODIFICANDO MI PERFIL:                          ||" << std::endl;
+	std::cout << "||=================================================||" << std::endl;
+	std::cout << "|| Que atributo de su perfil desea cambiar?        ||" << std::endl;
+	std::cout << "||-------------------------------------------------||" << std::endl;
+	std::cout << "|| (1) Modificar mi password                       ||" << std::endl;
+	std::cout << "|| (2) Modificar mi nombre                         ||" << std::endl;
+	std::cout << "|| (3) Modificar mi email                          ||" << std::endl;
+	std::cout << "|| (4) Modificar mi telefono                       ||" << std::endl;
+	std::cout << "|| (5) Modificar mi direccion                      ||" << std::endl;
+	std::cout << "|| (6) Modificar mi fecha de nacimiento            ||" << std::endl;
+	std::cout << "|| (7) Modificar mi imagen                         ||" << std::endl;
+	std::cout << "||-------------------------------------------------||" << std::endl;
+	std::cout << "|| Ingrese su opcion: "; cin >> opcion; cin.ignore();
+	std::cout << "||-------------------------------------------------||" << std::endl;
+	switch (opcion) {
+	case 1:
+		do {
+			cout << "|| Ingrese su nueva password: "; getline(cin, password);
+			if (!regex_match(password, patronPassword))
+				cout << "|| Password invalida. Debe tener al menos 8 caracteres, una mayuscula y un numero." << endl;
+			else vPassword = true;
+		} while (!vPassword);
+		switch (tipoUsuario[0]) {
+		case 'A':
+			this->adminActivo.setPassword(password);
+			administradores.modificar([](const Administrador<S, F>& admin) { return true; }, adminActivo); break;
+		case 'C':
+			this->clienteActivo.setPassword(password);
+			clientes.modificar([](const Cliente<S, F>& cliente) { return true; }, clienteActivo); break;
+		}
+		break;
+	case 2:
+		do {
+			cout << "|| Ingrese su nuevo nombre: "; getline(cin, nombre);
+			if (!regex_match(nombre, patronNombre))
+				cout << "|| Nombre invalido. Debe tener al menos 3 letras sin tildes." << endl;
+			else vNombre = true;
+		} while (!vNombre);
+		switch (tipoUsuario[0]) {
+		case 'A':
+			this->adminActivo.setNombre(nombre);
+			administradores.modificar([](const Administrador<S, F>& admin) { return true; }, adminActivo); break;
+		case 'C':
+			this->clienteActivo.setNombre(nombre);
+			clientes.modificar([](const Cliente<S, F>& cliente) { return true; }, clienteActivo); break;
+		}
+		break;
+	case 3:
+		do {
+			cout << "|| Ingrese su email: "; getline(cin, email);
+			if (!regex_match(email, patronEmail))
+				cout << "Email invalido. Formato correcto: (ej. ejemplo123@gmail.com)" << endl;
+			else if (
+				clientes.contiene([email](const Cliente<S, F>& cliente) { return cliente.getEmail() == email; }) ||
+				administradores.contiene([email](const Administrador<S, F>& admin) { return admin.getEmail() == email; })
+				)
+				cout << "|| Email invalido. Ya esta registrado en el sistema." << endl;
+			else vEmail = true;
+		} while (!vEmail);
+		switch (tipoUsuario[0]) {
+		case 'A':
+			this->adminActivo.setEmail(email);
+			administradores.modificar([](const Administrador<S, F>& admin) { return true; }, adminActivo); break;
+		case 'C':
+			this->clienteActivo.setEmail(email);
+			clientes.modificar([](const Cliente<S, F>& cliente) { return true; }, clienteActivo); break;
+		}
+		break;
+	case 4:
+		do {
+			cout << "|| Ingrese su telefono: "; getline(cin, telefono);
+			if (!regex_match(telefono, patronTelefono))
+				cout << "Telefono invalido. Debe tener exactamente 9 digitos numericos." << endl;
+			else if (
+				clientes.contiene([telefono](const Cliente<S, F>& cliente) { return cliente.getTelefono() == telefono; }) ||
+				administradores.contiene([telefono](const Administrador<S, F>& admin) { return admin.getTelefono() == telefono; })
+				)
+				cout << "|| Telefono invalido. Ya esta registrado en el sistema." << endl;
+			else vTelefono = true;
+		} while (!vTelefono);
+		switch (tipoUsuario[0]) {
+		case 'A':
+			this->adminActivo.setTelefono(telefono);
+			administradores.modificar([](const Administrador<S, F>& admin) { return true; }, adminActivo); break;
+		case 'C':
+			this->clienteActivo.setTelefono(telefono);
+			clientes.modificar([](const Cliente<S, F>& cliente) { return true; }, clienteActivo); break;
+		}
+		break;
+	case 5:
+		cout << "|| Ingrese su nueva direccion: "; getline(cin, direccion);
+		switch (tipoUsuario[0]) {
+		case 'A':
+			this->adminActivo.setDireccion(direccion);
+			administradores.modificar([](const Administrador<S, F>& admin) { return true; }, adminActivo); break;
+		case 'C':
+			this->clienteActivo.setDireccion(direccion);
+			clientes.modificar([](const Cliente<S, F>& cliente) { return true; }, clienteActivo); break;
+		}
+		break;
+	case 6:
+		do {
+			cout << "|| Ingrese su nueva fecha de nacimiento (DD-MM-AAAA): "; getline(cin, fechaNacimiento);
+			if (!regex_match(fechaNacimiento, patronFecha))
+				cout << "|| Fecha invalida. Formato correcto: (ej. 02-09-1939)" << endl;
+			else vFecha = true;
+		} while (!vFecha);
+		switch (tipoUsuario[0]) {
+		case 'A':
+			this->adminActivo.setFechaNacimiento(fechaNacimiento);
+			administradores.modificar([](const Administrador<S, F>& admin) { return true; }, adminActivo); break;
+		case 'C':
+			this->clienteActivo.setFechaNacimiento(fechaNacimiento);
+			clientes.modificar([](const Cliente<S, F>& cliente) { return true; }, clienteActivo); break;
+		}
+		break;
+	case 7:
+		cout << "|| Ingrese su nueva imagen: "; getline(cin, imagen);
+		switch (tipoUsuario[0]) {
+		case 'A':
+			this->adminActivo.setImagen(imagen);
+			administradores.modificar([](const Administrador<S, F>& admin) { return true; }, adminActivo); break;
+		case 'C':
+			this->clienteActivo.setImagen(imagen);
+			clientes.modificar([](const Cliente<S, F>& cliente) { return true; }, clienteActivo); break;
+		}
+		break;
+	default:
+		std::cout << "||=================================================||" << std::endl;
+		std::cout << "|| Opcion invalida..." << std::endl;
+		return;
+		break;
+	}
 }
 
 // Otros métodos

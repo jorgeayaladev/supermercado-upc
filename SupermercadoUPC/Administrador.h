@@ -29,6 +29,7 @@ public:
         this->horario = horario;
         this->salario = salario;
     }
+    Administrador() {}
     ~Administrador() {}
 
     // Getters
