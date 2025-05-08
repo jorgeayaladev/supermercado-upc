@@ -23,6 +23,10 @@ public:
     }
     ~Supermercado() {}
 
+	// Getters
+	Lista<Cliente<S, F>> getClientes() { return clientes; }
+	Lista<Administrador<S, F>> getAdministradores() { return administradores; }
+
     // Métodos para cargar datos por defecto
     void cargarUsuarios(vector<S> archivos);
 
