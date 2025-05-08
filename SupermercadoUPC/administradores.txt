@@ -1,3 +1,3 @@
-admin1|Admin123|70994822|Jorge Brayan Ayala Fernandez|admin1@gmail.com|904882657|Lima, Comas|17-10-2000|img1.png|A0001|Alto|Finanzas|Lu-Mi-Vi de 7am-3pm|4500
-admin2|Admin123|72845963|Maria Fernanda Gutierrez Rojas|admin2@gmail.com|987654321|Lima, Miraflores|05-03-1995|img2.png|A0002|Medio|Recursos Humanos|Ma-Sa de 8am-4pm|3200
-admin3|Admin123|76543218|Carlos Andres Mendoza Torres|admin3@gmail.com|912345678|Lima, San Isidro|22-07-1988|img3.png|A0003|Alto|Operaciones|Lu-Vi de 9am-6pm|4200
+admin1|Admin123|70994822|Jorge Ayala|admin1@gmail.com|904882657|Lima, Comas|17-10-2000|img1.png|07-05-2025 20:09:52|A0001|Alto|Finanzas|Lu-Mi-Vi de 7am-3pm|4500
+admin2|Admin123|72845963|Maria Gutierrez|admin2@gmail.com|987654321|Lima, Miraflores|05-03-1995|img2.png|07-05-2025 20:09:52|A0002|Medio|Recursos Humanos|Ma-Sa de 8am-4pm|3200
+admin3|Admin123|76543218|Carlos Mendoza|admin3@gmail.com|912345678|Lima, San Isidro|22-07-1988|img3.png|07-05-2025 20:09:52|A0003|Alto|Operaciones|Lu-Vi de 9am-6pm|4200

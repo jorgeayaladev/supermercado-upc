@@ -1,10 +1,12 @@
-cliente1|abc123|98765432A|Juan Lopez|cliente1@email.com|912345678|Lima|1995-06-10|img5.jpg|C0001|Premium|Tarjeta|1500|5000
-cliente2|def456|87654321B|María Garcia|cliente2@email.com|923456789|Arequipa|1992-04-15|img6.jpg|C0002|Regular|Efectivo|300|0
-cliente3|ghi789|76543210C|Pedro Sanchez|cliente3@email.com|934567890|Cusco|1990-12-20|img7.jpg|C0003|VIP|Yape|5000|15000
-cliente4|jkl012|65432109D|Luisa Fernandez|cliente4@email.com|945678901|Puno|1993-01-05|img8.jpg|C0004|Regular|Plin|800|0
-cliente5|mno345|54321098E|Carlos Ruiz|cliente5@email.com|956789012|Lima|1991-10-30|img9.jpg|C0005|Premium|Tarjeta|2200|6000
-cliente6|pqr678|43210987F|Ana Rivas|cliente6@email.com|967890123|Ica|1994-09-25|img10.jpg|C0006|VIP|Yape|4700|12000
-cliente7|stu901|32109876G|Luis Mendoza|cliente7@email.com|978901234|Tacna|1989-07-07|img11.jpg|C0007|Regular|Efectivo|100|0
-cliente8|vwx234|21098765H|Elena Chavez|cliente8@email.com|989012345|Lambayeque|1996-02-18|img12.jpg|C0008|Regular|Plin|500|0
-cliente9|yz1234|10987654I|Marco Paredes|cliente9@email.com|990123456|Junin|1990-11-11|img13.jpg|C0009|Premium|Tarjeta|1800|5500
-cliente10|abc567|09876543J|Carmen Vega|cliente10@email.com|901234567|Huanuco|1997-08-08|img14.jpg|C0010|VIP|Yape|5200|14000
+J12345678|@Jua123|12345678|Juan Perez|juan.perez@gmail.com|987654321|Av. Lima 123|15-05-1985|J12345678.png|07-05-2025 20:09:52|C001|Normal|Efectivo|0|0
+M87654321|@Mar876|87654321|Maria Lopez|maria.lopez@hotmail.com|912345678|Jr. Union 456|22-11-1990|M87654321.png|07-05-2025 20:09:52|C002|Premium|Tarjeta|100|5000
+C11223344|@Car112|11223344|Carlos Ruiz|carlos.ruiz@yahoo.com|923456789|Calle Las Flores 789|03-07-1978|C11223344.png|07-05-2025 20:09:52|C003|Normal|Transferencia|50|1000
+A55667788|@Ana556|55667788|Ana Torres|ana.torres@gmail.com|934567890|Av. Brasil 1011|18-09-1982|A55667788.png|07-05-2025 20:09:52|C004|Premium|Tarjeta|200|8000
+L33445566|@Lui334|33445566|Luis Mendoza|l.mendoza@outlook.com|945678901|Psje. Los Pinos 12|29-02-1996|L33445566.png|07-05-2025 20:09:52|C005|Normal|Efectivo|30|0
+P77889900|@Ped778|77889900|Pedro Castro|pedro.castro@gmail.com|956789012|Urb. Los Jardines 34|11-12-1989|P77889900.png|07-05-2025 20:09:52|C006|Premium|Tarjeta|150|6000
+S99001122|@Sof990|99001122|Sofia Ramos|sofia.ramos@hotmail.com|967890123|Av. La Marina 567|25-06-1993|S99001122.png|07-05-2025 20:09:52|C007|Normal|Transferencia|75|2000
+R22334455|@Ric223|22334455|Ricardo Gomez|ricardo.g@yahoo.com|978901234|Calle Los Alamos 89|14-08-1975|R22334455.png|07-05-2025 20:09:52|C008|Premium|Tarjeta|300|10000
+D66778899|@Die667|66778899|Diego Flores|diego.f@gmail.com|989012345|Jr. Los Olivos 101|07-04-1991|D66778899.png|07-05-2025 20:09:52|C009|Normal|Efectivo|40|0
+E44556677|@Eli445|44556677|Elena Chavez|elena.chavez@outlook.com|990123456|Av. Los Incas 202|30-01-1987|E44556677.png|07-05-2025 20:09:52|C010|Premium|Tarjeta|250|7000
+J70994823|@Jor709|70994823|Jorge Ayala|jorgeayala@gmail.com|904882658|Lima, Sinchi Roca|17-10-2000|J70994823.png|07-05-2025 20:09:52|C0011|Regular|Efectivo|0.000000|1000.000000
+E78932032|@Eri789|78932032|Erick Jimenez|erickjimenez@gmail.com|932093932|Calle los Laureles 234|12-10-2003|E78932032.png|07-05-2025 22:11:50|C0012|Regular|Efectivo|0.000000|1000.000000

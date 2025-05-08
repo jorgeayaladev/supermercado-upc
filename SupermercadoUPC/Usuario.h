@@ -24,8 +24,8 @@ private:
 public:
     // Constructor
 	Usuario(const S& username, const S& password, const S& dni, const S& nombre, const S& email,
-		const S& telefono, const S& direccion, const S& fechaNacimiento, const S& imagen = "",
-		const S& fechaRegistro = obtenerFechaHoraActual()) {
+		const S& telefono, const S& direccion, const S& fechaNacimiento, const S& imagen,
+		const S& fechaRegistro) {
 		this->username = username;
 		this->password = password;
 		this->dni = dni;
@@ -62,18 +62,6 @@ public:
 	void setFechaNacimiento(const S& newFechaNacimiento) { fechaNacimiento = newFechaNacimiento; }
 	void setImagen(const S& newImagen) { imagen = newImagen; }
 	void setFechaRegistro(const S& newFechaRegistro) { fechaRegistro = newFechaRegistro; }
-
-	// Methods
-	string obtenerFechaHoraActual() {
-		time_t ahora = time(nullptr);
-		struct tm tiempoStruct;
-		char buffer[80];
-
-		localtime_s(&tiempoStruct, &ahora);
-
-		strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", &tiempoStruct);
-		return std::string(buffer);
-	}
 };
 
 #endif // USUARIO_H
