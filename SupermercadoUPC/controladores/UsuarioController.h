@@ -2,9 +2,9 @@
 #define USUARIO_CONTROLLER_H
 
 #include <string>
-#include <vector>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 #include "../modelos/Usuario.h"
 #include "../estructuras/Lista.h"
 #include "../utilidades/Utilidades.h"
@@ -12,8 +12,8 @@
 class UsuarioController {
 private:
     Lista<Usuario> usuarios;
-    const std::string archivoUsuarios = "datos/usuarios.txt";
     Usuario* usuarioActual;
+    const std::string archivoUsuarios = "datos/usuarios.txt";
 
 public:
     UsuarioController() : usuarioActual(nullptr) {
@@ -22,21 +22,21 @@ public:
 
     bool login(const std::string& username, const std::string& password) {
         auto buscarUsuario = [&username, &password](const Usuario& u) {
-            return u.getUsername() == username &&
-                u.getPassword() == password &&
-                u.isActivo();
-            };
+            return u.getUsername() == username && u.getPassword() == password && u.isActivo();
+        };
 
-        usuarioActual = usuarios.buscar(buscarUsuario);
-        return usuarioActual != nullptr;
+        Usuario* usuario = usuarios.buscar(buscarUsuario);
+
+        if (usuario) {
+            usuarioActual = usuario;
+            return true;
+        }
+
+        return false;
     }
 
     void logout() {
         usuarioActual = nullptr;
-    }
-
-    Usuario* getUsuarioActual() const {
-        return usuarioActual;
     }
 
     bool esAdministrador() const {
@@ -47,10 +47,14 @@ public:
         return usuarioActual && usuarioActual->getRol() == "cliente";
     }
 
+    Usuario* getUsuarioActual() const {
+        return usuarioActual;
+    }
+
     void cargarUsuarios() {
         std::ifstream archivo(archivoUsuarios);
         if (!archivo.is_open()) {
-            std::cerr << "No se pudo abrir el archivo de usuarios. Se creará uno nuevo al guardar." << std::endl;
+            std::cerr << "No se pudo abrir el archivo de usuarios. Se crearÃ¡ uno nuevo al guardar." << std::endl;
             generarUsuariosEjemplo();
             return;
         }
@@ -77,7 +81,7 @@ public:
 
         auto guardarUsuario = [&archivo](const Usuario& u) {
             archivo << u.aCSV() << std::endl;
-            };
+        };
 
         usuarios.forEach(guardarUsuario);
 
@@ -86,9 +90,12 @@ public:
 
 private:
     void generarUsuariosEjemplo() {
-        usuarios.insertarFinal(Usuario("U001", "admin", "admin123", "administrador"));
-        usuarios.insertarFinal(Usuario("U002", "cliente1", "cliente123", "cliente"));
-        usuarios.insertarFinal(Usuario("U003", "cliente2", "cliente456", "cliente"));
+        usuarios.insertarFinal(Usuario("E001", "admin", "admin123", "administrador"));
+        usuarios.insertarFinal(Usuario("CL001", "cliente1", "cliente123", "cliente"));
+        usuarios.insertarFinal(Usuario("CL002", "cliente2", "cliente234", "cliente"));
+        usuarios.insertarFinal(Usuario("CL003", "cliente3", "cliente345", "cliente"));
+        usuarios.insertarFinal(Usuario("CL004", "cliente4", "cliente456", "cliente"));
+        usuarios.insertarFinal(Usuario("CL005", "cliente5", "cliente567", "cliente"));
 
         guardarUsuarios();
     }

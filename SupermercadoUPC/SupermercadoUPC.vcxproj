@@ -14,7 +14,7 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|x64">
-      <Configuration>Release</Configuration>
+      <Configuration>Debug</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
@@ -137,32 +137,44 @@
     <ClInclude Include="controladores\ProductoController.h" />
     <ClInclude Include="controladores\ProveedorController.h" />
     <ClInclude Include="controladores\ReporteController.h" />
+    <ClInclude Include="controladores\SucursalController.h" />
     <ClInclude Include="controladores\UsuarioController.h" />
     <ClInclude Include="controladores\VentaController.h" />
+    <ClInclude Include="estructuras\ABBalanceado.h" />
+    <ClInclude Include="estructuras\Arco.h" />
+    <ClInclude Include="estructuras\ArbolBinario.h" />
     <ClInclude Include="estructuras\Cola.h" />
+    <ClInclude Include="estructuras\Grafo.h" />
     <ClInclude Include="estructuras\Lista.h" />
     <ClInclude Include="estructuras\Nodo.h" />
     <ClInclude Include="estructuras\Pila.h" />
+    <ClInclude Include="estructuras\TablaHash.h" />
+    <ClInclude Include="estructuras\Vertice.h" />
     <ClInclude Include="modelos\Carrito.h" />
     <ClInclude Include="modelos\Categoria.h" />
     <ClInclude Include="modelos\Cliente.h" />
     <ClInclude Include="modelos\Empleado.h" />
     <ClInclude Include="modelos\ItemCarrito.h" />
     <ClInclude Include="modelos\Producto.h" />
+    <ClInclude Include="modelos\ProductoIndexado.h" />
     <ClInclude Include="modelos\Proveedor.h" />
     <ClInclude Include="modelos\Reporte.h" />
+    <ClInclude Include="modelos\Sucursal.h" />
     <ClInclude Include="modelos\Usuario.h" />
     <ClInclude Include="modelos\Venta.h" />
+    <ClInclude Include="utilidades\DataSetGenerator.h" />
     <ClInclude Include="utilidades\Ordenamiento.h" />
     <ClInclude Include="utilidades\Utilidades.h" />
     <ClInclude Include="vistas\CategoriaVista.h" />
     <ClInclude Include="vistas\ClienteVista.h" />
+    <ClInclude Include="vistas\DataSetVista.h" />
     <ClInclude Include="vistas\EmpleadoVista.h" />
     <ClInclude Include="vistas\LoginVista.h" />
     <ClInclude Include="vistas\Menu.h" />
     <ClInclude Include="vistas\ProductoVista.h" />
     <ClInclude Include="vistas\ProveedorVista.h" />
     <ClInclude Include="vistas\ReporteVista.h" />
+    <ClInclude Include="vistas\SucursalVista.h" />
     <ClInclude Include="vistas\VentaVista.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

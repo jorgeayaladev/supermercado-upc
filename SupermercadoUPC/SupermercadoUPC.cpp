@@ -1,4 +1,4 @@
-﻿// Librerías principales
+// Librerías principales
 #include <iostream>
 #include <string>
 #include <vector>
@@ -10,13 +10,21 @@
 #include "estructuras/Lista.h"
 #include "estructuras/Pila.h"
 #include "estructuras/Cola.h"
+#include "estructuras/TablaHash.h"
+#include "estructuras/ArbolBinario.h"
+#include "estructuras/ABBalanceado.h"
+#include "estructuras/Vertice.h"
+#include "estructuras/Arco.h"
+#include "estructuras/Grafo.h"
 // Utilidades
 #include "utilidades/Utilidades.h"
 #include "utilidades/Ordenamiento.h"
+#include "utilidades/DataSetGenerator.h"
 
 // Patrón MVC
 // Modelos
 #include "modelos/Producto.h"
+#include "modelos/ProductoIndexado.h"
 #include "modelos/Categoria.h"
 #include "modelos/Cliente.h"
 #include "modelos/Empleado.h"
@@ -26,6 +34,7 @@
 #include "modelos/Venta.h"
 #include "modelos/Reporte.h"
 #include "modelos/Usuario.h"
+#include "modelos/Sucursal.h"
 // Controladores
 #include "controladores/ProductoController.h"
 #include "controladores/CategoriaController.h"
@@ -36,6 +45,7 @@
 #include "controladores/VentaController.h"
 #include "controladores/ReporteController.h"
 #include "controladores/UsuarioController.h"
+#include "controladores/SucursalController.h"
 // Vistas
 #include "vistas/Menu.h"
 #include "vistas/ProductoVista.h"
@@ -46,6 +56,8 @@
 #include "vistas/CategoriaVista.h"
 #include "vistas/ClienteVista.h"
 #include "vistas/LoginVista.h"
+#include "vistas/SucursalVista.h"
+#include "vistas/DataSetVista.h"
 
 // Lambda para mostrar una animación de carga
 auto mostrarAnimacionCarga = [](const std::string& mensaje, int duracion = 2) {
@@ -72,7 +84,7 @@ auto mostrarDetallesSistema = []() {
     Utilidades::limpiarPantalla();
     std::cout << "===== INFORMACION DEL SISTEMA =====" << std::endl;
     std::cout << "Nombre: Sistema de Gestion de Supermercado" << std::endl;
-    std::cout << "Version: 1.0.0" << std::endl;
+    std::cout << "Version: 2.0.0" << std::endl;
     std::cout << "Fecha: " << Utilidades::obtenerFechaActual() << std::endl;
     std::cout << "Desarrollado por: Grupo 2" << std::endl;
     std::cout << "Integrantes:" << std::endl;
@@ -86,8 +98,19 @@ auto mostrarDetallesSistema = []() {
     std::cout << "- Gestion de clientes" << std::endl;
     std::cout << "- Gestion de empleados" << std::endl;
     std::cout << "- Gestion de proveedores" << std::endl;
+    std::cout << "- Gestion de sucursales" << std::endl;
     std::cout << "- Proceso de ventas" << std::endl;
     std::cout << "- Reportes y estadisticas" << std::endl;
+    std::cout << "- Generador de datasets" << std::endl;
+    std::cout << std::endl;
+    std::cout << "Estructuras de datos implementadas:" << std::endl;
+    std::cout << "- Listas enlazadas" << std::endl;
+    std::cout << "- Pilas" << std::endl;
+    std::cout << "- Colas" << std::endl;
+    std::cout << "- Tablas Hash" << std::endl;
+    std::cout << "- Arboles Binarios de Busqueda" << std::endl;
+    std::cout << "- Arboles Binarios Balanceados (AVL)" << std::endl;
+    std::cout << "- Grafos" << std::endl;
 
     Utilidades::pausar();
     };
@@ -196,6 +219,8 @@ int main() {
     VentaController ventaController(productoController, clienteController);
     ReporteController reporteController(productoController, clienteController, ventaController);
     UsuarioController usuarioController;
+    SucursalController sucursalController;
+    DataSetGenerator dataSetGenerator;
 
     // Crear vistas
     ProductoVista productoVista(productoController, categoriaController);
@@ -206,6 +231,10 @@ int main() {
     VentaVista ventaVista(ventaController, carritoController, clienteController, empleadoController);
     ReporteVista reporteVista(reporteController);
     LoginVista loginVista(usuarioController);
+    SucursalVista sucursalVista(sucursalController);
+    DataSetVista dataSetVista(dataSetGenerator, productoController, categoriaController,
+                             clienteController, empleadoController, proveedorController,
+                             ventaController, carritoController);
 
     // Mostrar animación de carga inicial
     mostrarAnimacionCarga("Iniciando el sistema", 3);
@@ -232,7 +261,9 @@ int main() {
             menuPrincipal.agregarOpcion("Gestionar Clientes");
             menuPrincipal.agregarOpcion("Gestionar Empleados");
             menuPrincipal.agregarOpcion("Gestionar Proveedores");
+            menuPrincipal.agregarOpcion("Gestionar Sucursales");
             menuPrincipal.agregarOpcion("Reportes y Estadisticas");
+            menuPrincipal.agregarOpcion("Generador de DataSet");
             menuPrincipal.agregarOpcion("Informacion del Sistema");
         }
         else if (usuarioController.esCliente()) {
@@ -264,12 +295,18 @@ int main() {
                 proveedorVista.mostrarMenu();
                 break;
             case 6:
-                reporteVista.mostrarMenu();
+                sucursalVista.mostrarMenu();
                 break;
             case 7:
-                mostrarDetallesSistema();
+                reporteVista.mostrarMenu();
                 break;
             case 8:
+                dataSetVista.mostrarMenu();
+                break;
+            case 9:
+                mostrarDetallesSistema();
+                break;
+            case 10:
                 if (Menu::confirmar("Esta seguro de que desea cerrar sesion?")) {
                     usuarioController.logout();
                     do {
