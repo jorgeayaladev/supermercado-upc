@@ -1,0 +1,10 @@
+C001,Abarrotes,Productos basicos no perecederos,1
+C002,Lacteos,Productos lacteos y derivados,1
+C003,Frutas,Frutas frescas,1
+C004,Verduras,Verduras y hortalizas frescas,1
+C005,Carnes,Carnes frescas y congeladas,1
+C006,Panaderia,Productos de panaderia y reposteria,1
+C007,Bebidas,Refrescos jugos y bebidas,1
+C008,Limpieza,Productos de limpieza para el hogar,1
+C009,Higiene,Productos de higiene personal,1
+C010,Hogar,Articulos para el hogar,1

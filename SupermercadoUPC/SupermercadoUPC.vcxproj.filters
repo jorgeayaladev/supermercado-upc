@@ -5,13 +5,20 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Archivos de encabezado">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="modelos">
+      <UniqueIdentifier>{9ed3db1e-c3c5-4a78-b9b9-7fb3038bbcd0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de recursos">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="controladores">
+      <UniqueIdentifier>{aca035b4-e7fd-45a2-9f2b-558b28ab3f17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utilidades">
+      <UniqueIdentifier>{fbff13f1-057c-4a2e-91fc-0b7a887616a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vistas">
+      <UniqueIdentifier>{3df6e3a0-f9fe-4f1c-8113-2ab67a846eac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="estructuras">
+      <UniqueIdentifier>{11cd65bf-f5fc-4040-951c-b6ee02debfcb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -20,14 +27,107 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Lista.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="modelos\Carrito.h">
+      <Filter>modelos</Filter>
     </ClInclude>
-    <ClInclude Include="Nodo.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="modelos\Categoria.h">
+      <Filter>modelos</Filter>
     </ClInclude>
-    <ClInclude Include="Cliente.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="modelos\Cliente.h">
+      <Filter>modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="modelos\Empleado.h">
+      <Filter>modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="modelos\ItemCarrito.h">
+      <Filter>modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="modelos\Producto.h">
+      <Filter>modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="modelos\Proveedor.h">
+      <Filter>modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="modelos\Reporte.h">
+      <Filter>modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="modelos\Usuario.h">
+      <Filter>modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="modelos\Venta.h">
+      <Filter>modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="controladores\CarritoController.h">
+      <Filter>controladores</Filter>
+    </ClInclude>
+    <ClInclude Include="controladores\CategoriaController.h">
+      <Filter>controladores</Filter>
+    </ClInclude>
+    <ClInclude Include="controladores\ClienteController.h">
+      <Filter>controladores</Filter>
+    </ClInclude>
+    <ClInclude Include="controladores\EmpleadoController.h">
+      <Filter>controladores</Filter>
+    </ClInclude>
+    <ClInclude Include="controladores\ProductoController.h">
+      <Filter>controladores</Filter>
+    </ClInclude>
+    <ClInclude Include="controladores\ProveedorController.h">
+      <Filter>controladores</Filter>
+    </ClInclude>
+    <ClInclude Include="controladores\ReporteController.h">
+      <Filter>controladores</Filter>
+    </ClInclude>
+    <ClInclude Include="controladores\UsuarioController.h">
+      <Filter>controladores</Filter>
+    </ClInclude>
+    <ClInclude Include="controladores\VentaController.h">
+      <Filter>controladores</Filter>
+    </ClInclude>
+    <ClInclude Include="utilidades\Ordenamiento.h">
+      <Filter>utilidades</Filter>
+    </ClInclude>
+    <ClInclude Include="utilidades\Utilidades.h">
+      <Filter>utilidades</Filter>
+    </ClInclude>
+    <ClInclude Include="vistas\CategoriaVista.h">
+      <Filter>vistas</Filter>
+    </ClInclude>
+    <ClInclude Include="vistas\ClienteVista.h">
+      <Filter>vistas</Filter>
+    </ClInclude>
+    <ClInclude Include="vistas\EmpleadoVista.h">
+      <Filter>vistas</Filter>
+    </ClInclude>
+    <ClInclude Include="vistas\LoginVista.h">
+      <Filter>vistas</Filter>
+    </ClInclude>
+    <ClInclude Include="vistas\Menu.h">
+      <Filter>vistas</Filter>
+    </ClInclude>
+    <ClInclude Include="vistas\ProductoVista.h">
+      <Filter>vistas</Filter>
+    </ClInclude>
+    <ClInclude Include="vistas\ProveedorVista.h">
+      <Filter>vistas</Filter>
+    </ClInclude>
+    <ClInclude Include="vistas\ReporteVista.h">
+      <Filter>vistas</Filter>
+    </ClInclude>
+    <ClInclude Include="vistas\VentaVista.h">
+      <Filter>vistas</Filter>
+    </ClInclude>
+    <ClInclude Include="estructuras\Cola.h">
+      <Filter>estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="estructuras\Lista.h">
+      <Filter>estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="estructuras\Nodo.h">
+      <Filter>estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="estructuras\Pila.h">
+      <Filter>estructuras</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

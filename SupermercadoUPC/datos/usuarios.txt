@@ -1,0 +1,6 @@
+E001,admin,admin123,administrador,1
+CL001,cliente1,cliente123,cliente,1
+CL002,cliente2,cliente234,cliente,1
+CL003,cliente3,cliente345,cliente,1
+CL004,cliente4,cliente456,cliente,1
+CL005,cliente5,cliente567,cliente,1

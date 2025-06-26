@@ -1,0 +1,4 @@
+R001,Reporte de Ventas Mensual,Resumen de ventas del mes,2023-11-01,ventas,2023-11-01,2023-11-30
+R002,Productos con Stock Bajo,Productos con stock menor a 20 unidades,2023-11-01,inventario,2023-11-01,2023-11-01
+R003,Top Clientes,Clientes con mayores compras,2023-11-01,clientes,2023-11-01,2023-11-01
+1747224230,Reporte de Ventas,Resumen de ventas entre 2000-10-10 y 2024-10-10,2025-05-14,ventas,2000-10-10,2024-10-10

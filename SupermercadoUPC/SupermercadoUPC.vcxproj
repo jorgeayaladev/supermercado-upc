@@ -130,18 +130,40 @@
     <ClCompile Include="SupermercadoUPC.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Administrador.h" />
-    <ClInclude Include="Cliente.h" />
-    <ClInclude Include="Cola.h" />
-    <ClInclude Include="Lista.h" />
-    <ClInclude Include="Nodo.h" />
-    <ClInclude Include="Pila.h" />
-    <ClInclude Include="Supermercado.h" />
-    <ClInclude Include="Usuario.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="administradores.txt" />
-    <Text Include="clientes.txt" />
+    <ClInclude Include="controladores\CarritoController.h" />
+    <ClInclude Include="controladores\CategoriaController.h" />
+    <ClInclude Include="controladores\ClienteController.h" />
+    <ClInclude Include="controladores\EmpleadoController.h" />
+    <ClInclude Include="controladores\ProductoController.h" />
+    <ClInclude Include="controladores\ProveedorController.h" />
+    <ClInclude Include="controladores\ReporteController.h" />
+    <ClInclude Include="controladores\UsuarioController.h" />
+    <ClInclude Include="controladores\VentaController.h" />
+    <ClInclude Include="estructuras\Cola.h" />
+    <ClInclude Include="estructuras\Lista.h" />
+    <ClInclude Include="estructuras\Nodo.h" />
+    <ClInclude Include="estructuras\Pila.h" />
+    <ClInclude Include="modelos\Carrito.h" />
+    <ClInclude Include="modelos\Categoria.h" />
+    <ClInclude Include="modelos\Cliente.h" />
+    <ClInclude Include="modelos\Empleado.h" />
+    <ClInclude Include="modelos\ItemCarrito.h" />
+    <ClInclude Include="modelos\Producto.h" />
+    <ClInclude Include="modelos\Proveedor.h" />
+    <ClInclude Include="modelos\Reporte.h" />
+    <ClInclude Include="modelos\Usuario.h" />
+    <ClInclude Include="modelos\Venta.h" />
+    <ClInclude Include="utilidades\Ordenamiento.h" />
+    <ClInclude Include="utilidades\Utilidades.h" />
+    <ClInclude Include="vistas\CategoriaVista.h" />
+    <ClInclude Include="vistas\ClienteVista.h" />
+    <ClInclude Include="vistas\EmpleadoVista.h" />
+    <ClInclude Include="vistas\LoginVista.h" />
+    <ClInclude Include="vistas\Menu.h" />
+    <ClInclude Include="vistas\ProductoVista.h" />
+    <ClInclude Include="vistas\ProveedorVista.h" />
+    <ClInclude Include="vistas\ReporteVista.h" />
+    <ClInclude Include="vistas\VentaVista.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
