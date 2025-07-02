@@ -20,7 +20,7 @@ public:
     // Wrapper para quicksort
     static void quickSort(std::vector<T>& arr) {
         if (arr.size() > 1) {
-            quickSort(arr, 0, arr.size() - 1);
+            quickSort(arr, 0, (int) arr.size() - 1);
         }
     }
     
@@ -37,13 +37,13 @@ public:
     // Wrapper para mergesort
     static void mergeSort(std::vector<T>& arr) {
         if (arr.size() > 1) {
-            mergeSort(arr, 0, arr.size() - 1);
+            mergeSort(arr, 0, (int) arr.size() - 1);
         }
     }
     
     // Heapsort
     static void heapSort(std::vector<T>& arr) {
-        int n = arr.size();
+        int n = (int) arr.size();
         
         // Construir el heap (árbol binario completo)
         for (int i = n / 2 - 1; i >= 0; i--) {

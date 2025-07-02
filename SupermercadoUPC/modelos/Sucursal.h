@@ -121,6 +121,14 @@ public:
     bool operator>(const Sucursal& otra) const {
         return nombre > otra.nombre;
     }
+
+    bool operator<=(const Sucursal& otra) const {
+        return nombre < otra.nombre;
+    }
+
+    bool operator>=(const Sucursal& otra) const {
+        return nombre > otra.nombre;
+    }
     
     bool operator==(const Sucursal& otra) const {
         return id == otra.id;

@@ -106,7 +106,7 @@ public:
             if (umbral < 0) {
                 throw std::invalid_argument("El umbral no puede ser negativo");
             }
-        } catch (const std::exception& e) {
+        } catch (...) {
             Menu::mostrarError("Umbral invalido");
             return;
         }
@@ -132,7 +132,7 @@ public:
             if (cantidad <= 0) {
                 throw std::invalid_argument("La cantidad debe ser mayor que cero");
             }
-        } catch (const std::exception& e) {
+        } catch (...) {
             Menu::mostrarError("Cantidad invalida");
             return;
         }

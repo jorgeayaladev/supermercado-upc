@@ -303,11 +303,11 @@ public:
     
     // Información del grafo
     int getNumVertices() const {
-        return vertices.size();
+        return (int) vertices.size();
     }
     
     int getNumArcos() const {
-        return arcos.size();
+        return (int) arcos.size();
     }
     
     bool esDirigido() const {

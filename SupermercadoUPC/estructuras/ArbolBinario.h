@@ -34,10 +34,10 @@ public:
 template <typename T>
 class ArbolBinario {
 private:
-    NodoArbol<T>* raiz;
+    NodoArbol<T>* raiz = nullptr;
     int tamano;
     
-    void insertarRecursivo(NodoArbol<T>*& nodo, const T& dato) {
+    void insertarRecursivo(NodoArbol<T>* nodo, const T& dato) {
         if (nodo == nullptr) {
             nodo = new NodoArbol<T>(dato);
             tamano++;

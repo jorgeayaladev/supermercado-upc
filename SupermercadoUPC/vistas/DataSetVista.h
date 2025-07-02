@@ -109,7 +109,7 @@ public:
                 if (cantidad <= 0 || cantidad > 100) {
                     throw std::invalid_argument("Cantidad fuera de rango");
                 }
-            } catch (const std::exception& e) {
+            } catch (...) {
                 Menu::mostrarError("Cantidad invalida, usando valor por defecto (15)");
                 cantidad = 15;
             }
@@ -137,7 +137,7 @@ public:
                 
                     throw std::invalid_argument("Cantidad fuera de rango");
                 }
-            } catch (const std::exception& e) {
+            } catch (...) {
                 Menu::mostrarError("Cantidad invalida, usando valor por defecto (100)");
                 cantidad = 100;
             }
@@ -164,7 +164,7 @@ public:
                 if (cantidad <= 0 || cantidad > 500) {
                     throw std::invalid_argument("Cantidad fuera de rango");
                 }
-            } catch (const std::exception& e) {
+            } catch (...) {
                 Menu::mostrarError("Cantidad invalida, usando valor por defecto (50)");
                 cantidad = 50;
             }
@@ -191,7 +191,7 @@ public:
                 if (cantidad <= 0 || cantidad > 100) {
                     throw std::invalid_argument("Cantidad fuera de rango");
                 }
-            } catch (const std::exception& e) {
+            } catch (...) {
                 Menu::mostrarError("Cantidad invalida, usando valor por defecto (20)");
                 cantidad = 20;
             }
@@ -218,7 +218,7 @@ public:
                 if (cantidad <= 0 || cantidad > 50) {
                     throw std::invalid_argument("Cantidad fuera de rango");
                 }
-            } catch (const std::exception& e) {
+            } catch (...) {
                 Menu::mostrarError("Cantidad invalida, usando valor por defecto (15)");
                 cantidad = 15;
             }
@@ -245,7 +245,7 @@ public:
                 if (cantidad <= 0 || cantidad > 200) {
                     throw std::invalid_argument("Cantidad fuera de rango");
                 }
-            } catch (const std::exception& e) {
+            } catch (...) {
                 Menu::mostrarError("Cantidad invalida, usando valor por defecto (30)");
                 cantidad = 30;
             }
@@ -379,7 +379,7 @@ private:
                 return valorDefecto;
             }
             return cantidad;
-        } catch (const std::exception& e) {
+        } catch (...) {
             std::cout << "Cantidad invalida, usando valor por defecto." << std::endl;
             return valorDefecto;
         }

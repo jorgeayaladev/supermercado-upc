@@ -370,7 +370,7 @@ private:
             if (cantidad <= 0) {
                 throw std::invalid_argument("La cantidad debe ser mayor que cero");
             }
-        } catch (const std::exception& e) {
+        } catch (...) {
             Menu::mostrarError("Cantidad invalida");
             return;
         }
@@ -409,7 +409,7 @@ private:
             if (cantidad < 0) {
                 throw std::invalid_argument("La cantidad no puede ser negativa");
             }
-        } catch (const std::exception& e) {
+        } catch (...) {
             Menu::mostrarError("Cantidad invalida");
             return;
         }
@@ -438,7 +438,7 @@ private:
             if (descuento < 0 || descuento > 100) {
                 throw std::invalid_argument("El descuento debe estar entre 0 y 100");
             }
-        } catch (const std::exception& e) {
+        } catch (...) {
             Menu::mostrarError("Descuento invalido");
             return;
         }

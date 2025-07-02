@@ -251,7 +251,6 @@ int main() {
 
     // Menú principal
     bool salir = false;
-
     while (!salir) {
         Menu menuPrincipal("MENU PRINCIPAL");
 

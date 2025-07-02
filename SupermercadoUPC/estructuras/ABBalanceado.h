@@ -21,10 +21,10 @@ public:
     const T& getDato() const { return dato; }
     void setDato(const T& _dato) { dato = _dato; }
     
-    NodoAVL<T>* getIzquierdo() const { return izquierdo; }
+    NodoAVL<T>* getIzquierdo() { return izquierdo; }
     void setIzquierdo(NodoAVL<T>* _izquierdo) { izquierdo = _izquierdo; }
     
-    NodoAVL<T>* getDerecho() const { return derecho; }
+    NodoAVL<T>* getDerecho() { return derecho; }
     void setDerecho(NodoAVL<T>* _derecho) { derecho = _derecho; }
     
     int getAltura() const { return altura; }
@@ -41,11 +41,11 @@ private:
     NodoAVL<T>* raiz;
     int tamano;
     
-    int obtenerAltura(NodoAVL<T>* nodo) {
+    int obtenerAltura(NodoAVL<T>* nodo) const {
         return nodo ? nodo->getAltura() : 0;
     }
     
-    int obtenerBalance(NodoAVL<T>* nodo) {
+    int obtenerBalance(NodoAVL<T>* nodo) const {
         return nodo ? obtenerAltura(nodo->getIzquierdo()) - obtenerAltura(nodo->getDerecho()) : 0;
     }
     
@@ -300,7 +300,7 @@ public:
         raiz = nullptr;
         tamano = 0;
     }
-    
+
     std::vector<T> buscarEnRango(const T& minimo, const T& maximo) const {
         std::vector<T> resultado;
         

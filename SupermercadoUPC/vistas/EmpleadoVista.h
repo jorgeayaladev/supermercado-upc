@@ -132,7 +132,7 @@ public:
             if (salario <= 0) {
                 throw std::invalid_argument("El salario debe ser mayor que cero");
             }
-        } catch (const std::exception& e) {
+        } catch (...) {
             Menu::mostrarError("Salario invalido");
             return;
         }
@@ -216,7 +216,7 @@ public:
                 if (salario <= 0) {
                     throw std::invalid_argument("El salario debe ser mayor que cero");
                 }
-            } catch (const std::exception& e) {
+            } catch (...) {
                 Menu::mostrarError("Salario invalido. Se mantendra el valor original");
                 salario = empleado->getSalario();
             }

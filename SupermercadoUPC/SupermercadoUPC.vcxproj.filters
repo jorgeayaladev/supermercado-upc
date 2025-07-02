@@ -20,6 +20,9 @@
     <Filter Include="estructuras">
       <UniqueIdentifier>{11cd65bf-f5fc-4040-951c-b6ee02debfcb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="datos">
+      <UniqueIdentifier>{20498f98-261a-4c26-9a8b-c393adad51e9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SupermercadoUPC.cpp">
@@ -129,5 +132,73 @@
     <ClInclude Include="estructuras\Pila.h">
       <Filter>estructuras</Filter>
     </ClInclude>
+    <ClInclude Include="controladores\SucursalController.h">
+      <Filter>controladores</Filter>
+    </ClInclude>
+    <ClInclude Include="estructuras\ABBalanceado.h">
+      <Filter>estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="estructuras\ArbolBinario.h">
+      <Filter>estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="estructuras\Arco.h">
+      <Filter>estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="estructuras\Grafo.h">
+      <Filter>estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="estructuras\TablaHash.h">
+      <Filter>estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="estructuras\Vertice.h">
+      <Filter>estructuras</Filter>
+    </ClInclude>
+    <ClInclude Include="modelos\Sucursal.h">
+      <Filter>modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="utilidades\DataSetGenerator.h">
+      <Filter>utilidades</Filter>
+    </ClInclude>
+    <ClInclude Include="modelos\ProductoIndexado.h">
+      <Filter>modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="vistas\SucursalVista.h">
+      <Filter>vistas</Filter>
+    </ClInclude>
+    <ClInclude Include="vistas\DataSetVista.h">
+      <Filter>vistas</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="datos\carritos.txt">
+      <Filter>datos</Filter>
+    </Text>
+    <Text Include="datos\categorias.txt">
+      <Filter>datos</Filter>
+    </Text>
+    <Text Include="datos\clientes.txt">
+      <Filter>datos</Filter>
+    </Text>
+    <Text Include="datos\empleados.txt">
+      <Filter>datos</Filter>
+    </Text>
+    <Text Include="datos\productos.txt">
+      <Filter>datos</Filter>
+    </Text>
+    <Text Include="datos\proveedores.txt">
+      <Filter>datos</Filter>
+    </Text>
+    <Text Include="datos\reportes.txt">
+      <Filter>datos</Filter>
+    </Text>
+    <Text Include="datos\sucursales.txt">
+      <Filter>datos</Filter>
+    </Text>
+    <Text Include="datos\usuarios.txt">
+      <Filter>datos</Filter>
+    </Text>
+    <Text Include="datos\ventas.txt">
+      <Filter>datos</Filter>
+    </Text>
   </ItemGroup>
 </Project>

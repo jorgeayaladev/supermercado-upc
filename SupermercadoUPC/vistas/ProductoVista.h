@@ -156,7 +156,7 @@ public:
             if (precio <= 0) {
                 throw std::invalid_argument("El precio debe ser mayor que cero");
             }
-        } catch (const std::exception& e) {
+        } catch (...) {
             Menu::mostrarError("Precio invalido. Debe ser un numero mayor que cero");
             return;
         }
@@ -170,7 +170,7 @@ public:
             if (stock < 0) {
                 throw std::invalid_argument("El stock no puede ser negativo");
             }
-        } catch (const std::exception& e) {
+        } catch (...) {
             Menu::mostrarError("Stock invalido. Debe ser un numero entero no negativo");
             return;
         }
@@ -278,7 +278,7 @@ public:
                 if (precio <= 0) {
                     throw std::invalid_argument("El precio debe ser mayor que cero");
                 }
-            } catch (const std::exception& e) {
+            } catch (...) {
                 Menu::mostrarError("Precio invalido. Se mantendra el valor original");
                 precio = producto->getPrecio();
             }
@@ -296,7 +296,7 @@ public:
                 if (stock < 0) {
                     throw std::invalid_argument("El stock no puede ser negativo");
                 }
-            } catch (const std::exception& e) {
+            } catch (...) {
                 Menu::mostrarError("Stock invalido. Se mantendra el valor original");
                 stock = producto->getStock();
             }
@@ -563,7 +563,7 @@ public:
             if (umbral < 0) {
                 throw std::invalid_argument("El umbral no puede ser negativo");
             }
-        } catch (const std::exception& e) {
+        } catch (...) {
             Menu::mostrarError("Umbral invalido. Debe ser un numero entero no negativo");
             return;
         }

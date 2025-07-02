@@ -252,7 +252,7 @@ public:
                 if (limite <= 0) {
                     throw std::invalid_argument("El limite debe ser mayor que cero");
                 }
-            } catch (const std::exception& e) {
+            } catch (...) {
                 Menu::mostrarError("Limite invalido, usando valor por defecto (10)");
                 limite = 10;
             }

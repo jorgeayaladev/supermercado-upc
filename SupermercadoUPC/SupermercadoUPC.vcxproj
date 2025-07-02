@@ -177,6 +177,18 @@
     <ClInclude Include="vistas\SucursalVista.h" />
     <ClInclude Include="vistas\VentaVista.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="datos\carritos.txt" />
+    <Text Include="datos\categorias.txt" />
+    <Text Include="datos\clientes.txt" />
+    <Text Include="datos\empleados.txt" />
+    <Text Include="datos\productos.txt" />
+    <Text Include="datos\proveedores.txt" />
+    <Text Include="datos\reportes.txt" />
+    <Text Include="datos\sucursales.txt" />
+    <Text Include="datos\usuarios.txt" />
+    <Text Include="datos\ventas.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

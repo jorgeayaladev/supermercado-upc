@@ -168,7 +168,7 @@ public:
             if (ventasMin < 0 || ventasMax < 0 || ventasMin > ventasMax) {
                 throw std::invalid_argument("Rango invalido");
             }
-        } catch (const std::exception& e) {
+        } catch (...) {
             Menu::mostrarError("Valores de ventas invalidos");
             return;
         }
@@ -239,7 +239,7 @@ public:
             if (ventasMensuales < 0) {
                 throw std::invalid_argument("Las ventas no pueden ser negativas");
             }
-        } catch (const std::exception& e) {
+        } catch (...) {
             Menu::mostrarError("Ventas invalidas");
             return;
         }
@@ -253,7 +253,7 @@ public:
             if (numeroEmpleados < 0) {
                 throw std::invalid_argument("El numero de empleados no puede ser negativo");
             }
-        } catch (const std::exception& e) {
+        } catch (...) {
             Menu::mostrarError("Numero de empleados invalido");
             return;
         }
@@ -347,7 +347,7 @@ public:
             if (!distanciaStr.empty()) {
                 distancia = std::stod(distanciaStr);
             }
-        } catch (const std::exception& e) {
+        } catch (...) {
             Menu::mostrarError("Distancia invalida, usando valor por defecto");
         }
         
