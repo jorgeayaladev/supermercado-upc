@@ -116,12 +116,12 @@ public:
     // Método para mostrar información en formato tabular
     std::string obtenerFilaTabla() const {
         std::stringstream ss;
-        ss << std::left << std::setw(5) << id.substr(0, 5)
-           << std::left << std::setw(25) << (getNombreCompleto().length() > 23 ? getNombreCompleto().substr(0, 23) + "..." : getNombreCompleto())
-           << std::left << std::setw(25) << (email.length() > 23 ? email.substr(0, 23) + "..." : email)
+        ss << std::left << std::setw(10) << id.substr(0, 5)
+           << std::left << std::setw(20) << (getNombreCompleto().length() > 20 ? getNombreCompleto().substr(0, 20) + "..." : getNombreCompleto())
+           << std::left << std::setw(30) << (email.length() > 30 ? email.substr(0, 30) + "..." : email)
            << std::left << std::setw(15) << telefono
-           << std::right << std::setw(10) << "$" + std::to_string(int(totalCompras)) + "." + std::to_string(int(totalCompras * 100) % 100)
-           << std::right << std::setw(8) << puntosAcumulados;
+           << std::left << std::setw(15) << "$" + std::to_string(int(totalCompras)) + "." + std::to_string(int(totalCompras * 100) % 100)
+           << std::left << std::setw(10) << puntosAcumulados;
         return ss.str();
     }
     

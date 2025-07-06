@@ -13,4 +13,3 @@ P012,Shampoo,Head and shoulders,6.000000,2,Higiene,7423642378434,1
 P013,Papitas Lays,Papitas saladas 500g,34.000000,56,Panaderia,7482347234782,1
 P014,Toallas Avon,Toallas hidratantes,23.000000,66,Higiene,7382938293923233,1
 P015,Desodorante Axe,desodorante exclusivo,67.000000,23,Higiene,7832832932932393,1
-P016,productonuevo,kfasbdhas,23.000000,45,Lacteos,7498343284324232,0

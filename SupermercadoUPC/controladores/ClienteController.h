@@ -85,8 +85,9 @@ public:
         bool encontrado = false;
         
         auto eliminarCliente = [&id, &encontrado](Cliente& c) {
-            if (c.getId() == id) {
-                c.setActivo(false);
+			if (c.getId() == id) {
+				// Marcar como inactivo en lugar de eliminar
+				c.setActivo(false);
                 encontrado = true;
             }
         };
@@ -101,9 +102,8 @@ public:
     }
     
     // Obtener todos los clientes
-    Lista<Cliente>& obtenerTodos() {
-        return clientes;
-    }
+    Lista<Cliente>& obtenerTodos() { return clientes; }
+	int obtenerCantidad() const { return clientes.getTamano(); }
     
     // Obtener clientes activos
     Lista<Cliente> obtenerActivos() {
@@ -174,7 +174,7 @@ public:
         if (!archivo.is_open()) {
             std::cerr << "No se pudo abrir el archivo de clientes. Se creará uno nuevo al guardar." << std::endl;
             // Crear clientes de ejemplo si no existe el archivo
-            // generarClientesEjemplo();
+            generarClientesEjemplo();
             return;
         }
         
@@ -190,10 +190,7 @@ public:
     }
     
     // Guardar clientes en archivo
-    void guardarClientes() {
-        // Crear el directorio si no existe
-        system("mkdir -p datos");
-        
+    void guardarClientes() {        
         std::ofstream archivo(archivoClientes);
         if (!archivo.is_open()) {
             std::cerr << "No se pudo abrir el archivo para guardar los clientes." << std::endl;
@@ -222,7 +219,6 @@ public:
     
 private:
     // Generar clientes de ejemplo
-    /*
     void generarClientesEjemplo() {
         clientes.insertarFinal(Cliente("CL001", "Juan", "Perez", "juanperez@gmail.com", "904892343", "Calle Principal 123", 580.50, 5));
         clientes.insertarFinal(Cliente("CL002", "Maria", "Garcia", "mariagarcia@gmail.com", "940234233", "Av. Central 456", 1200.75, 12));
@@ -232,7 +228,6 @@ private:
         
         guardarClientes();
     }
-    */
 };
 
 #endif

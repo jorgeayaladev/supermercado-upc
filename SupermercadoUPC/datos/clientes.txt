@@ -1,5 +1,8 @@
-CL001,Juan,Perez,juanperez@gmail.com,903234489,Calle Principal 123,580.50,5,1
-CL002,Maria,Garcia,mariagarcia@gmail.com,999320323,Av. Central 456,1200.75,12,1
-CL003,Carlos,Rodriguez,carlosrodriguez@gmail.com,902348234,Plaza Mayor 789,320.25,3,1
-CL004,Ana,Martinez,anamartinez@gmail.com,994304384,Calle Secundaria 234,950.00,9,1
-CL005,Pedro,Lopez,pedrolopez@gmail.com,974392392,Av. Principal 567,150.50,1,1
+CL001,Juan,Perez,juanperez@gmail.com,903234489,Calle Principal 123,580.500000,5,1
+CL002,Maria,Garcia,mariagarcia@gmail.com,999320323,Av. Central 456,1200.750000,12,1
+CL003,Carlos,Rodriguez,carlosrodriguez@gmail.com,902348234,Plaza Mayor 789,320.250000,3,1
+CL004,Ana,Martinez,anamartinez@gmail.com,994304384,Calle Secundaria 234,950.000000,9,1
+CL005,Pedro,Lopez,pedrolopez@gmail.com,974392392,Av. Principal 567,150.500000,1,1
+CL006,Jorge,Ayala,jorgeayala@gmail.com,903293023,av. los laureles 345,0.000000,0,1
+CL007,Laura,Gonzales,lauragonzales@gmail.com,937482343,Av. Alfredo Mendiola,0.000000,0,1
+CL008,Edgardo,Diaz,edgardodiaz@gmail.com,938293323,Av. el Retablo 381,0.000000,0,1

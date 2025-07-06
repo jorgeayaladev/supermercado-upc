@@ -19,7 +19,7 @@ public:
     ~Lista() {
         vaciar();
     }
-    
+
     // Métodos básicos
     void insertarInicio(T dato) {
         Nodo<T>* nuevo = new Nodo<T>(dato);
@@ -88,7 +88,7 @@ public:
         tamano--;
         return dato;
     }
-    
+
     void vaciar() {
         while (!estaVacia()) {
             eliminarInicio();

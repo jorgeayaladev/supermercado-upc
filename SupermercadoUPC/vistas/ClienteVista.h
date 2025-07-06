@@ -17,11 +17,12 @@ public:
     ClienteVista(ClienteController& _clienteController)
         : clienteController(_clienteController) {}
     
+    // Perfecto
     void mostrarMenu() {
         bool salir = false;
         
         while (!salir) {
-            Menu menu("GESTION DE CLIENTES");
+            Menu menu("GESTION DE CLIENTES:");
             menu.agregarOpcion("Listar todos los clientes");
             menu.agregarOpcion("Buscar cliente");
             menu.agregarOpcion("Agregar nuevo cliente");
@@ -48,18 +49,23 @@ public:
         }
     }
     
+    // Perfecto
     void listarClientes() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== LISTADO DE CLIENTES =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "LISTADO DE CLIENTES" << std::endl;
         
         mostrarTablaClientes();
         
         Utilidades::pausar();
     }
     
+    // Perfecto
     void buscarCliente() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== BUSCAR CLIENTE =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "BUSCAR CLIENTE" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese nombre o apellido a buscar: ";
         std::string busqueda;
@@ -83,9 +89,12 @@ public:
         Utilidades::pausar();
     }
     
+    // Perfecto
     void agregarCliente() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== AGREGAR CLIENTE =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "AGREGAR CLIENTE" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::string nombre, apellido, email, telefono, direccion;
         
@@ -119,8 +128,10 @@ public:
         std::cout << "Direccion: ";
         std::getline(std::cin, direccion);
         
-        std::string id = "CL" + Utilidades::generarId().substr(0, 8);
+		std::string id = "CL" + Utilidades::idGenerado(clienteController.obtenerCantidad() + 1);
         Cliente nuevoCliente(id, nombre, apellido, email, telefono, direccion);
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         if (clienteController.crear(nuevoCliente)) {
             Menu::mostrarExito("Cliente agregado correctamente");
@@ -129,9 +140,12 @@ public:
         }
     }
     
+    // Perfecto
     void editarCliente() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== EDITAR CLIENTE =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "EDITAR CLIENTE" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese ID del cliente a editar: ";
         std::string id;
@@ -147,7 +161,7 @@ public:
         std::cout << "\nCliente encontrado:" << std::endl;
         cliente->mostrar();
         
-        if (!Menu::confirmar("\n¿Desea editar este cliente?")) {
+        if (!Menu::confirmar("\nDesea editar este cliente?")) {
             return;
         }
         
@@ -185,7 +199,7 @@ public:
         }
         
         std::string activoStr;
-        std::cout << "¿Activo? (S/N) (" << (cliente->isActivo() ? "S" : "N") << "): ";
+        std::cout << "Activo? (S/N) (" << (cliente->isActivo() ? "S" : "N") << "): ";
         std::getline(std::cin, activoStr);
         
         if (activoStr.empty()) {
@@ -201,6 +215,8 @@ public:
                                  direccion, cliente->getTotalCompras(), 
                                  cliente->getPuntosAcumulados(), activo);
         
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+
         if (clienteController.actualizar(clienteActualizado)) {
             Menu::mostrarExito("Cliente actualizado correctamente");
         } else {
@@ -208,9 +224,12 @@ public:
         }
     }
     
+    // Perfecto
     void eliminarCliente() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== ELIMINAR CLIENTE =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "ELIMINAR CLIENTE" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese ID del cliente a eliminar: ";
         std::string id;
@@ -226,9 +245,11 @@ public:
         std::cout << "\nCliente encontrado:" << std::endl;
         cliente->mostrar();
         
-        if (!Menu::confirmar("\n¿Esta seguro de que desea eliminar este cliente?")) {
+        if (!Menu::confirmar("Esta seguro de que desea eliminar este cliente?")) {
             return;
         }
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         if (clienteController.eliminar(id)) {
             Menu::mostrarExito("Cliente eliminado correctamente");
@@ -237,9 +258,12 @@ public:
         }
     }
     
+    // Perfecto
     void clientesFrecuentes() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== CLIENTES FRECUENTES =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "CLIENTES FRECUENTES" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::string limitStr;
         std::cout << "Ingrese numero de clientes a mostrar (por defecto 10): ";
@@ -266,25 +290,30 @@ public:
         }
         
         std::cout << "\nTop " << limite << " clientes frecuentes:" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 88) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
-                  << std::left << std::setw(25) << "Nombre"
-                  << std::left << std::setw(25) << "Email"
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
+                  << std::left << std::setw(20) << "Nombre"
+                  << std::left << std::setw(30) << "Email"
                   << std::left << std::setw(15) << "Telefono"
-                  << std::right << std::setw(10) << "Total"
-                  << std::right << std::setw(8) << "Puntos" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 88) << std::endl;
+                  << std::left << std::setw(15) << "Total"
+                  << std::left << std::setw(10) << "Puntos" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         for (const auto& cliente : clientesFrecuentes) {
             std::cout << cliente.obtenerFilaTabla() << std::endl;
         }
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         Utilidades::pausar();
     }
     
+    // Perfecto
     void ordenarPorApellido() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== CLIENTES ORDENADOS POR APELLIDO =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "CLIENTES ORDENADOS POR APELLIDO" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::vector<Cliente> clientesOrdenados = clienteController.ordenarPorApellidoAsc();
         
@@ -294,25 +323,30 @@ public:
         }
         
         std::cout << "\nClientes ordenados por apellido:" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 88) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
-                  << std::left << std::setw(25) << "Nombre"
-                  << std::left << std::setw(25) << "Email"
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
+                  << std::left << std::setw(20) << "Nombre"
+                  << std::left << std::setw(30) << "Email"
                   << std::left << std::setw(15) << "Telefono"
-                  << std::right << std::setw(10) << "Total"
-                  << std::right << std::setw(8) << "Puntos" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 88) << std::endl;
+                  << std::left << std::setw(15) << "Total"
+                  << std::left << std::setw(10) << "Puntos" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         for (const auto& cliente : clientesOrdenados) {
             std::cout << cliente.obtenerFilaTabla() << std::endl;
         }
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         Utilidades::pausar();
     }
     
+    // Perfecto
     void calcularTotalComprasRecursivo() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== CALCULO RECURSIVO DE TOTAL DE COMPRAS =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "CALCULO RECURSIVO DE TOTAL DE COMPRAS" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         // Obtener el primer nodo de la lista de clientes
         Lista<Cliente>& clientes = clienteController.obtenerTodos();
@@ -343,51 +377,60 @@ public:
         if (totalClientes > 0) {
             std::cout << "- Promedio por cliente: $" << std::fixed << std::setprecision(2) << (totalCompras / totalClientes) << std::endl;
         }
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         Utilidades::pausar();
     }
     
+    // Perfecto
     void mostrarTablaClientes() {
-        std::cout << Utilidades::generarLinea('-', 88) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
-                  << std::left << std::setw(25) << "Nombre"
-                  << std::left << std::setw(25) << "Email"
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
+                  << std::left << std::setw(20) << "Nombre"
+                  << std::left << std::setw(30) << "Email"
                   << std::left << std::setw(15) << "Telefono"
-                  << std::right << std::setw(10) << "Total"
-                  << std::right << std::setw(8) << "Puntos" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 88) << std::endl;
+                  << std::left << std::setw(15) << "Total"
+                  << std::left << std::setw(10) << "Puntos" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         auto mostrarCliente = [](const Cliente& c) {
             if (c.isActivo()) {
                 std::cout << c.obtenerFilaTabla() << std::endl;
             }
         };
-        
         clienteController.obtenerTodos().forEach(mostrarCliente);
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
     }
     
+    // Perfecto
     void mostrarTablaClientes(Lista<Cliente>& clientes) {
-        std::cout << Utilidades::generarLinea('-', 88) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
-                  << std::left << std::setw(25) << "Nombre"
-                  << std::left << std::setw(25) << "Email"
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
+                  << std::left << std::setw(20) << "Nombre"
+                  << std::left << std::setw(30) << "Email"
                   << std::left << std::setw(15) << "Telefono"
-                  << std::right << std::setw(10) << "Total"
-                  << std::right << std::setw(8) << "Puntos" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 88) << std::endl;
+                  << std::left << std::setw(15) << "Total"
+                  << std::left << std::setw(10) << "Puntos" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         auto mostrarCliente = [](const Cliente& c) {
             if (c.isActivo()) {
                 std::cout << c.obtenerFilaTabla() << std::endl;
             }
         };
-        
         clientes.forEach(mostrarCliente);
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
     }
 
+    // Perfecto
     void mostrarPerfil(const std::string& clienteId) {
         Utilidades::limpiarPantalla();
-        std::cout << "===== MI PERFIL =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "MI PERFIL" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
 
         Cliente* cliente = clienteController.obtenerPorId(clienteId);
 
@@ -397,6 +440,8 @@ public:
         }
 
         cliente->mostrar();
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
 
         std::cout << "\nPresione Enter para volver al menu...";
         std::cin.get();
