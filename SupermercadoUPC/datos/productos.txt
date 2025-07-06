@@ -1,9 +1,9 @@
-P001,Leche Entera 1L,Leche entera de vaca en envase de 1 litro,1.500000,50,Lacteos,7501055321001,0
+P001,Leche Entera 1L,Leche entera de vaca en envase de 1 litro,1.500000,24,Lacteos,7501055321001,1
 P002,Pan Chabata,Pan chabata,3.000000,16,Panaderia,73612731237213,1
-P003,Manzanas Rojas,Manzanas rojas frescas por kg,3.500000,20,Frutas,7501055321003,1
+P003,Manzanas Rojas,Manzanas rojas frescas por kg,3.500000,15,Frutas,7501055321003,1
 P004,Arroz Blanco 1kg,Arroz blanco grano largo,1.800000,60,Abarrotes,7501055321004,1
-P005,Jabon de Bano,Jabon de bano con aloe vera,1.200000,45,Higiene,7501055321005,1
-P006,Refresco Cola 2L,Refresco sabor cola,2.000000,35,Bebidas,7501055321006,1
+P005,Jabon de Bano,Jabon de bano con aloe vera,1.200000,41,Higiene,7501055321005,1
+P006,Refresco Cola 2L,Refresco sabor cola,2.000000,31,Bebidas,7501055321006,1
 P007,Papel Higienico,Paquete de 4 rollos,4.500000,25,Hogar,7501055321007,1
 P008,Detergente Liquido,Detergente liquido 1L,3.800000,20,Limpieza,7501055321008,1
 P009,Jamon de Pavo,Jamon de pavo bajo en grasa 250g,3.200000,15,Embutidos,7501055321009,1

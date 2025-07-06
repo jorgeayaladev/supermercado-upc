@@ -143,18 +143,21 @@ public:
     
     // Método para mostrar toda la información del carrito
     void mostrar() {
-        std::cout << "===== CARRITO DE COMPRAS =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "CARRITO DE COMPRAS" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         std::cout << "ID: " << id << std::endl;
         std::cout << "Cliente ID: " << clienteId << std::endl;
         std::cout << "Estado: " << estado << std::endl;
         std::cout << std::endl;
         
         std::cout << "ITEMS:" << std::endl;
-        std::cout << std::left << std::setw(30) << "Producto"
-                  << std::right << std::setw(12) << "Precio Unit."
-                  << std::right << std::setw(10) << "Cantidad"
-                  << std::right << std::setw(15) << "Subtotal" << std::endl;
-        std::cout << std::string(67, '-') << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(40) << "Producto"
+                  << std::left << std::setw(20) << "Precio Unit."
+                  << std::left << std::setw(20) << "Cantidad"
+                  << std::right << std::setw(20) << "Subtotal" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         auto mostrarItem = [](const ItemCarrito& item) {
             std::cout << item.obtenerFilaTabla() << std::endl;
@@ -162,17 +165,17 @@ public:
         
         items.forEach(mostrarItem);
         
-        std::cout << std::string(67, '-') << std::endl;
-        std::cout << std::right << std::setw(52) << "Subtotal:"
-                  << std::right << std::setw(15) << "$" << std::fixed << std::setprecision(2) << total / (1.0 + impuesto / 100.0) << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::right << std::setw(85) << "Subtotal:"
+                  << std::right << std::setw(10) << "$" << std::fixed << std::setprecision(2) << total / (1.0 + impuesto / 100.0) << std::endl;
         if (descuento > 0) {
-            std::cout << std::right << std::setw(52) << "Descuento (" << descuento << "%):"
-                      << std::right << std::setw(15) << "-$" << std::fixed << std::setprecision(2) << (total / (1.0 + impuesto / 100.0)) * (descuento / 100.0) << std::endl;
+            std::cout << std::right << std::setw(85) << "Descuento (" << descuento << "%):"
+                      << std::right << std::setw(10) << "-$" << std::fixed << std::setprecision(2) << (total / (1.0 + impuesto / 100.0)) * (descuento / 100.0) << std::endl;
         }
-        std::cout << std::right << std::setw(52) << "Impuesto (" << impuesto << "%):"
-                  << std::right << std::setw(15) << "$" << std::fixed << std::setprecision(2) << total - (total / (1.0 + impuesto / 100.0)) << std::endl;
-        std::cout << std::right << std::setw(52) << "TOTAL:"
-                  << std::right << std::setw(15) << "$" << std::fixed << std::setprecision(2) << total << std::endl;
+        std::cout << std::right << std::setw(78) << "Impuesto (" << impuesto << "%):"
+                  << std::right << std::setw(10) << "$" << std::fixed << std::setprecision(2) << total - (total / (1.0 + impuesto / 100.0)) << std::endl;
+        std::cout << std::right << std::setw(85) << "TOTAL:"
+                  << std::right << std::setw(10) << "$" << std::fixed << std::setprecision(2) << total << std::endl;
     }
     
     // Método para obtener items como vector (útil para algoritmos de ordenamiento)

@@ -153,7 +153,7 @@ public:
         std::cout << "Generando " << cantidad << " categorias..." << std::endl;
         
         for (int i = 0; i < cantidad; i++) {
-            std::string id = "CAT" + std::to_string(i + 1);
+            std::string id = "C" + std::to_string(i + 1);
             std::string nombre = (i < categorias.size()) ? categorias[i] : 
                                 ("Categoria " + std::to_string(i + 1));
             std::string descripcion = "Descripcion de " + nombre;
@@ -182,7 +182,7 @@ public:
         categoriasDisponibles.forEach(agregarCategoria);
         
         for (int i = 0; i < cantidad; i++) {
-            std::string id = "PROD" + std::to_string(i + 1);
+            std::string id = "P" + std::to_string(i + 1);
             std::string nombre = seleccionarAleatorio(nombresProductos) + " " + 
                                std::to_string(generarEntero(1, 10));
             std::string descripcion = "Descripcion de " + nombre;
@@ -203,7 +203,7 @@ public:
         std::cout << "Generando " << cantidad << " clientes..." << std::endl;
         
         for (int i = 0; i < cantidad; i++) {
-            std::string id = "CLI" + std::to_string(i + 1);
+            std::string id = "CL" + std::to_string(i + 1);
             std::string nombre = seleccionarAleatorio(nombres);
             std::string apellido = seleccionarAleatorio(apellidos);
             std::string email = generarEmail(nombre, apellido);
@@ -225,7 +225,7 @@ public:
         std::cout << "Generando " << cantidad << " empleados..." << std::endl;
         
         for (int i = 0; i < cantidad; i++) {
-            std::string id = "EMP" + std::to_string(i + 1);
+            std::string id = "E" + std::to_string(i + 1);
             std::string nombre = seleccionarAleatorio(nombres);
             std::string apellido = seleccionarAleatorio(apellidos);
             std::string cargo = seleccionarAleatorio(cargos);
@@ -255,7 +255,7 @@ public:
         };
         
         for (int i = 0; i < cantidad; i++) {
-            std::string id = "PROV" + std::to_string(i + 1);
+            std::string id = "PR" + std::to_string(i + 1);
             std::string nombre = (i < nombresEmpresas.size()) ? nombresEmpresas[i] :
                                ("Proveedor " + std::to_string(i + 1));
             std::string contacto = seleccionarAleatorio(nombres) + " " + seleccionarAleatorio(apellidos);
@@ -389,8 +389,8 @@ public:
                              ProveedorController& proveedorController) {
         std::cout << "Limpiando todos los datos..." << std::endl;
         
-        // Aquí podrías implementar métodos de limpieza en los controladores
-        // Por ahora, solo mostramos el mensaje
+        // Aqui implementaré métodos de limpieza en los controladores
+        // Por ahora, solo muestro el mensaje
         
         std::cout << "Datos limpiados exitosamente." << std::endl;
     }

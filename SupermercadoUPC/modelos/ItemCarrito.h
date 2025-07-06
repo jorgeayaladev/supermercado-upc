@@ -92,10 +92,10 @@ public:
     // Método para mostrar información en formato tabular
     std::string obtenerFilaTabla() const {
         std::stringstream ss;
-        ss << std::left << std::setw(30) << (nombre.length() > 28 ? nombre.substr(0, 28) + "..." : nombre)
-           << std::right << std::setw(12) << "$" + std::to_string(int(precioUnitario)) + "." + std::to_string(int(precioUnitario * 100) % 100)
-           << std::right << std::setw(10) << cantidad
-           << std::right << std::setw(15) << "$" + std::to_string(int(subtotal)) + "." + std::to_string(int(subtotal * 100) % 100);
+        ss << std::left << std::setw(40) << (nombre.length() > 40 ? nombre.substr(0, 40) + "..." : nombre)
+           << std::left << std::setw(20) << "$" + std::to_string(int(precioUnitario)) + "." + std::to_string(int(precioUnitario * 100) % 100)
+           << std::left << std::setw(20) << cantidad
+           << std::right << std::setw(20) << "$" + std::to_string(int(subtotal)) + "." + std::to_string(int(subtotal * 100) % 100);
         return ss.str();
     }
 };

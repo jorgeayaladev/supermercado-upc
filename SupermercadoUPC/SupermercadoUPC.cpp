@@ -252,7 +252,7 @@ int main() {
                              ventaController, carritoController);
 
     // Pruebas
-    // proveedorVista.mostrarMenu();
+    // ventaVista.mostrarMenuCliente("CL001");
 
     // Mostrar animación de carga inicial
     std::cout << "\033[1;36m";
@@ -279,17 +279,17 @@ int main() {
             menuPrincipal.agregarOpcion("Gestionar Categorias"); // Perfecto
             menuPrincipal.agregarOpcion("Gestionar Clientes"); // Perfecto
             menuPrincipal.agregarOpcion("Gestionar Empleados"); // Perfecto
-            menuPrincipal.agregarOpcion("Gestionar Proveedores");
+            menuPrincipal.agregarOpcion("Gestionar Proveedores"); // Perfecto
             menuPrincipal.agregarOpcion("Gestionar Sucursales");
             menuPrincipal.agregarOpcion("Reportes y Estadisticas");
             menuPrincipal.agregarOpcion("Generador de DataSet");
-            menuPrincipal.agregarOpcion("Informacion del Sistema");
+            menuPrincipal.agregarOpcion("Informacion del Sistema"); // Perfecto
         }
         else if (usuarioController.esCliente()) {
-            menuPrincipal.agregarOpcion("Ver Productos");
-            menuPrincipal.agregarOpcion("Ver Categorias");
-            menuPrincipal.agregarOpcion("Proceso de Compras");
-            menuPrincipal.agregarOpcion("Mi Perfil");
+            menuPrincipal.agregarOpcion("Ver Productos"); // Perfecto
+            menuPrincipal.agregarOpcion("Ver Categorias"); // Perfecto
+            menuPrincipal.agregarOpcion("Proceso de Compras"); // Falta
+            menuPrincipal.agregarOpcion("Mi Perfil"); // Perfecto
         }
 
         menuPrincipal.agregarOpcion("Cerrar Sesion");

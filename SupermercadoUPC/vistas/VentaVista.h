@@ -47,30 +47,14 @@ public:
             int opcion = menu.mostrar();
             
             switch (opcion) {
-                case 1:
-                    realizarVenta();
-                    break;
-                case 2:
-                    verVentasDelDia();
-                    break;
-                case 3:
-                    buscarVenta();
-                    break;
-                case 4:
-                    cancelarVenta();
-                    break;
-                case 5:
-                    verVentasPorCliente();
-                    break;
-                case 6:
-                    verVentasPorEmpleado();
-                    break;
-                case 7:
-                    verVentasPorMetodoPago();
-                    break;
-                case 8:
-                    salir = true;
-                    break;
+                case 1: realizarVenta(); break;
+                case 2: verVentasDelDia(); break;
+                case 3: buscarVenta(); break;
+                case 4: cancelarVenta(); break;
+                case 5: verVentasPorCliente(); break;
+                case 6: verVentasPorEmpleado(); break;
+                case 7: verVentasPorMetodoPago(); break;
+                case 8: salir = true; break;
             }
         }
     }
@@ -305,7 +289,7 @@ public:
         bool salir = false;
 
         while (!salir) {
-            Menu menu("PROCESO DE COMPRA");
+            Menu menu("PROCESO DE COMPRA:");
             menu.agregarOpcion("Ver carrito actual");
             menu.agregarOpcion("Agregar producto al carrito");
             menu.agregarOpcion("Eliminar producto del carrito");
@@ -321,26 +305,10 @@ public:
             }
 
             switch (opcion) {
-            case 1:
-                if (carrito) {
-                    verCarrito(carrito);
-                }
-                break;
-            case 2:
-                if (carrito) {
-                    agregarProductoCarrito(carrito);
-                }
-                break;
-            case 3:
-                if (carrito) {
-                    eliminarProductoCarrito(carrito);
-                }
-                break;
-            case 4:
-                if (carrito) {
-                    actualizarCantidadCarrito(carrito);
-                }
-                break;
+            case 1: if (carrito) verCarrito(carrito); break;
+            case 2: if (carrito) agregarProductoCarrito(carrito); break;
+            case 3: if (carrito) eliminarProductoCarrito(carrito); break;
+            case 4: if (carrito) actualizarCantidadCarrito(carrito); break;
             case 5:
                 if (carrito && procesarVenta(carrito)) {
                     Menu::mostrarExito("Compra realizada con exito");
@@ -477,14 +445,9 @@ private:
         
         std::string metodoPago;
         switch (opcion) {
-            case 1:
-                metodoPago = "efectivo";
-                break;
-            case 2:
-                metodoPago = "tarjeta";
-                break;
-            default:
-                return false;
+            case 1: metodoPago = "efectivo"; break;
+            case 2: metodoPago = "tarjeta"; break;
+            default: return false;
         }
         
         // Finalizar el carrito
@@ -494,10 +457,11 @@ private:
         }
         
         // Crear la venta
+        /*
         if (!ventaController.crear(*carrito, empleadoId, metodoPago)) {
             Menu::mostrarError("No se pudo procesar la venta");
             return false;
-        }
+        }*/
         
         return true;
     }

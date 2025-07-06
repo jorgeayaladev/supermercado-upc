@@ -28,7 +28,7 @@ public:
     
     // Crear un nuevo carrito
     Carrito* crear(const std::string& clienteId) {
-        std::string id = "CAR" + Utilidades::generarId();
+		std::string id = "CR" + Utilidades::idGenerado(carritos.getTamano() + 1);
         Carrito nuevoCarrito(id, clienteId);
         
         carritos.insertarFinal(nuevoCarrito);
@@ -179,9 +179,8 @@ public:
     }
     
     // Obtener todos los carritos
-    Lista<Carrito>& obtenerTodos() {
-        return carritos;
-    }
+    Lista<Carrito>& obtenerTodos() { return carritos; }
+	int getCantidadCarritos() const { return carritos.getTamano(); }
     
     // Cargar carritos desde archivo
     void cargarCarritos() {
@@ -204,9 +203,6 @@ public:
     
     // Guardar carritos en archivo
     void guardarCarritos() {
-        // Crear el directorio si no existe
-        system("mkdir -p datos");
-        
         std::ofstream archivo(archivoCarritos);
         if (!archivo.is_open()) {
             std::cerr << "No se pudo abrir el archivo para guardar los carritos." << std::endl;
@@ -216,7 +212,6 @@ public:
         auto guardarCarrito = [&archivo](const Carrito& c) {
             archivo << c.aCSV() << std::endl;
         };
-        
         carritos.forEach(guardarCarrito);
         
         archivo.close();
