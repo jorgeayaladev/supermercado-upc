@@ -19,11 +19,12 @@ public:
     CategoriaVista(CategoriaController& _categoriaController, ProductoController& _productoController)
         : categoriaController(_categoriaController), productoController(_productoController) {}
     
+    // Perfecto
     void mostrarMenu() {
         bool salir = false;
         
         while (!salir) {
-            Menu menu("GESTION DE CATEGORIAS");
+            Menu menu("GESTION DE CATEGORIAS:");
             menu.agregarOpcion("Listar todas las categorias");
             menu.agregarOpcion("Buscar categoria");
             menu.agregarOpcion("Agregar nueva categoria");
@@ -36,46 +37,35 @@ public:
             int opcion = menu.mostrar();
             
             switch (opcion) {
-                case 1:
-                    listarCategorias();
-                    break;
-                case 2:
-                    buscarCategoria();
-                    break;
-                case 3:
-                    agregarCategoria();
-                    break;
-                case 4:
-                    editarCategoria();
-                    break;
-                case 5:
-                    eliminarCategoria();
-                    break;
-                case 6:
-                    verProductosPorCategoria();
-                    break;
-                case 7:
-                    ordenarCategoriasPorNombre();
-                    break;
-                case 8:
-                    salir = true;
-                    break;
+                case 1: listarCategorias(); break;
+                case 2: buscarCategoria(); break;
+                case 3: agregarCategoria(); break;
+                case 4: editarCategoria(); break;
+                case 5: eliminarCategoria(); break;
+                case 6: verProductosPorCategoria(); break;
+                case 7: ordenarCategoriasPorNombre(); break;
+                case 8: salir = true; break;
             }
         }
     }
     
+    // Perfecto
     void listarCategorias() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== LISTADO DE CATEGORIAS =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "LISTADO DE CATEGORIAS" << std::endl;
         
         mostrarTablaCategorias();
         
         Utilidades::pausar();
     }
     
+    // Perfecto
     void buscarCategoria() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== BUSCAR CATEGORIA =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "BUSCAR CATEGORIA" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese nombre de la categoria: ";
         std::string nombre;
@@ -95,13 +85,18 @@ public:
         
         std::cout << "\nCategoria encontrada:" << std::endl;
         categoria->mostrar();
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         Utilidades::pausar();
     }
     
+    // Perfecto
     void agregarCategoria() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== AGREGAR CATEGORIA =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "AGREGAR CATEGORIA" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::string nombre, descripcion;
         
@@ -120,8 +115,10 @@ public:
             descripcion = "Descripcion de " + nombre;
         }
         
-        std::string id = "CAT" + Utilidades::generarId().substr(0, 8);
+        std::string id = "C" + Utilidades::idGenerado(categoriaController.obtenerCantidad() + 1);
         Categoria nuevaCategoria(id, nombre, descripcion);
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         if (categoriaController.crear(nuevaCategoria)) {
             Menu::mostrarExito("Categoria agregada correctamente");
@@ -130,9 +127,12 @@ public:
         }
     }
     
+    // Perfecto
     void editarCategoria() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== EDITAR CATEGORIA =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "EDITAR CATEGORIA" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese ID de la categoria a editar: ";
         std::string id;
@@ -148,7 +148,7 @@ public:
         std::cout << "\nCategoria encontrada:" << std::endl;
         categoria->mostrar();
         
-        if (!Menu::confirmar("\n¿Desea editar esta categoria?")) {
+        if (!Menu::confirmar("Desea editar esta categoria?")) {
             return;
         }
         
@@ -168,7 +168,7 @@ public:
         }
         
         std::string activaStr;
-        std::cout << "¿Activa? (S/N) (" << (categoria->isActiva() ? "S" : "N") << "): ";
+        std::cout << "Activa? (S/N) (" << (categoria->isActiva() ? "S" : "N") << "): ";
         std::getline(std::cin, activaStr);
         
         if (activaStr.empty()) {
@@ -182,6 +182,8 @@ public:
         
         Categoria categoriaActualizada(categoria->getId(), nombre, descripcion, activa);
         
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+
         if (categoriaController.actualizar(categoriaActualizada)) {
             Menu::mostrarExito("Categoria actualizada correctamente");
         } else {
@@ -189,9 +191,12 @@ public:
         }
     }
     
+    // Perfecto
     void eliminarCategoria() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== ELIMINAR CATEGORIA =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "ELIMINAR CATEGORIA" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese ID de la categoria a eliminar: ";
         std::string id;
@@ -215,9 +220,11 @@ public:
                       << " productos asociados." << std::endl;
         }
         
-        if (!Menu::confirmar("\n¿Esta seguro de que desea eliminar esta categoria?")) {
+        if (!Menu::confirmar("Esta seguro de que desea eliminar esta categoria?")) {
             return;
         }
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         if (categoriaController.eliminar(id)) {
             Menu::mostrarExito("Categoria eliminada correctamente");
@@ -226,9 +233,12 @@ public:
         }
     }
     
+    // Perfecto
     void verProductosPorCategoria() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== PRODUCTOS POR CATEGORIA =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "PRODUCTOS POR CATEGORIA" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         // Mostrar categorías disponibles
         Lista<Categoria> categoriasActivas = categoriaController.obtenerActivas();
@@ -264,27 +274,31 @@ public:
         }
         
         std::cout << "\nProductos en la categoria " << categoriaExistente->getNombre() << ":" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 70) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
-                  << std::left << std::setw(20) << "Nombre"
-                  << std::right << std::setw(10) << "Precio"
-                  << std::right << std::setw(8) << "Stock"
-                  << std::left << std::setw(15) << "Categoria"
-                  << std::left << std::setw(10) << "Disponible" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 70) << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
+                  << std::left << std::setw(25) << "Nombre"
+                  << std::left << std::setw(15) << "Precio"
+                  << std::left << std::setw(15) << "Stock"
+                  << std::left << std::setw(20) << "Categoria"
+                  << std::left << std::setw(15) << "Disponible" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         auto mostrarProducto = [](const Producto& p) {
             std::cout << p.obtenerFilaTabla() << std::endl;
         };
-        
         productos.forEach(mostrarProducto);
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         Utilidades::pausar();
     }
     
+    // Perfecto
     void ordenarCategoriasPorNombre() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== CATEGORIAS ORDENADAS POR NOMBRE =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "CATEGORIAS ORDENADAS POR NOMBRE" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::vector<Categoria> categoriasOrdenadas = categoriaController.ordenarPorNombreAsc();
         
@@ -294,40 +308,47 @@ public:
         }
         
         std::cout << "Categorias ordenadas alfabeticamente:" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 65) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
                   << std::left << std::setw(20) << "Nombre"
-                  << std::left << std::setw(30) << "Descripcion"
+                  << std::left << std::setw(45) << "Descripcion"
                   << std::left << std::setw(10) << "Activa" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 65) << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         for (const auto& categoria : categoriasOrdenadas) {
             std::cout << categoria.obtenerFilaTabla() << std::endl;
         }
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         Utilidades::pausar();
     }
     
+    // Perfecto
     void mostrarTablaCategorias() {
-        std::cout << Utilidades::generarLinea('-', 65) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
                   << std::left << std::setw(20) << "Nombre"
-                  << std::left << std::setw(30) << "Descripcion"
+                  << std::left << std::setw(45) << "Descripcion"
                   << std::left << std::setw(10) << "Activa" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 65) << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         auto mostrarCategoria = [](const Categoria& c) {
             if (c.isActiva()) {
                 std::cout << c.obtenerFilaTabla() << std::endl;
             }
         };
-        
         categoriaController.obtenerTodas().forEach(mostrarCategoria);
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
     }
 
+    // Perfecto
     void mostrarCatalogo() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== CATALOGO DE CATEGORIAS =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "CATALOGO DE CATEGORIAS" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
 
         mostrarTablaCategorias();
 

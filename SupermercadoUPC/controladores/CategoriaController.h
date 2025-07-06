@@ -101,9 +101,8 @@ public:
     }
     
     // Obtener todas las categorías
-    Lista<Categoria>& obtenerTodas() {
-        return categorias;
-    }
+    Lista<Categoria>& obtenerTodas() { return categorias; }
+	int obtenerCantidad() const { return categorias.getTamano(); }
     
     // Obtener categorías activas
     Lista<Categoria> obtenerActivas() {
@@ -153,10 +152,7 @@ public:
     }
     
     // Guardar categorías en archivo
-    void guardarCategorias() {
-        // Crear el directorio si no existe
-        system("mkdir -p datos");
-        
+    void guardarCategorias() {        
         std::ofstream archivo(archivoCategorias);
         if (!archivo.is_open()) {
             std::cerr << "No se pudo abrir el archivo para guardar las categorías." << std::endl;
@@ -166,7 +162,6 @@ public:
         auto guardarCategoria = [&archivo](const Categoria& c) {
             archivo << c.aCSV() << std::endl;
         };
-        
         categorias.forEach(guardarCategoria);
         
         archivo.close();

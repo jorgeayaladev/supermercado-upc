@@ -8,3 +8,5 @@ C007,Bebidas,Refrescos jugos y bebidas,1
 C008,Limpieza,Productos de limpieza para el hogar,1
 C009,Higiene,Productos de higiene personal,1
 C010,Hogar,Articulos para el hogar,1
+C011,Ropa,Ropas para hombres y mujeres,1
+C012,Juguetes,Juguetes para ninos y ninas,1

@@ -64,9 +64,9 @@ public:
     // Método para mostrar información en formato tabular
     std::string obtenerFilaTabla() const {
         std::stringstream ss;
-        ss << std::left << std::setw(5) << id.substr(0, 5)
-           << std::left << std::setw(20) << (nombre.length() > 18 ? nombre.substr(0, 18) + "..." : nombre)
-           << std::left << std::setw(30) << (descripcion.length() > 28 ? descripcion.substr(0, 28) + "..." : descripcion)
+        ss << std::left << std::setw(10) << id.substr(0, 5)
+           << std::left << std::setw(20) << (nombre.length() > 20 ? nombre.substr(0, 20) + "..." : nombre)
+           << std::left << std::setw(45) << (descripcion.length() > 45 ? descripcion.substr(0, 45) + "..." : descripcion)
            << std::left << std::setw(10) << (activa ? "Si" : "No");
         return ss.str();
     }
