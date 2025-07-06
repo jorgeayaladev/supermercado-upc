@@ -17,6 +17,7 @@ public:
     ProveedorVista(ProveedorController& _proveedorController)
         : proveedorController(_proveedorController) {}
     
+    // Perfecto
     void mostrarMenu() {
         bool salir = false;
         
@@ -34,46 +35,35 @@ public:
             int opcion = menu.mostrar();
             
             switch (opcion) {
-                case 1:
-                    listarProveedores();
-                    break;
-                case 2:
-                    buscarProveedor();
-                    break;
-                case 3:
-                    agregarProveedor();
-                    break;
-                case 4:
-                    editarProveedor();
-                    break;
-                case 5:
-                    eliminarProveedor();
-                    break;
-                case 6:
-                    listarPorCategoria();
-                    break;
-                case 7:
-                    ordenarPorNombre();
-                    break;
-                case 8:
-                    salir = true;
-                    break;
+                case 1: listarProveedores(); break;
+                case 2: buscarProveedor(); break;
+                case 3: agregarProveedor(); break;
+                case 4: editarProveedor(); break;
+                case 5: eliminarProveedor(); break;
+                case 6: listarPorCategoria(); break;
+                case 7: ordenarPorNombre(); break;
+                case 8: salir = true; break;
             }
         }
     }
     
+    // Perfecto
     void listarProveedores() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== LISTADO DE PROVEEDORES =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "LISTADO DE PROVEEDORES" << std::endl;
         
         mostrarTablaProveedores();
         
         Utilidades::pausar();
     }
     
+    // Perfecto
     void buscarProveedor() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== BUSCAR PROVEEDOR =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "BUSCAR PROVEEDOR" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese nombre a buscar: ";
         std::string busqueda;
@@ -97,9 +87,12 @@ public:
         Utilidades::pausar();
     }
     
+    // Perfecto
     void agregarProveedor() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== AGREGAR PROVEEDOR =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "AGREGAR PROVEEDOR" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::string nombre, contacto, email, telefono, direccion;
         std::vector<std::string> categorias;
@@ -156,9 +149,11 @@ public:
             return;
         }
         
-        std::string id = "PR" + Utilidades::generarId().substr(0, 8);
+		std::string id = "PR" + Utilidades::idGenerado(proveedorController.obtenerCantidad() + 1);
         Proveedor nuevoProveedor(id, nombre, contacto, email, telefono, direccion, categorias);
         
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+
         if (proveedorController.crear(nuevoProveedor)) {
             Menu::mostrarExito("Proveedor agregado correctamente");
         } else {
@@ -166,9 +161,12 @@ public:
         }
     }
     
+    // Perfecto
     void editarProveedor() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== EDITAR PROVEEDOR =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "EDITAR PROVEEDOR" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese ID del proveedor a editar: ";
         std::string id;
@@ -184,7 +182,7 @@ public:
         std::cout << "\nProveedor encontrado:" << std::endl;
         proveedor->mostrar();
         
-        if (!Menu::confirmar("\n¿Desea editar este proveedor?")) {
+        if (!Menu::confirmar("\nDesea editar este proveedor?")) {
             return;
         }
         
@@ -242,7 +240,7 @@ public:
         }
         
         std::string activoStr;
-        std::cout << "¿Activo? (S/N) (" << (proveedor->isActivo() ? "S" : "N") << "): ";
+        std::cout << "Activo? (S/N) (" << (proveedor->isActivo() ? "S" : "N") << "): ";
         std::getline(std::cin, activoStr);
         
         if (activoStr.empty()) {
@@ -257,6 +255,8 @@ public:
         Proveedor proveedorActualizado(proveedor->getId(), nombre, contacto, email, 
                                      telefono, direccion, categorias, activo);
         
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+
         if (proveedorController.actualizar(proveedorActualizado)) {
             Menu::mostrarExito("Proveedor actualizado correctamente");
         } else {
@@ -264,9 +264,12 @@ public:
         }
     }
     
+    // Perfecto
     void eliminarProveedor() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== ELIMINAR PROVEEDOR =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "ELIMINAR PROVEEDOR" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese ID del proveedor a eliminar: ";
         std::string id;
@@ -282,9 +285,11 @@ public:
         std::cout << "\nProveedor encontrado:" << std::endl;
         proveedor->mostrar();
         
-        if (!Menu::confirmar("\n¿Esta seguro de que desea eliminar este proveedor?")) {
+        if (!Menu::confirmar("Esta seguro de que desea eliminar este proveedor?")) {
             return;
         }
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         if (proveedorController.eliminar(id)) {
             Menu::mostrarExito("Proveedor eliminado correctamente");
@@ -293,9 +298,12 @@ public:
         }
     }
     
+    // Perfecto
     void listarPorCategoria() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== PROVEEDORES POR CATEGORIA =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "PROVEEDORES POR CATEGORIA" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese categoria a buscar: ";
         std::string categoria;
@@ -321,7 +329,9 @@ public:
     
     void ordenarPorNombre() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== PROVEEDORES ORDENADOS POR NOMBRE =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "PROVEEDORES ORDENADOS POR NOMBRE" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::vector<Proveedor> proveedores = proveedorController.ordenarPorNombreAsc();
         
@@ -331,55 +341,59 @@ public:
         }
         
         std::cout << "\nProveedores ordenados por nombre:" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 85) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
                   << std::left << std::setw(25) << "Nombre"
                   << std::left << std::setw(20) << "Contacto"
-                  << std::left << std::setw(20) << "Email"
+                  << std::left << std::setw(30) << "Email"
                   << std::left << std::setw(15) << "Telefono" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 85) << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         for (const auto& proveedor : proveedores) {
             std::cout << proveedor.obtenerFilaTabla() << std::endl;
         }
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         Utilidades::pausar();
     }
     
     void mostrarTablaProveedores() {
-        std::cout << Utilidades::generarLinea('-', 85) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
                   << std::left << std::setw(25) << "Nombre"
                   << std::left << std::setw(20) << "Contacto"
-                  << std::left << std::setw(20) << "Email"
+                  << std::left << std::setw(30) << "Email"
                   << std::left << std::setw(15) << "Telefono" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 85) << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         auto mostrarProveedor = [](const Proveedor& p) {
             if (p.isActivo()) {
                 std::cout << p.obtenerFilaTabla() << std::endl;
             }
         };
-        
         proveedorController.obtenerTodos().forEach(mostrarProveedor);
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
     }
     
     void mostrarTablaProveedores(Lista<Proveedor>& proveedores) {
-        std::cout << Utilidades::generarLinea('-', 85) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
                   << std::left << std::setw(25) << "Nombre"
                   << std::left << std::setw(20) << "Contacto"
-                  << std::left << std::setw(20) << "Email"
+                  << std::left << std::setw(30) << "Email"
                   << std::left << std::setw(15) << "Telefono" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 85) << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         auto mostrarProveedor = [](const Proveedor& p) {
             if (p.isActivo()) {
                 std::cout << p.obtenerFilaTabla() << std::endl;
             }
         };
-        
         proveedores.forEach(mostrarProveedor);
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
     }
 };
 

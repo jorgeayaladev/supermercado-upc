@@ -101,9 +101,8 @@ public:
     }
     
     // Obtener todos los proveedores
-    Lista<Proveedor>& obtenerTodos() {
-        return proveedores;
-    }
+    Lista<Proveedor>& obtenerTodos() { return proveedores; }
+	int obtenerCantidad() const { return proveedores.getTamano(); }
     
     // Obtener proveedores activos
     Lista<Proveedor> obtenerActivos() {
@@ -175,9 +174,6 @@ public:
     
     // Guardar proveedores en archivo
     void guardarProveedores() {
-        // Crear el directorio si no existe
-        system("mkdir -p datos");
-        
         std::ofstream archivo(archivoProveedores);
         if (!archivo.is_open()) {
             std::cerr << "No se pudo abrir el archivo para guardar los proveedores." << std::endl;
@@ -187,7 +183,6 @@ public:
         auto guardarProveedor = [&archivo](const Proveedor& p) {
             archivo << p.aCSV() << std::endl;
         };
-        
         proveedores.forEach(guardarProveedor);
         
         archivo.close();

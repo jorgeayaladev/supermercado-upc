@@ -3,3 +3,4 @@ PR002,Frutas Frescas SA,Maria Ortiz,ventas@frutasfrescas.com,919183293,Av. Campo
 PR003,Limpieza Total,Carlos Mendez,contacto@limpiezatotal.com,989827123,Blvd. Central 789,Limpieza|Higiene,1
 PR004,Carnes Premium,Laura Vega,info@carnespremium.com,987642121,Calle Ganaderos 321,Carnes,1
 PR005,Panaderia San Juan,Pedro Rosales,ventas@panaderiasjuan.com,957368136,Av. Trigo 567,Panaderia|Abarrotes,1
+PR006,BIMBO S.A.C.,Laura Sanz,bimbo@gmail.com,943985894,Jr. de la Union 510,Panaderia,1

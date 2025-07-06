@@ -252,7 +252,7 @@ int main() {
                              ventaController, carritoController);
 
     // Pruebas
-    empleadoVista.mostrarMenu();
+    // proveedorVista.mostrarMenu();
 
     // Mostrar animación de carga inicial
     std::cout << "\033[1;36m";
@@ -278,7 +278,7 @@ int main() {
             menuPrincipal.agregarOpcion("Gestionar Productos"); // Perfecto
             menuPrincipal.agregarOpcion("Gestionar Categorias"); // Perfecto
             menuPrincipal.agregarOpcion("Gestionar Clientes"); // Perfecto
-            menuPrincipal.agregarOpcion("Gestionar Empleados");
+            menuPrincipal.agregarOpcion("Gestionar Empleados"); // Perfecto
             menuPrincipal.agregarOpcion("Gestionar Proveedores");
             menuPrincipal.agregarOpcion("Gestionar Sucursales");
             menuPrincipal.agregarOpcion("Reportes y Estadisticas");

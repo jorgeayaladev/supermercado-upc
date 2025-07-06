@@ -130,10 +130,10 @@ public:
     // Método para mostrar información en formato tabular
     std::string obtenerFilaTabla() const {
         std::stringstream ss;
-        ss << std::left << std::setw(5) << id.substr(0, 5)
-           << std::left << std::setw(25) << (nombre.length() > 23 ? nombre.substr(0, 23) + "..." : nombre)
-           << std::left << std::setw(20) << (contacto.length() > 18 ? contacto.substr(0, 18) + "..." : contacto)
-           << std::left << std::setw(20) << (email.length() > 18 ? email.substr(0, 18) + "..." : email)
+        ss << std::left << std::setw(10) << id.substr(0, 5)
+           << std::left << std::setw(25) << (nombre.length() > 25 ? nombre.substr(0, 25) + "..." : nombre)
+           << std::left << std::setw(20) << (contacto.length() > 20 ? contacto.substr(0, 20) + "..." : contacto)
+           << std::left << std::setw(30) << (email.length() > 30 ? email.substr(0, 30) + "..." : email)
            << std::left << std::setw(15) << telefono;
         return ss.str();
     }
