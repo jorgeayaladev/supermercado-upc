@@ -101,9 +101,8 @@ public:
     }
     
     // Obtener todos los empleados
-    Lista<Empleado>& obtenerTodos() {
-        return empleados;
-    }
+    Lista<Empleado>& obtenerTodos() { return empleados; }
+	int obtenerCantidad() const { return empleados.getTamano(); }
     
     // Obtener empleados activos
     Lista<Empleado> obtenerActivos() {
@@ -177,7 +176,7 @@ public:
         if (!archivo.is_open()) {
             std::cerr << "No se pudo abrir el archivo de empleados. Se creará uno nuevo al guardar." << std::endl;
             // Crear empleados de ejemplo si no existe el archivo
-            // generarEmpleadosEjemplo();
+            generarEmpleadosEjemplo();
             return;
         }
         
@@ -193,10 +192,7 @@ public:
     }
     
     // Guardar empleados en archivo
-    void guardarEmpleados() {
-        // Crear el directorio si no existe
-        system("mkdir -p datos");
-        
+    void guardarEmpleados() {        
         std::ofstream archivo(archivoEmpleados);
         if (!archivo.is_open()) {
             std::cerr << "No se pudo abrir el archivo para guardar los empleados." << std::endl;
@@ -214,7 +210,6 @@ public:
     
 private:
     // Generar empleados de ejemplo
-    /*
     void generarEmpleadosEjemplo() {
         empleados.insertarFinal(Empleado("E001", "Roberto", "Gomez", "Gerente", "robertogomez@supermercado.com", "930284332", 3500.00, "2020-01-15"));
         empleados.insertarFinal(Empleado("E002", "Sofia", "Hernandez", "Cajero", "sofiahernandez@supermercado.com", "904324323", 1800.00, "2021-03-10"));
@@ -224,7 +219,6 @@ private:
         
         guardarEmpleados();
     }
-    */
 };
 
 #endif

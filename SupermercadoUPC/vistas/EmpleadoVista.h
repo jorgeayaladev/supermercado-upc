@@ -17,6 +17,7 @@ public:
     EmpleadoVista(EmpleadoController& _empleadoController)
         : empleadoController(_empleadoController) {}
     
+    // Perfecto
     void mostrarMenu() {
         bool salir = false;
         
@@ -46,18 +47,23 @@ public:
         }
     }
     
+    // Perfecto
     void listarEmpleados() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== LISTADO DE EMPLEADOS =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "LISTADO DE EMPLEADOS" << std::endl;
         
         mostrarTablaEmpleados();
         
         Utilidades::pausar();
     }
     
+    // Perfecto
     void buscarEmpleado() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== BUSCAR EMPLEADO =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "LISTADO DE EMPLEADOS" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese nombre o apellido a buscar: ";
         std::string busqueda;
@@ -81,9 +87,12 @@ public:
         Utilidades::pausar();
     }
     
+    // Perfecto
     void agregarEmpleado() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== AGREGAR EMPLEADO =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "AGREGAR EMPLEADO" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::string nombre, apellido, cargo, email, telefono;
         double salario;
@@ -137,9 +146,11 @@ public:
             return;
         }
         
-        std::string id = "E" + Utilidades::generarId().substr(0, 8);
+        std::string id = "E" + Utilidades::idGenerado(empleadoController.obtenerCantidad() + 1);
         Empleado nuevoEmpleado(id, nombre, apellido, cargo, email, telefono, 
                               salario, Utilidades::obtenerFechaActual());
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         if (empleadoController.crear(nuevoEmpleado)) {
             Menu::mostrarExito("Empleado agregado correctamente");
@@ -148,10 +159,13 @@ public:
         }
     }
     
+    // Perfecto
     void editarEmpleado() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== EDITAR EMPLEADO =====" << std::endl;
-        
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "EDITAR EMPLEADO" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+
         std::cout << "Ingrese ID del empleado a editar: ";
         std::string id;
         std::getline(std::cin, id);
@@ -166,7 +180,7 @@ public:
         std::cout << "\nEmpleado encontrado:" << std::endl;
         empleado->mostrar();
         
-        if (!Menu::confirmar("\n¿Desea editar este empleado?")) {
+        if (!Menu::confirmar("\nDesea editar este empleado?")) {
             return;
         }
         
@@ -223,7 +237,7 @@ public:
         }
         
         std::string activoStr;
-        std::cout << "¿Activo? (S/N) (" << (empleado->isActivo() ? "S" : "N") << "): ";
+        std::cout << "Activo? (S/N) (" << (empleado->isActivo() ? "S" : "N") << "): ";
         std::getline(std::cin, activoStr);
         
         if (activoStr.empty()) {
@@ -239,6 +253,8 @@ public:
                                    email, telefono, salario, 
                                    empleado->getFechaContratacion(), activo);
         
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+
         if (empleadoController.actualizar(empleadoActualizado)) {
             Menu::mostrarExito("Empleado actualizado correctamente");
         } else {
@@ -246,9 +262,12 @@ public:
         }
     }
     
+    // Perfecto
     void eliminarEmpleado() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== ELIMINAR EMPLEADO =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "ELIMINAR EMPLEADO" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese ID del empleado a eliminar: ";
         std::string id;
@@ -264,9 +283,11 @@ public:
         std::cout << "\nEmpleado encontrado:" << std::endl;
         empleado->mostrar();
         
-        if (!Menu::confirmar("\n¿Esta seguro de que desea eliminar este empleado?")) {
+        if (!Menu::confirmar("Esta seguro de que desea eliminar este empleado?")) {
             return;
         }
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         if (empleadoController.eliminar(id)) {
             Menu::mostrarExito("Empleado eliminado correctamente");
@@ -275,9 +296,12 @@ public:
         }
     }
     
+    // Perfecto
     void listarPorCargo() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== EMPLEADOS POR CARGO =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "EMPLEADOS POR CARGO" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese cargo a buscar: ";
         std::string cargo;
@@ -301,9 +325,12 @@ public:
         Utilidades::pausar();
     }
     
+    // Perfecto
     void ordenarPorSalario() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== EMPLEADOS ORDENADOS POR SALARIO =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "EMPLEADOS ORDENADOS POR SALARIO" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::vector<Empleado> empleados = empleadoController.ordenarPorSalarioDesc();
         
@@ -313,58 +340,64 @@ public:
         }
         
         std::cout << "\nEmpleados ordenados por salario (mayor a menor):" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 85) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
                   << std::left << std::setw(25) << "Nombre"
-                  << std::left << std::setw(15) << "Cargo"
-                  << std::right << std::setw(12) << "Salario"
-                  << std::left << std::setw(13) << "Fecha Contr."
-                  << std::left << std::setw(10) << "Estado" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 85) << std::endl;
+                  << std::left << std::setw(20) << "Cargo"
+                  << std::left << std::setw(15) << "Salario"
+                  << std::left << std::setw(20) << "Fecha Contr."
+                  << std::left << std::setw(15) << "Estado" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         for (const auto& empleado : empleados) {
             std::cout << empleado.obtenerFilaTabla() << std::endl;
         }
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         Utilidades::pausar();
     }
     
+    // Perfecto
     void mostrarTablaEmpleados() {
-        std::cout << Utilidades::generarLinea('-', 85) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
                   << std::left << std::setw(25) << "Nombre"
-                  << std::left << std::setw(15) << "Cargo"
-                  << std::right << std::setw(12) << "Salario"
-                  << std::left << std::setw(13) << "Fecha Contr."
-                  << std::left << std::setw(10) << "Estado" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 85) << std::endl;
+                  << std::left << std::setw(20) << "Cargo"
+                  << std::left << std::setw(15) << "Salario"
+                  << std::left << std::setw(20) << "Fecha Contr."
+                  << std::left << std::setw(15) << "Estado" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         auto mostrarEmpleado = [](const Empleado& e) {
             if (e.isActivo()) {
                 std::cout << e.obtenerFilaTabla() << std::endl;
             }
         };
-        
         empleadoController.obtenerTodos().forEach(mostrarEmpleado);
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
     }
     
+    // Perfecto
     void mostrarTablaEmpleados(Lista<Empleado>& empleados) {
-        std::cout << Utilidades::generarLinea('-', 85) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
                   << std::left << std::setw(25) << "Nombre"
-                  << std::left << std::setw(15) << "Cargo"
-                  << std::right << std::setw(12) << "Salario"
-                  << std::left << std::setw(13) << "Fecha Contr."
-                  << std::left << std::setw(10) << "Estado" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 85) << std::endl;
+                  << std::left << std::setw(20) << "Cargo"
+                  << std::left << std::setw(15) << "Salario"
+                  << std::left << std::setw(20) << "Fecha Contr."
+                  << std::left << std::setw(15) << "Estado" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         auto mostrarEmpleado = [](const Empleado& e) {
             if (e.isActivo()) {
                 std::cout << e.obtenerFilaTabla() << std::endl;
             }
         };
-        
         empleados.forEach(mostrarEmpleado);
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
     }
 };
 
