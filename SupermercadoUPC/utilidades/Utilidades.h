@@ -79,6 +79,11 @@ public:
             ahora.time_since_epoch()).count();
         return std::to_string(milisegundos);
     }
+
+    // Genera un ID único basado en timestamp
+    static std::string idGenerado(int cantidad) {
+        return (cantidad < 10 ? "00" : cantidad < 100 ? "0" : "") + std::to_string(cantidad);
+    }
     
     // Formatea un precio con dos decimales
     static std::string formatearPrecio(double precio) {

@@ -23,7 +23,7 @@ public:
     ProductoVista(ProductoController& _productoController, CategoriaController& _categoriaController)
         : productoController(_productoController), categoriaController(_categoriaController) {}
     
-    // Mostrar menú principal de productos
+    // Mostrar menú principal de productos (Perfecto)
     void mostrarMenu() {
         bool salir = false;
         
@@ -43,54 +43,37 @@ public:
             int opcion = menu.mostrar();
             
             switch (opcion) {
-                case 1:
-                    listarProductos();
-                    break;
-                case 2:
-                    buscarProducto();
-                    break;
-                case 3:
-                    agregarProducto();
-                    break;
-                case 4:
-                    editarProducto();
-                    break;
-                case 5:
-                    eliminarProducto();
-                    break;
-                case 6:
-                    listarPorCategoria();
-                    break;
-                case 7:
-                    ordenarPorNombre();
-                    break;
-                case 8:
-                    ordenarPorPrecio();
-                    break;
-                case 9:
-                    productosStockBajo();
-                    break;
-                case 10:
-                    salir = true;
-                    break;
+                case 1: listarProductos(); break;
+                case 2: buscarProducto(); break;
+                case 3: agregarProducto(); break;
+                case 4: editarProducto(); break;
+                case 5: eliminarProducto(); break;
+                case 6: listarPorCategoria(); break;
+                case 7: ordenarPorNombre(); break;
+                case 8: ordenarPorPrecio(); break;
+                case 9: productosStockBajo(); break;
+                case 10: salir = true; break;
             }
         }
     }
     
-    // Listar todos los productos
+    // Listar todos los productos (Perfecto)
     void listarProductos() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== LISTADO DE PRODUCTOS =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "LISTADO DE PRODUCTOS" << std::endl;
         
         mostrarTablaProductos();
         
         Utilidades::pausar();
     }
     
-    // Buscar producto
+    // Buscar producto (Perfecto)
     void buscarProducto() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== BUSCAR PRODUCTO =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "BUSCAR PRODUCTO" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese nombre a buscar: ";
         std::string busqueda;
@@ -109,28 +92,31 @@ public:
         }
         
         std::cout << "\nResultados de la busqueda para: '" << busqueda << "'" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 70) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
-                  << std::left << std::setw(20) << "Nombre"
-                  << std::right << std::setw(10) << "Precio"
-                  << std::right << std::setw(8) << "Stock"
-                  << std::left << std::setw(15) << "Categoria"
-                  << std::left << std::setw(10) << "Disponible" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 70) << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
+                  << std::left << std::setw(25) << "Nombre"
+                  << std::left << std::setw(15) << "Precio"
+                  << std::left << std::setw(15) << "Stock"
+                  << std::left << std::setw(20) << "Categoria"
+                  << std::left << std::setw(15) << "Disponible" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         auto mostrarProducto = [](const Producto& p) {
             std::cout << p.obtenerFilaTabla() << std::endl;
         };
-        
         resultados.forEach(mostrarProducto);
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         Utilidades::pausar();
     }
     
-    // Agregar un nuevo producto
+    // Agregar un nuevo producto (Perfecto)
     void agregarProducto() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== AGREGAR NUEVO PRODUCTO =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "AGREGAR NUEVO PRODUCTO" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::string nombre, descripcion, categoria, codigoBarras;
         double precio;
@@ -216,9 +202,11 @@ public:
         }
         
         // Crear el nuevo producto
-        std::string id = "P" + Utilidades::generarId().substr(0, 8);
+        std::string id = "P" + Utilidades::idGenerado(productoController.obtenerCantidad() + 1);
         Producto nuevoProducto(id, nombre, descripcion, precio, stock, categoriaExistente->getNombre(), codigoBarras);
         
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+
         if (productoController.crear(nuevoProducto)) {
             Menu::mostrarExito("Producto agregado correctamente");
         } else {
@@ -226,10 +214,12 @@ public:
         }
     }
     
-    // Editar un producto existente
+    // Editar un producto existente (Perfecto)
     void editarProducto() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== EDITAR PRODUCTO =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "EDITAR PRODUCTO" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese ID del producto a editar: ";
         std::string id;
@@ -245,7 +235,7 @@ public:
         std::cout << "\nProducto encontrado:" << std::endl;
         producto->mostrar();
         
-        if (!Menu::confirmar("\n¿Desea editar este producto?")) {
+        if (!Menu::confirmar("\nDesea editar este producto?")) {
             return;
         }
         
@@ -339,7 +329,7 @@ public:
         }
         
         std::string disponibleStr;
-        std::cout << "¿Disponible? (S/N) (" << (producto->isDisponible() ? "S" : "N") << "): ";
+        std::cout << "Disponible? (S/N) (" << (producto->isDisponible() ? "S" : "N") << "): ";
         std::getline(std::cin, disponibleStr);
         
         if (disponibleStr.empty()) {
@@ -354,6 +344,8 @@ public:
         // Actualizar el producto
         Producto productoActualizado(producto->getId(), nombre, descripcion, precio, stock, categoria, codigoBarras, disponible);
         
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+
         if (productoController.actualizar(productoActualizado)) {
             Menu::mostrarExito("Producto actualizado correctamente");
         } else {
@@ -361,10 +353,12 @@ public:
         }
     }
     
-    // Eliminar un producto
+    // Eliminar un producto (Perfecto)
     void eliminarProducto() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== ELIMINAR PRODUCTO =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "ELIMINAR PRODUCTO" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese ID del producto a eliminar: ";
         std::string id;
@@ -380,9 +374,11 @@ public:
         std::cout << "\nProducto encontrado:" << std::endl;
         producto->mostrar();
         
-        if (!Menu::confirmar("\n¿Esta seguro de que desea eliminar este producto?")) {
+        if (!Menu::confirmar("\nEsta seguro de que desea eliminar este producto?")) {
             return;
         }
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         if (productoController.eliminar(id)) {
             Menu::mostrarExito("Producto eliminado correctamente");
@@ -391,10 +387,12 @@ public:
         }
     }
     
-    // Listar productos por categoría
+    // Listar productos por categoría (Perfecto)
     void listarPorCategoria() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== PRODUCTOS POR CATEGORIA =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "PRODUCTOS POR CATEGORIA" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         // Mostrar categorías disponibles
         Lista<Categoria> categoriasActivas = categoriaController.obtenerActivas();
@@ -430,30 +428,33 @@ public:
         }
         
         std::cout << "\nProductos en la categoria " << categoriaExistente->getNombre() << ":" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 70) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
-                  << std::left << std::setw(20) << "Nombre"
-                  << std::right << std::setw(10) << "Precio"
-                  << std::right << std::setw(8) << "Stock"
-                  << std::left << std::setw(15) << "Categoria"
-                  << std::left << std::setw(10) << "Disponible" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 70) << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
+                  << std::left << std::setw(25) << "Nombre"
+                  << std::left << std::setw(15) << "Precio"
+                  << std::left << std::setw(15) << "Stock"
+                  << std::left << std::setw(20) << "Categoria"
+                  << std::left << std::setw(15) << "Disponible" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         auto mostrarProducto = [](const Producto& p) {
             std::cout << p.obtenerFilaTabla() << std::endl;
         };
-        
         productos.forEach(mostrarProducto);
-        
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+
         Utilidades::pausar();
     }
     
-    // Ordenar productos por nombre
+    // Ordenar productos por nombre (Perfecto)
     void ordenarPorNombre() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== ORDENAR PRODUCTOS POR NOMBRE =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "ORDENAR PRODUCTOS POR NOMBRE" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
-        Menu menuOrden("Seleccione el orden");
+        Menu menuOrden("Seleccione el orden:");
         menuOrden.agregarOpcion("A-Z (Ascendente)");
         menuOrden.agregarOpcion("Z-A (Descendente)");
         menuOrden.agregarOpcion("Volver");
@@ -482,28 +483,32 @@ public:
             return;
         }
         
-        std::cout << Utilidades::generarLinea('-', 70) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
-                  << std::left << std::setw(20) << "Nombre"
-                  << std::right << std::setw(10) << "Precio"
-                  << std::right << std::setw(8) << "Stock"
-                  << std::left << std::setw(15) << "Categoria"
-                  << std::left << std::setw(10) << "Disponible" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 70) << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
+                  << std::left << std::setw(25) << "Nombre"
+                  << std::left << std::setw(15) << "Precio"
+                  << std::left << std::setw(15) << "Stock"
+                  << std::left << std::setw(20) << "Categoria"
+                  << std::left << std::setw(15) << "Disponible" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         for (const auto& producto : productos) {
             std::cout << producto.obtenerFilaTabla() << std::endl;
         }
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         Utilidades::pausar();
     }
     
-    // Ordenar productos por precio
+    // Ordenar productos por precio (Perfecto)
     void ordenarPorPrecio() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== ORDENAR PRODUCTOS POR PRECIO =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "ORDENAR PRODUCTOS POR PRECIO" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
-        Menu menuOrden("Seleccione el orden");
+        Menu menuOrden("Seleccione el orden:");
         menuOrden.agregarOpcion("Menor a Mayor");
         menuOrden.agregarOpcion("Mayor a Menor");
         menuOrden.agregarOpcion("Volver");
@@ -532,26 +537,30 @@ public:
             return;
         }
         
-        std::cout << Utilidades::generarLinea('-', 70) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
-                  << std::left << std::setw(20) << "Nombre"
-                  << std::right << std::setw(10) << "Precio"
-                  << std::right << std::setw(8) << "Stock"
-                  << std::left << std::setw(15) << "Categoria"
-                  << std::left << std::setw(10) << "Disponible" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 70) << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
+                  << std::left << std::setw(25) << "Nombre"
+                  << std::left << std::setw(15) << "Precio"
+                  << std::left << std::setw(15) << "Stock"
+                  << std::left << std::setw(20) << "Categoria"
+                  << std::left << std::setw(15) << "Disponible" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         for (const auto& producto : productos) {
             std::cout << producto.obtenerFilaTabla() << std::endl;
         }
         
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+
         Utilidades::pausar();
     }
     
-    // Mostrar productos con stock bajo
+    // Mostrar productos con stock bajo (Perfecto)
     void productosStockBajo() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== PRODUCTOS CON STOCK BAJO =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "PRODUCTOS CON STOCK BAJO" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::string umbralStr;
         std::cout << "Ingrese el umbral de stock: ";
@@ -575,48 +584,56 @@ public:
             return;
         }
         
-        std::cout << "\nProductos con stock menor a " << umbral << ":" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 70) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
-                  << std::left << std::setw(20) << "Nombre"
-                  << std::right << std::setw(10) << "Precio"
-                  << std::right << std::setw(8) << "Stock"
-                  << std::left << std::setw(15) << "Categoria"
-                  << std::left << std::setw(10) << "Disponible" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 70) << std::endl;
+        std::cout << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+
+        std::cout << "Productos con stock menor a " << umbral << ":" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
+                  << std::left << std::setw(25) << "Nombre"
+                  << std::left << std::setw(15) << "Precio"
+                  << std::left << std::setw(15) << "Stock"
+                  << std::left << std::setw(20) << "Categoria"
+                  << std::left << std::setw(15) << "Disponible" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         auto mostrarProducto = [](const Producto& p) {
             std::cout << p.obtenerFilaTabla() << std::endl;
         };
-        
         productos.forEach(mostrarProducto);
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         Utilidades::pausar();
     }
     
-    // Mostrar tabla de productos
+    // Mostrar tabla de productos (Perfecto)
     void mostrarTablaProductos() {
-        std::cout << Utilidades::generarLinea('-', 70) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
-                  << std::left << std::setw(20) << "Nombre"
-                  << std::right << std::setw(10) << "Precio"
-                  << std::right << std::setw(8) << "Stock"
-                  << std::left << std::setw(15) << "Categoria"
-                  << std::left << std::setw(10) << "Disponible" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 70) << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(10) << "ID"
+                  << std::left << std::setw(25) << "Nombre"
+                  << std::left << std::setw(15) << "Precio"
+                  << std::left << std::setw(15) << "Stock"
+                  << std::left << std::setw(20) << "Categoria"
+                  << std::left << std::setw(15) << "Disponible" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         auto mostrarProducto = [](const Producto& p) {
             if (p.isDisponible()) {
                 std::cout << p.obtenerFilaTabla() << std::endl;
             }
         };
-        
         productoController.obtenerTodos().forEach(mostrarProducto);
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
     }
 
+	// Mostrar catálogo de productos (Perfecto)
     void mostrarCatalogo() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== CATALOGO DE PRODUCTOS =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "CATALOGO DE PRODUCTOS" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
 
         mostrarTablaProductos();
 

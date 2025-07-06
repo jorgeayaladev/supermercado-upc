@@ -100,9 +100,8 @@ public:
     }
     
     // Obtener todos los productos
-    Lista<Producto>& obtenerTodos() {
-        return productos;
-    }
+    Lista<Producto>& obtenerTodos() { return productos; }
+    int obtenerCantidad() const { return productos.getTamano(); }
     
     // Obtener productos por categoría
     Lista<Producto> obtenerPorCategoria(const std::string& categoria) {
@@ -228,7 +227,7 @@ public:
         if (!archivo.is_open()) {
             std::cerr << "No se pudo abrir el archivo de productos. Se creará uno nuevo al guardar." << std::endl;
             // Crear productos de ejemplo si no existe el archivo
-            // generarProductosEjemplo();
+            generarProductosEjemplo();
             return;
         }
         
@@ -245,9 +244,6 @@ public:
     
     // Guardar productos en archivo
     void guardarProductos() {
-        // Crear el directorio si no existe
-        system("mkdir -p datos");
-        
         std::ofstream archivo(archivoProductos);
         if (!archivo.is_open()) {
             std::cerr << "No se pudo abrir el archivo para guardar los productos." << std::endl;
@@ -257,7 +253,6 @@ public:
         auto guardarProducto = [&archivo](const Producto& p) {
             archivo << p.aCSV() << std::endl;
         };
-        
         productos.forEach(guardarProducto);
         
         archivo.close();
@@ -285,7 +280,6 @@ public:
 
         return resultado;
     }
-
     std::vector<Producto> mergeSortProductos(const std::vector<Producto>& productos) {
         if (productos.size() <= 1) {
             return productos;
@@ -300,7 +294,6 @@ public:
     
 private:
     // Generar productos de ejemplo
-    /*
     void generarProductosEjemplo() {
         productos.insertarFinal(Producto("P001", "Leche Entera 1L", "Leche entera de vaca en envase de 1 litro", 1.50, 50, "Lacteos", "7501055321001"));
         productos.insertarFinal(Producto("P002", "Pan Integral", "Pan de trigo integral, 500g", 2.20, 30, "Panaderia", "7501055321002"));
@@ -315,7 +308,6 @@ private:
         
         guardarProductos();
     }
-    */
 };
 
 #endif

@@ -251,6 +251,8 @@ int main() {
                              clienteController, empleadoController, proveedorController,
                              ventaController, carritoController);
 
+    // Pruebas
+
     // Mostrar animación de carga inicial
     std::cout << "\033[1;36m";
     Utilidades::mostrarCarga("|| => Iniciando en");
