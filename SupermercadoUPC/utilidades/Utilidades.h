@@ -18,28 +18,21 @@
 class Utilidades {
 public:
     // Limpia la pantalla de consola
-    static void limpiarPantalla() {
-        #ifdef _WIN32
-            system("cls");
-        #else
-            system("clear");
-        #endif
-    }
+    static void limpiarPantalla() { system("cls"); }
     
     // Pausa la ejecución y espera a que el usuario presione una tecla
     static void pausar() {
-        std::cout << "\nPresione Enter para continuar...";
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cin.get();
+        std::cout << std::endl << "Presione Enter para continuar...";
+        system("pause>0");
     }
     
     // Muestra un mensaje de carga con animación
-    static void mostrarCarga(const std::string& mensaje, int duracion = 2) {
-        std::cout << mensaje;
-        for (int i = 0; i < duracion * 3; i++) {
-            std::cout << ".";
+    static void mostrarCarga(const std::string& mensaje, int duracion = 3) {
+        std::cout << mensaje << " ";
+        for (int i = duracion; i > 0; i--) {
+            std::cout << i << " ";
             std::cout.flush();
-            std::this_thread::sleep_for(std::chrono::milliseconds(300));
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
         std::cout << std::endl;
     }

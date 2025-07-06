@@ -59,59 +59,74 @@
 #include "vistas/SucursalVista.h"
 #include "vistas/DataSetVista.h"
 
-// Lambda para mostrar una animación de carga
-auto mostrarAnimacionCarga = [](const std::string& mensaje, int duracion = 2) {
-    Utilidades::mostrarCarga(mensaje, duracion);
-    };
-
 // Lambda para mostrar un banner de bienvenida
 auto mostrarBanner = []() {
     Utilidades::limpiarPantalla();
     std::cout << "\033[1;36m";
-    std::cout << "||============================================================||" << std::endl;
-    std::cout << "||                                                            ||" << std::endl;
-    std::cout << "||                SISTEMA DE SUPERMERCADO UPC                 ||" << std::endl;
-    std::cout << "||                                                            ||" << std::endl;
-    std::cout << "||      Bienvenido al sistema integral de supermercados       ||" << std::endl;
-    std::cout << "||                                                            ||" << std::endl;
-    std::cout << "||============================================================||" << std::endl;
+    std::cout << "||===========================================================================================||" << std::endl;
+    std::cout << "||    _________                                                                  .___        ||" << std::endl;
+    std::cout << "||   /   _____/__ ________   ___________  _____   ___________   ____ _____     __| _/____    ||" << std::endl;
+    std::cout << "||   \\_____  \\|  |  \\____ \\_/ __ \\_  __ \\/     \\_/ __ \\_  __ \\_/ ___\\\\__  \\   / __ |/  _ \\   ||" << std::endl;
+    std::cout << "||   /        \\  |  /  |_> >  ___/|  | \\/  Y Y  \\  ___/|  | \\/\\  \\___ / __ \\_/ /_/ (  <_> )  ||" << std::endl;
+    std::cout << "||  /_______  /____/|   __/ \\___  >__|  |__|_|  /\\___  >__|    \\___  >____  /\\____ |\\____/   ||" << std::endl;
+    std::cout << "||          \\/      |__|        \\/            \\/     \\/            \\/     \\/      \\/         ||" << std::endl;
+    std::cout << "||   ____ ______________________                                                             ||" << std::endl;
+    std::cout << "||  |    |   \\______   \\_   ___ \\                                                            ||" << std::endl;
+    std::cout << "||  |    |   /|     ___/    \\  \\/                                                            ||" << std::endl;
+    std::cout << "||  |    |  / |    |   \\     \\____                                                           ||" << std::endl;
+    std::cout << "||  |______/  |____|    \\______  /                                                           ||" << std::endl;
+    std::cout << "||                             \\/                                                            ||" << std::endl;
+    std::cout << "||===========================================================================================||" << std::endl;
+    std::cout << "||                                                                                           ||" << std::endl;
+    std::cout << "||      Bienvenido a Supermercado UPC!, aplicacion de consola realizada por el Grupo 2       ||" << std::endl;
+    std::cout << "||                                                                                           ||" << std::endl;
+    std::cout << "||===========================================================================================||" << std::endl;
     std::cout << "\033[0m";
-    std::cout << std::endl;
     };
 
 // Lambda para mostrar detalles del sistema
 auto mostrarDetallesSistema = []() {
     Utilidades::limpiarPantalla();
-    std::cout << "===== INFORMACION DEL SISTEMA =====" << std::endl;
-    std::cout << "Nombre: Sistema de Gestion de Supermercado" << std::endl;
-    std::cout << "Version: 2.0.0" << std::endl;
-    std::cout << "Fecha: " << Utilidades::obtenerFechaActual() << std::endl;
-    std::cout << "Desarrollado por: Grupo 2" << std::endl;
-    std::cout << "Integrantes:" << std::endl;
-    std::cout << "- Ayala Fernandez, Jorge Brayan" << std::endl;
-    std::cout << "- Alarcon Castellanos, Ericks Santiago" << std::endl;
-    std::cout << "- Chaca Gonzales, Miguel Sebastian" << std::endl;
+    std::cout << "|| ================================================= ||" << std::endl;
+    std::cout << "||              INFORMACION DEL SISTEMA              ||" << std::endl;
+    std::cout << "|| ================================================= ||" << std::endl;
+    std::cout << "|| Nombre: Sistema de Gestion de Supermercado        ||" << std::endl;
+    std::cout << "|| Version: 2.0.0                                    ||" << std::endl;
+    std::cout << "|| Fecha: " << Utilidades::obtenerFechaActual() << std::endl;
+    std::cout << "|| Desarrollado por: Grupo 2                         ||" << std::endl;
+    std::cout << "|| ------------------------------------------------- ||" << std::endl;
+    std::cout << "|| Integrantes:                                      ||" << std::endl;
+    std::cout << "|| ------------------------------------------------- ||" << std::endl;
+    std::cout << "||   - Ayala Fernandez, Jorge Brayan                 ||" << std::endl;
+    std::cout << "||   - Alarcon Castellanos, Ericks Santiago          ||" << std::endl;
+    std::cout << "||   - Chaca Gonzales, Miguel Sebastian              ||" << std::endl;
+    std::cout << "|| ================================================= ||" << std::endl;
     std::cout << std::endl;
-    std::cout << "Este sistema incluye los siguientes modulos:" << std::endl;
-    std::cout << "- Gestion de productos e inventario" << std::endl;
-    std::cout << "- Gestion de categorias" << std::endl;
-    std::cout << "- Gestion de clientes" << std::endl;
-    std::cout << "- Gestion de empleados" << std::endl;
-    std::cout << "- Gestion de proveedores" << std::endl;
-    std::cout << "- Gestion de sucursales" << std::endl;
-    std::cout << "- Proceso de ventas" << std::endl;
-    std::cout << "- Reportes y estadisticas" << std::endl;
-    std::cout << "- Generador de datasets" << std::endl;
+    std::cout << "|| ================================================= ||" << std::endl;
+    std::cout << "|| Este sistema incluye los siguientes modulos:      ||" << std::endl;
+    std::cout << "|| ------------------------------------------------- ||" << std::endl;
+    std::cout << "||    - Gestion de productos e inventario            ||" << std::endl;
+    std::cout << "||    - Gestion de categorias                        ||" << std::endl;
+    std::cout << "||    - Gestion de clientes                          ||" << std::endl;
+    std::cout << "||    - Gestion de empleados                         ||" << std::endl;
+    std::cout << "||    - Gestion de proveedores                       ||" << std::endl;
+    std::cout << "||    - Gestion de sucursales                        ||" << std::endl;
+    std::cout << "||    - Proceso de ventas                            ||" << std::endl;
+    std::cout << "||    - Reportes y estadisticas                      ||" << std::endl;
+    std::cout << "||    - Generador de datasets                        ||" << std::endl;
+    std::cout << "|| ================================================= ||" << std::endl;
     std::cout << std::endl;
-    std::cout << "Estructuras de datos implementadas:" << std::endl;
-    std::cout << "- Listas enlazadas" << std::endl;
-    std::cout << "- Pilas" << std::endl;
-    std::cout << "- Colas" << std::endl;
-    std::cout << "- Tablas Hash" << std::endl;
-    std::cout << "- Arboles Binarios de Busqueda" << std::endl;
-    std::cout << "- Arboles Binarios Balanceados (AVL)" << std::endl;
-    std::cout << "- Grafos" << std::endl;
-
+    std::cout << "|| ================================================= ||" << std::endl;
+    std::cout << "|| Estructuras de datos implementadas:               ||" << std::endl;
+    std::cout << "|| ------------------------------------------------- ||" << std::endl;
+    std::cout << "||    - Listas enlazadas                             ||" << std::endl;
+    std::cout << "||    - Pilas                                        ||" << std::endl;
+    std::cout << "||    - Colas                                        ||" << std::endl;
+    std::cout << "||    - Tablas Hash                                  ||" << std::endl;
+    std::cout << "||    - Arboles Binarios de Busqueda                 ||" << std::endl;
+    std::cout << "||    - Arboles Binarios Balanceados (AVL)           ||" << std::endl;
+    std::cout << "||    - Grafos                                       ||" << std::endl;
+    std::cout << "|| ================================================= ||" << std::endl;
     Utilidades::pausar();
     };
 
@@ -237,7 +252,9 @@ int main() {
                              ventaController, carritoController);
 
     // Mostrar animación de carga inicial
-    mostrarAnimacionCarga("Iniciando el sistema", 3);
+    std::cout << "\033[1;36m";
+    Utilidades::mostrarCarga("|| => Iniciando en");
+    std::cout << "\033[0m";
 
     // Mostrar banner de bienvenida
     mostrarBanner();
@@ -278,33 +295,15 @@ int main() {
 
         if (usuarioController.esAdministrador()) {
             switch (opcion) {
-            case 1:
-                productoVista.mostrarMenu();
-                break;
-            case 2:
-                categoriaVista.mostrarMenu();
-                break;
-            case 3:
-                clienteVista.mostrarMenu();
-                break;
-            case 4:
-                empleadoVista.mostrarMenu();
-                break;
-            case 5:
-                proveedorVista.mostrarMenu();
-                break;
-            case 6:
-                sucursalVista.mostrarMenu();
-                break;
-            case 7:
-                reporteVista.mostrarMenu();
-                break;
-            case 8:
-                dataSetVista.mostrarMenu();
-                break;
-            case 9:
-                mostrarDetallesSistema();
-                break;
+            case 1: productoVista.mostrarMenu(); break;
+            case 2: categoriaVista.mostrarMenu(); break;
+            case 3: clienteVista.mostrarMenu(); break;
+            case 4: empleadoVista.mostrarMenu(); break;
+            case 5: proveedorVista.mostrarMenu(); break;
+            case 6: sucursalVista.mostrarMenu(); break;
+            case 7: reporteVista.mostrarMenu(); break;
+            case 8: dataSetVista.mostrarMenu(); break;
+            case 9: mostrarDetallesSistema(); break;
             case 10:
                 if (Menu::confirmar("Esta seguro de que desea cerrar sesion?")) {
                     usuarioController.logout();
@@ -317,12 +316,8 @@ int main() {
         }
         else if (usuarioController.esCliente()) {
             switch (opcion) {
-            case 1:
-                productoVista.mostrarCatalogo();
-                break;
-            case 2:
-                categoriaVista.mostrarCatalogo();
-                break;
+            case 1: productoVista.mostrarCatalogo(); break;
+            case 2: categoriaVista.mostrarCatalogo(); break;
             case 3:
                 ventaVista.mostrarMenuCliente(usuarioController.getUsuarioActual()->getId());
                 break;

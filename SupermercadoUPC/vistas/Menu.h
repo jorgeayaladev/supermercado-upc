@@ -72,6 +72,7 @@ public:
         }
         
         // Dibujar borde inferior
+        std::cout << colorBorde << "||" << std::string(ancho - 2, ' ') << "||" << colorBase << std::endl;
         std::cout << colorBorde << "||==========================================================||" << colorBase << std::endl;
         
         // Solicitar selección
