@@ -169,9 +169,8 @@ public:
     }
     
     // Obtener todas las sucursales
-    Lista<Sucursal>& obtenerTodas() {
-        return sucursales;
-    }
+    Lista<Sucursal>& obtenerTodas() { return sucursales; }
+	int obtenerCantidad() const { return sucursales.getTamano(); }
     
     // Obtener sucursales activas
     Lista<Sucursal> obtenerActivas() {
@@ -260,10 +259,7 @@ public:
     }
     
     // Guardar sucursales en archivo
-    void guardarSucursales() {
-        // Crear el directorio si no existe
-        system("mkdir -p datos");
-        
+    void guardarSucursales() {        
         std::ofstream archivo(archivoSucursales);
         if (!archivo.is_open()) {
             std::cerr << "No se pudo abrir el archivo para guardar las sucursales." << std::endl;

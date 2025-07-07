@@ -21,7 +21,7 @@ public:
         bool salir = false;
         
         while (!salir) {
-            Menu menu("GESTION DE SUCURSALES");
+            Menu menu("GESTION DE SUCURSALES:");
             menu.agregarOpcion("Listar todas las sucursales");
             menu.agregarOpcion("Buscar sucursal por ID (Tabla Hash)");
             menu.agregarOpcion("Buscar sucursal por nombre (Arbol Binario)");
@@ -58,7 +58,8 @@ public:
     
     void listarSucursales() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== LISTADO DE SUCURSALES =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "LISTADO DE SUCURSALES" << std::endl;
         
         mostrarTablaSucursales();
         
@@ -67,7 +68,9 @@ public:
     
     void buscarPorId() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== BUSCAR SUCURSAL POR ID (TABLA HASH) =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "BUSCAR SUCURSAL POR ID (TABLA HASH)" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese ID de la sucursal: ";
         std::string id;
@@ -87,13 +90,17 @@ public:
         
         std::cout << "\nSucursal encontrada usando Tabla Hash:" << std::endl;
         sucursal->mostrar();
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         Utilidades::pausar();
     }
     
     void buscarPorNombre() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== BUSCAR SUCURSAL POR NOMBRE (ARBOL BINARIO) =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "BUSCAR SUCURSAL POR NOMBRE (ARBOL BINARIO)" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese nombre de la sucursal: ";
         std::string nombre;
@@ -113,13 +120,17 @@ public:
         
         std::cout << "\nSucursal encontrada usando Arbol Binario:" << std::endl;
         sucursal->mostrar();
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         Utilidades::pausar();
     }
     
     void listarOrdenadasPorNombre() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== SUCURSALES ORDENADAS POR NOMBRE (ARBOL BINARIO) =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "SUCURSALES ORDENADAS POR NOMBRE (ARBOL BINARIO)" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::vector<Sucursal> sucursalesOrdenadas = sucursalController.obtenerOrdenadasPorNombre();
         
@@ -129,28 +140,32 @@ public:
         }
         
         std::cout << "Sucursales ordenadas alfabeticamente:" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 90) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
-                  << std::left << std::setw(20) << "Nombre"
-                  << std::left << std::setw(25) << "Direccion"
-                  << std::left << std::setw(15) << "Telefono"
-                  << std::right << std::setw(12) << "Ventas/Mes"
-                  << std::right << std::setw(8) << "Empleados"
-                  << std::left << std::setw(10) << "Estado" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 90) << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(8) << "ID"
+            << std::left << std::setw(25) << "Nombre"
+            << std::left << std::setw(22) << "Direccion"
+            << std::left << std::setw(12) << "Telefono"
+            << std::left << std::setw(10) << "Ventas"
+            << std::left << std::setw(12) << "Empleados"
+            << std::left << std::setw(10) << "Estado" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         for (const auto& sucursal : sucursalesOrdenadas) {
             if (sucursal.isActiva()) {
                 std::cout << sucursal.obtenerFilaTabla() << std::endl;
             }
         }
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         Utilidades::pausar();
     }
     
     void buscarPorRangoVentas() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== BUSCAR POR RANGO DE VENTAS (ARBOL BALANCEADO) =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "BUSCAR POR RANGO DE VENTAS (ARBOL BALANCEADO)" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::string ventasMinStr, ventasMaxStr;
         double ventasMin, ventasMax;
@@ -181,28 +196,32 @@ public:
         }
         
         std::cout << "\nSucursales con ventas entre $" << ventasMin << " y $" << ventasMax << ":" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 90) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
-                  << std::left << std::setw(20) << "Nombre"
-                  << std::left << std::setw(25) << "Direccion"
-                  << std::left << std::setw(15) << "Telefono"
-                  << std::right << std::setw(12) << "Ventas/Mes"
-                  << std::right << std::setw(8) << "Empleados"
-                  << std::left << std::setw(10) << "Estado" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 90) << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(8) << "ID"
+            << std::left << std::setw(25) << "Nombre"
+            << std::left << std::setw(22) << "Direccion"
+            << std::left << std::setw(12) << "Telefono"
+            << std::left << std::setw(10) << "Ventas"
+            << std::left << std::setw(12) << "Empleados"
+            << std::left << std::setw(10) << "Estado" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         for (const auto& sucursal : sucursalesEnRango) {
             if (sucursal.isActiva()) {
                 std::cout << sucursal.obtenerFilaTabla() << std::endl;
             }
         }
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         Utilidades::pausar();
     }
     
     void agregarSucursal() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== AGREGAR NUEVA SUCURSAL =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "AGREGAR NUEVA SUCURSAL" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::string nombre, direccion, telefono, gerente;
         double ventasMensuales;
@@ -258,10 +277,12 @@ public:
             return;
         }
         
-        std::string id = "SUC" + Utilidades::generarId().substr(0, 8);
+		std::string id = "SUC" + Utilidades::idGenerado(sucursalController.obtenerCantidad() + 1);
         Sucursal nuevaSucursal(id, nombre, direccion, telefono, gerente, 
                               ventasMensuales, numeroEmpleados);
         
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+
         if (sucursalController.crear(nuevaSucursal)) {
             Menu::mostrarExito("Sucursal agregada correctamente con ID: " + id);
         } else {
@@ -271,7 +292,9 @@ public:
     
     void editarSucursal() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== EDITAR SUCURSAL =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "EDITAR SUCURSAL" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese ID de la sucursal a editar: ";
         std::string id;
@@ -287,19 +310,20 @@ public:
         std::cout << "\nSucursal encontrada:" << std::endl;
         sucursal->mostrar();
         
-        if (!Menu::confirmar("\n¿Desea editar esta sucursal?")) {
+        if (!Menu::confirmar("\nDesea editar esta sucursal?")) {
             return;
         }
         
-        // Implementar edición similar a agregarSucursal pero con valores actuales
-        // Por brevedad, se omite la implementación completa
-        
         Menu::mostrarInfo("Funcionalidad de edicion en desarrollo");
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
     }
     
     void eliminarSucursal() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== ELIMINAR SUCURSAL =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "ELIMINAR SUCURSAL" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "Ingrese ID de la sucursal a eliminar: ";
         std::string id;
@@ -315,10 +339,12 @@ public:
         std::cout << "\nSucursal encontrada:" << std::endl;
         sucursal->mostrar();
         
-        if (!Menu::confirmar("\n¿Esta seguro de que desea eliminar esta sucursal?")) {
+        if (!Menu::confirmar("\nEsta seguro de que desea eliminar esta sucursal?")) {
             return;
         }
         
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+
         if (sucursalController.eliminar(id)) {
             Menu::mostrarExito("Sucursal eliminada correctamente");
         } else {
@@ -328,7 +354,9 @@ public:
     
     void conectarSucursales() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== CONECTAR SUCURSALES (GRAFO) =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "CONECTAR SUCURSALES (GRAFO)" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "ID de sucursal origen: ";
         std::string idOrigen;
@@ -357,6 +385,8 @@ public:
         if (tipoConexion.empty()) {
             tipoConexion = "carretera";
         }
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         if (sucursalController.conectarSucursales(idOrigen, idDestino, distancia, tipoConexion)) {
             Menu::mostrarExito("Sucursales conectadas correctamente");
@@ -367,7 +397,9 @@ public:
     
     void encontrarRutaMasCorta() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== ENCONTRAR RUTA MAS CORTA (DIJKSTRA) =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "ENCONTRAR RUTA MAS CORTA (DIJKSTRA)" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         std::cout << "ID de sucursal origen: ";
         std::string idOrigen;
@@ -393,12 +425,16 @@ public:
         }
         std::cout << std::endl;
         
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+
         Utilidades::pausar();
     }
     
     void analizarRedSucursales() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== ANALISIS DE RED DE SUCURSALES =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "ANALISIS DE RED DE SUCURSALES" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         sucursalController.analizarRedSucursales();
         
@@ -407,7 +443,9 @@ public:
     
     void mostrarEstadisticas() {
         Utilidades::limpiarPantalla();
-        std::cout << "===== ESTADISTICAS DE ESTRUCTURAS DE DATOS =====" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "ESTADISTICAS DE ESTRUCTURAS DE DATOS" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         sucursalController.mostrarEstadisticas();
         
@@ -415,23 +453,24 @@ public:
     }
     
     void mostrarTablaSucursales() {
-        std::cout << Utilidades::generarLinea('-', 90) << std::endl;
-        std::cout << std::left << std::setw(5) << "ID"
-                  << std::left << std::setw(20) << "Nombre"
-                  << std::left << std::setw(25) << "Direccion"
-                  << std::left << std::setw(15) << "Telefono"
-                  << std::right << std::setw(12) << "Ventas/Mes"
-                  << std::right << std::setw(8) << "Empleados"
-                  << std::left << std::setw(10) << "Estado" << std::endl;
-        std::cout << Utilidades::generarLinea('-', 90) << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << std::left << std::setw(8) << "ID"
+            << std::left << std::setw(25) << "Nombre"
+            << std::left << std::setw(22) << "Direccion"
+            << std::left << std::setw(12) << "Telefono"
+            << std::left << std::setw(10) << "Ventas"
+            << std::left << std::setw(12) << "Empleados"
+            << std::left << std::setw(10) << "Estado" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         auto mostrarSucursal = [](const Sucursal& s) {
             if (s.isActiva()) {
                 std::cout << s.obtenerFilaTabla() << std::endl;
             }
-        };
-        
+        };        
         sucursalController.obtenerTodas().forEach(mostrarSucursal);
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
     }
 };
 
