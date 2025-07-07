@@ -280,15 +280,15 @@ int main() {
             menuPrincipal.agregarOpcion("Gestionar Clientes"); // Perfecto
             menuPrincipal.agregarOpcion("Gestionar Empleados"); // Perfecto
             menuPrincipal.agregarOpcion("Gestionar Proveedores"); // Perfecto
-            menuPrincipal.agregarOpcion("Gestionar Sucursales");
-            menuPrincipal.agregarOpcion("Reportes y Estadisticas");
-            menuPrincipal.agregarOpcion("Generador de DataSet");
+            menuPrincipal.agregarOpcion("Gestionar Sucursales"); // Falta
+            menuPrincipal.agregarOpcion("Reportes y Estadisticas"); // Falta
+            menuPrincipal.agregarOpcion("Generador de DataSet"); // Falta
             menuPrincipal.agregarOpcion("Informacion del Sistema"); // Perfecto
         }
         else if (usuarioController.esCliente()) {
             menuPrincipal.agregarOpcion("Ver Productos"); // Perfecto
             menuPrincipal.agregarOpcion("Ver Categorias"); // Perfecto
-            menuPrincipal.agregarOpcion("Proceso de Compras"); // Falta
+            menuPrincipal.agregarOpcion("Proceso de Compras"); // Perfecto
             menuPrincipal.agregarOpcion("Mi Perfil"); // Perfecto
         }
 

@@ -1,12 +1,14 @@
 C001,Abarrotes,Productos basicos no perecederos,1
-C002,Lacteos,Productos lacteos y derivados,1
-C003,Frutas,Frutas frescas,1
-C004,Verduras,Verduras y hortalizas frescas,1
-C005,Carnes,Carnes frescas y congeladas,1
-C006,Panaderia,Productos de panaderia y reposteria,1
-C007,Bebidas,Refrescos jugos y bebidas,1
-C008,Limpieza,Productos de limpieza para el hogar,1
-C009,Higiene,Productos de higiene personal,1
-C010,Hogar,Articulos para el hogar,1
-C011,Ropa,Ropas para hombres y mujeres,1
-C012,Juguetes,Juguetes para ninos y ninas,1
+C002,Lacteos,Descripcion de Lacteos,1
+C003,Panaderia,Descripcion de Panaderia,1
+C004,Carnes,Descripcion de Carnes,1
+C005,Frutas,Descripcion de Frutas,1
+C006,Verduras,Descripcion de Verduras,1
+C007,Bebidas,Descripcion de Bebidas,1
+C008,Limpieza,Descripcion de Limpieza,1
+C009,Higiene,Descripcion de Higiene,1
+C010,Hogar,Descripcion de Hogar,1
+C011,Embutidos,Descripcion de Embutidos,1
+C012,Congelados,Descripcion de Congelados,1
+C013,Dulces,Descripcion de Dulces,1
+C014,Snacks,Descripcion de Snacks,1

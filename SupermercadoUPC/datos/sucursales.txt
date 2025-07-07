@@ -1,3 +1,10 @@
 SUC001,Supermercado Central,Av. Principal 123,987654321,Roberto Gomez,45000.50,25,1
 SUC002,Supermercado Norte,Jr. Lima 456,987654322,Maria Rodriguez,38000.75,20,1
 SUC003,Supermercado Sur,Calle Real 789,987654323,Carlos Martinez,52000.25,30,1
+SUC004,Supermercado Este,Av. Los Incas 100,987654324,Luisa Fernandez,41000.00,22,1
+SUC005,Supermercado Oeste,Jr. Amazonas 200,987654325,Jose Ramirez,39000.60,18,1
+SUC006,Supermercado Centro,Calle Bolivar 150,987654326,Angela Torres,47000.90,26,1
+SUC007,Supermercado Andino,Av. Arequipa 300,987654327,Marco Salinas,43000.20,24,1
+SUC008,Supermercado Costero,Jr. Grau 320,987654328,Paola Chavez,36500.80,19,1
+SUC009,Supermercado Amazonico,Calle Loreto 85,987654329,Daniel Huaman,49500.70,28,1
+SUC010,Supermercado Serrano,Av. Tupac Amaru 560,987654330,Rosa Paredes,45500.30,21,1

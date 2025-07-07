@@ -1,8 +1,60 @@
 CL001,Juan,Perez,juanperez@gmail.com,903234489,Calle Principal 123,580.500000,5,1
-CL002,Maria,Garcia,mariagarcia@gmail.com,999320323,Av. Central 456,1200.750000,12,1
-CL003,Carlos,Rodriguez,carlosrodriguez@gmail.com,902348234,Plaza Mayor 789,320.250000,3,1
-CL004,Ana,Martinez,anamartinez@gmail.com,994304384,Calle Secundaria 234,950.000000,9,1
-CL005,Pedro,Lopez,pedrolopez@gmail.com,974392392,Av. Principal 567,150.500000,1,1
-CL006,Jorge,Ayala,jorgeayala@gmail.com,903293023,av. los laureles 345,0.000000,0,1
-CL007,Laura,Gonzales,lauragonzales@gmail.com,937482343,Av. Alfredo Mendiola,0.000000,0,1
-CL008,Edgardo,Diaz,edgardodiaz@gmail.com,938293323,Av. el Retablo 381,0.000000,0,1
+CL002,Sofia,Molina,sofiamolina382@outlook.com,910993342,Jr. Ayacucho 9166,2772.024066,27,1
+CL003,Miguel,Castro,miguelcastro878@gmail.com,910565051,Av. Arequipa 9936,615.808244,6,1
+CL004,Sofia,Gomez,sofiagomez649@hotmail.com,956422928,Calle Real 653,3088.826769,30,1
+CL005,Alejandro,Lopez,alejandrolopez606@hotmail.com,955555926,Calle San Martin 7910,3579.544503,35,1
+CL006,Antonio,Serrano,antonioserrano19@hotmail.com,968192576,Jr. Huancayo 5817,4155.031336,41,1
+CL007,Gabriela,Delgado,gabrieladelgado516@gmail.com,933056266,Calle Union 1039,416.275979,4,1
+CL008,Roberto,Torres,robertotorres869@outlook.com,947546313,Jr. Lima 4204,4723.814893,47,1
+CL009,Beatriz,Rubio,beatrizrubio446@hotmail.com,954022094,Calle San Martin 634,1556.605045,15,1
+CL010,Jorge,Rodriguez,jorgerodriguez479@hotmail.com,974905564,Calle Los Olivos 6004,1137.675488,11,1
+CL011,Ricardo,Alvarez,ricardoalvarez980@yahoo.com,980316627,Calle Union 1047,666.178056,6,1
+CL012,Roberto,Sanz,robertosanz551@hotmail.com,960274757,Calle Union 8624,1366.001619,13,1
+CL013,Elena,Ruiz,elenaruiz793@hotmail.com,932198503,Jr. Huancayo 3716,4336.912003,43,1
+CL014,Rosa,Prieto,rosaprieto398@hotmail.com,966531315,Jr. Huancayo 9305,4249.617647,42,1
+CL015,Monica,Molina,monicamolina710@hotmail.com,950990687,Av. Arequipa 8545,208.477714,2,1
+CL016,Hector,Medina,hectormedina397@yahoo.com,954716341,Av. Grau 2225,1901.023029,19,1
+CL017,Daniela,Ortega,danielaortega167@gmail.com,920766618,Calle San Martin 9938,4651.963330,46,1
+CL018,Alberto,Serrano,albertoserrano860@outlook.com,922873977,Calle Union 7010,879.989434,8,1
+CL019,Veronica,Hernandez,veronicahernandez40@yahoo.com,910496240,Calle Los Olivos 2270,646.976486,6,1
+CL020,Hector,Ruiz,hectorruiz916@hotmail.com,949761205,Calle San Martin 1459,1904.805485,19,1
+CL021,Paola,Sanz,paolasanz254@yahoo.com,941465478,Av. Universitaria 5854,3426.735034,34,1
+CL022,Ricardo,Delgado,ricardodelgado432@yahoo.com,966669910,Av. Grau 6054,1188.882400,11,1
+CL023,Antonio,Romero,antonioromero482@hotmail.com,944028671,Calle San Martin 8886,4917.546272,49,1
+CL024,Diego,Morales,diegomorales432@hotmail.com,951130377,Av. Universitaria 3799,3924.291561,39,1
+CL025,Cesar,Cruz,cesarcruz350@outlook.com,950000031,Av. Universitaria 7701,1155.337859,11,1
+CL026,Francisco,Morales,franciscomorales815@hotmail.com,978320306,Jr. Ayacucho 898,1041.663910,10,1
+CL027,Ana,Calvo,anacalvo569@yahoo.com,919594885,Jr. Lima 577,522.961201,5,1
+CL028,Claudia,Marin,claudiamarin737@gmail.com,979637598,Calle San Martin 3478,3965.924892,39,1
+CL029,Lorena,Rubio,lorenarubio777@yahoo.com,980724541,Av. Universitaria 6381,933.851466,9,1
+CL030,Mario,Vazquez,mariovazquez331@gmail.com,912439196,Av. Principal 7464,1478.482629,14,1
+CL031,Mario,Prieto,marioprieto18@gmail.com,979169794,Calle Real 2384,2613.334755,26,1
+CL032,Veronica,Molina,veronicamolina724@outlook.com,969893716,Av. Grau 6091,2065.542882,20,1
+CL033,Carmen,Dominguez,carmendominguez684@outlook.com,934435767,Calle Central 1448,641.843378,6,1
+CL034,Antonio,Flores,antonioflores433@hotmail.com,957367527,Calle Union 4372,2337.033763,23,1
+CL035,Isabel,Castillo,isabelcastillo843@outlook.com,944887474,Jr. Comercio 7466,2338.339960,23,1
+CL036,Carlos,Castillo,carloscastillo803@gmail.com,929303367,Calle Central 956,997.031566,9,1
+CL037,Paola,Serrano,paolaserrano122@yahoo.com,918637320,Jr. Huancayo 7967,4628.666866,46,1
+CL038,Carlos,Dominguez,carlosdominguez315@hotmail.com,970617580,Calle Central 6525,1789.135937,17,1
+CL039,Diego,Morales,diegomorales224@gmail.com,919182041,Calle Union 1648,917.363113,9,1
+CL040,Esperanza,Serrano,esperanzaserrano93@hotmail.com,950999085,Av. Universitaria 2123,1865.859641,18,1
+CL041,Francisco,Hernandez,franciscohernandez796@gmail.com,996293181,Calle Real 2814,4590.652541,45,1
+CL042,Isabel,Delgado,isabeldelgado739@gmail.com,918640611,Jr. Comercio 6342,3144.329001,31,1
+CL043,Cesar,Molina,cesarmolina601@hotmail.com,917588095,Av. El Sol 4399,369.275198,3,1
+CL044,Isabel,Dominguez,isabeldominguez472@yahoo.com,995881469,Av. Universitaria 5420,1978.246899,19,1
+CL045,Gabriela,Flores,gabrielaflores89@outlook.com,953958761,Calle Real 5743,1778.560891,17,1
+CL046,Roberto,Serrano,robertoserrano525@yahoo.com,917431198,Jr. Lima 965,4411.761551,44,1
+CL047,Laura,Guerrero,lauraguerrero437@gmail.com,946438160,Jr. Huancayo 6120,1593.044155,15,1
+CL048,Laura,Gil,lauragil65@gmail.com,982332490,Av. Grau 4947,3452.545359,34,1
+CL049,Enrique,Moreno,enriquemoreno486@hotmail.com,945875868,Av. Arequipa 5082,4222.107252,42,1
+CL050,Hector,Ortiz,hectorortiz940@outlook.com,969894743,Calle Los Olivos 5671,3295.792547,32,1
+CL051,Adriana,Perez,adrianaperez399@yahoo.com,965634806,Av. Arequipa 7818,379.692894,3,1
+CL052,Isabel,Ruiz,isabelruiz246@hotmail.com,984954725,Calle Union 3642,4995.939264,49,1
+CL053,Monica,Cano,monicacano303@gmail.com,913972481,Jr. Lima 6574,82.587393,0,1
+CL054,Javier,Castillo,javiercastillo65@gmail.com,967981623,Calle Los Olivos 6934,4014.441060,40,1
+CL055,Alberto,Medina,albertomedina265@outlook.com,926043584,Av. Principal 5250,813.984468,8,1
+CL056,Sofia,Gil,sofiagil897@gmail.com,941114381,Calle Central 3351,4120.950991,41,1
+CL057,Patricia,Ruiz,patriciaruiz635@outlook.com,916904041,Av. Grau 4972,1047.938546,10,1
+CL058,Veronica,Molina,veronicamolina928@outlook.com,970200701,Calle Central 3188,3968.823706,39,1
+CL059,Andres,Muñoz,andresmuñoz515@yahoo.com,974201862,Av. El Sol 1358,1587.076496,15,1
+CL060,Paola,Gomez,paolagomez583@hotmail.com,971121610,Jr. Lima 6352,1805.822581,18,1

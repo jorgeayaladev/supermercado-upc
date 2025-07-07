@@ -1,6 +1,16 @@
 PR001,Lacteos del Valle,Juan Ramirez,info@lacteosdelvalle.com,993289312,Calle Industrial 123,Lacteos|Abarrotes,1
-PR002,Frutas Frescas SA,Maria Ortiz,ventas@frutasfrescas.com,919183293,Av. Campo 456,Frutas|Verduras,1
-PR003,Limpieza Total,Carlos Mendez,contacto@limpiezatotal.com,989827123,Blvd. Central 789,Limpieza|Higiene,1
-PR004,Carnes Premium,Laura Vega,info@carnespremium.com,987642121,Calle Ganaderos 321,Carnes,1
-PR005,Panaderia San Juan,Pedro Rosales,ventas@panaderiasjuan.com,957368136,Av. Trigo 567,Panaderia|Abarrotes,1
-PR006,BIMBO S.A.C.,Laura Sanz,bimbo@gmail.com,943985894,Jr. de la Union 510,Panaderia,1
+PR002,Distribuidora Central,Roberto Molina,contacto@distribuidora central.com,947888073,Av. El Sol 1957,Hogar,1
+PR003,Alimentos del Norte,Rosa Prieto,contacto@alimentos del norte.com,940526207,Calle Real 8966,Panaderia|Lacteos,1
+PR004,Productos del Sur,Ana Castro,contacto@productos del sur.com,960555314,Calle Union 5210,Lacteos|Hogar,1
+PR005,Comercial Lima,Beatriz Castillo,contacto@comercial lima.com,965501015,Av. Arequipa 798,Carnes,1
+PR006,Distribuciones Peruanas,Antonio Alvarez,contacto@distribuciones peruanas.com,920822207,Av. Universitaria 7368,Dulces|Panaderia|Limpieza,1
+PR007,Alimentos Frescos,Veronica Gutierrez,contacto@alimentos frescos.com,994151607,Av. Principal 1935,Embutidos|Panaderia|Higiene|Abarrotes,1
+PR008,Productos Naturales,Valeria Morales,contacto@productos naturales.com,972520903,Av. Arequipa 3484,Dulces|Bebidas|Snacks|Limpieza,1
+PR009,Distribuidora Nacional,Silvia Sanz,contacto@distribuidora nacional.com,949393764,Calle San Martin 5579,Higiene|Verduras,1
+PR010,Comercial Andina,Gloria Sanz,contacto@comercial andina.com,936302519,Jr. Comercio 5262,Congelados,1
+PR011,Alimentos Premium,Francisco Gutierrez,contacto@alimentos premium.com,968780361,Av. Arequipa 7223,Limpieza|Verduras|Panaderia|Hogar,1
+PR012,Distribuciones Modernas,Arturo Ruiz,contacto@distribuciones modernas.com,913054417,Calle Union 5489,Frutas,1
+PR013,Productos Selectos,Paola Morales,contacto@productos selectos.com,937198826,Av. Arequipa 8820,Hogar|Snacks|Panaderia|Bebidas,1
+PR014,Comercial del Pacifico,Beatriz Alvarez,contacto@comercial del pacifico.com,923480841,Av. Principal 494,Panaderia,1
+PR015,Distribuidora Continental,Silvia Calvo,contacto@distribuidora continental.com,928745011,Calle Real 6582,Congelados,1
+PR016,Alimentos Integrales,Raul Gutierrez,contacto@alimentos integrales.com,979325172,Calle Union 8819,Dulces,1

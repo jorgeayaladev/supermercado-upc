@@ -1,8 +1,30 @@
 E001,Roberto,Gomez,Gerente,robertogomez@supermercado.com,942034234,3500.000000,2020-01-15,1
-E002,Sofia,Hernandez,Cajero,sofiahernandez@supermercado.com,904234923,1800.000000,2021-03-10,1
-E003,Luis,Torres,Almacenista,luistorres@supermercado.com,908588832,1600.000000,2021-05-22,1
-E004,Carmen,Diaz,Cajero,carmendiaz@supermercado.com,903284123,1800.000000,2022-02-01,1
-E005,Miguel,Sanchez,Supervisor,miguelsanchez@supermercado.com,910298322,2500.000000,2020-11-05,1
-E006,Joel,Lorenz,Secretario,joelorenz@gmail.com,932092367,4500.000000,2025-07-06,1
-E007,Gabriel,Magalaes,Ejecutivo,gabrielmagalaes@gmail.com,947834444,7000.000000,2025-07-06,1
-E008,Ernesto,Guevara,Director,ernestoguevara@gmail.com,947834420,9000.000000,2025-07-06,1
+E002,Rosa,Vargas,Limpieza,rosavargas126@gmail.com,986333897,2237.689170,2022-06-17,1
+E003,Mariana,Molina,Supervisor,marianamolina263@hotmail.com,986308748,2493.428452,2018-08-08,1
+E004,Francisco,Ortega,Vendedor,franciscoortega820@yahoo.com,918427334,3007.609596,2024-09-25,1
+E005,Luis,Sanchez,Recursos Humanos,luissanchez131@yahoo.com,946689926,3954.202186,2018-06-15,1
+E006,Luis,Romero,Limpieza,luisromero215@hotmail.com,930085869,3347.849974,2021-02-14,1
+E007,Laura,Gomez,Recursos Humanos,lauragomez455@gmail.com,952604828,3488.790326,2023-01-01,1
+E008,Gabriela,Gonzalez,Cajero,gabrielagonzalez170@gmail.com,994505568,1793.934169,2022-08-17,1
+E009,Alberto,Muñoz,Recursos Humanos,albertomuñoz593@yahoo.com,960469387,1326.262039,2021-03-23,1
+E010,Andres,Morales,Cajero,andresmorales879@outlook.com,918579669,1344.581209,2020-08-13,1
+E011,Gloria,Flores,Gerente,gloriaflores24@hotmail.com,962972243,3122.500803,2022-12-23,1
+E012,Lorena,Diaz,Seguridad,lorenadiaz517@yahoo.com,919606837,4974.207381,2019-03-25,1
+E013,Sergio,Ramirez,Contador,sergioramirez114@outlook.com,921186593,1151.702101,2020-10-26,1
+E014,Daniela,Ortega,Recursos Humanos,danielaortega259@hotmail.com,967002382,1107.528986,2021-02-09,1
+E015,Adriana,Dominguez,Supervisor,adrianadominguez537@gmail.com,933509641,4170.888466,2024-06-10,1
+E016,Cesar,Iglesias,Limpieza,cesariglesias715@hotmail.com,934373434,3595.636820,2024-03-18,1
+E017,Beatriz,Rodriguez,Marketing,beatrizrodriguez224@gmail.com,917657290,4095.856746,2023-03-26,1
+E018,Beatriz,Perez,Supervisor,beatrizperez510@outlook.com,916794671,2659.061050,2019-11-15,1
+E019,Mario,Molina,Supervisor,mariomolina912@outlook.com,997541780,2323.299853,2024-04-11,1
+E020,Silvia,Prieto,Seguridad,silviaprieto447@hotmail.com,962517803,2331.492690,2021-05-10,1
+E021,Maria,Navarro,Vendedor,marianavarro459@yahoo.com,948251745,4913.050679,2024-05-14,1
+E022,Sofia,Gomez,Seguridad,sofiagomez361@hotmail.com,929529228,4077.069096,2023-05-28,1
+E023,Juan,Molina,Almacenista,juanmolina296@gmail.com,984872862,1994.887816,2022-10-18,1
+E024,Gloria,Cano,Contador,gloriacano114@outlook.com,948318958,1796.108379,2020-05-20,1
+E025,Mariana,Vargas,Limpieza,marianavargas249@outlook.com,952589164,2527.913466,2023-12-09,1
+E026,Francisco,Ramirez,Contador,franciscoramirez87@gmail.com,954018707,1799.437648,2022-02-23,1
+E027,Esperanza,Marin,Vendedor,esperanzamarin17@outlook.com,996658156,2181.149002,2019-06-15,1
+E028,Javier,Hernandez,Limpieza,javierhernandez174@gmail.com,997086958,1014.496734,2018-03-13,1
+E029,Francisco,Molina,Vendedor,franciscomolina343@hotmail.com,954353706,4658.639702,2018-02-18,1
+E030,Diego,Garcia,Almacenista,diegogarcia207@outlook.com,968625123,4735.556973,2022-07-14,1

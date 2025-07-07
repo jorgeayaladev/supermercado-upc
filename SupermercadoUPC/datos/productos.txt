@@ -1,15 +1,110 @@
 P001,Leche Entera 1L,Leche entera de vaca en envase de 1 litro,1.500000,24,Lacteos,7501055321001,1
-P002,Pan Chabata,Pan chabata,3.000000,16,Panaderia,73612731237213,1
-P003,Manzanas Rojas,Manzanas rojas frescas por kg,3.500000,15,Frutas,7501055321003,1
-P004,Arroz Blanco 1kg,Arroz blanco grano largo,1.800000,60,Abarrotes,7501055321004,1
-P005,Jabon de Bano,Jabon de bano con aloe vera,1.200000,41,Higiene,7501055321005,1
-P006,Refresco Cola 2L,Refresco sabor cola,2.000000,31,Bebidas,7501055321006,1
-P007,Papel Higienico,Paquete de 4 rollos,4.500000,25,Hogar,7501055321007,1
-P008,Detergente Liquido,Detergente liquido 1L,3.800000,20,Limpieza,7501055321008,1
-P009,Jamon de Pavo,Jamon de pavo bajo en grasa 250g,3.200000,15,Embutidos,7501055321009,1
-P010,Cereal Integral,Cereal de trigo integral 500g,4.300000,28,Desayuno,7501055321010,1
-P011,Delineador labial,Dleineador labial rojo,12.300000,45,Higiene,7501055421010,1
-P012,Shampoo,Head and shoulders,6.000000,2,Higiene,7423642378434,1
-P013,Papitas Lays,Papitas saladas 500g,34.000000,56,Panaderia,7482347234782,1
-P014,Toallas Avon,Toallas hidratantes,23.000000,66,Higiene,7382938293923233,1
-P015,Desodorante Axe,desodorante exclusivo,67.000000,23,Higiene,7832832932932393,1
+P002,Pasta dental 2,Descripcion de Pasta dental 2,48.822413,45,Panaderia,5993589597560,1
+P003,Vinagre 10,Descripcion de Vinagre 10,33.613888,93,Frutas,3685577083640,1
+P004,Pañales 9,Descripcion de Pañales 9,11.932331,172,Carnes,2503521650906,1
+P005,Pasta dental 8,Descripcion de Pasta dental 8,2.597061,18,Abarrotes,3299379128072,1
+P006,Carne 5,Descripcion de Carne 5,34.086585,183,Frutas,6536420371128,1
+P007,Arroz 10,Descripcion de Arroz 10,31.195374,78,Carnes,8885637809351,1
+P008,Pollo 8,Descripcion de Pollo 8,12.276326,169,Frutas,5127780641944,1
+P009,Galletas 10,Descripcion de Galletas 10,4.302967,88,Lacteos,8772912299049,1
+P010,Aceite 1,Descripcion de Aceite 1,15.655830,134,Abarrotes,6229730592165,1
+P011,Huevos 6,Descripcion de Huevos 6,17.277039,130,Lacteos,8673672179033,1
+P012,Detergente 2,Descripcion de Detergente 2,39.584754,199,Higiene,1680135011433,1
+P013,Mostaza 8,Descripcion de Mostaza 8,2.698748,102,Carnes,7805085752174,1
+P014,Vino 2,Descripcion de Vino 2,45.812233,60,Embutidos,2311380248481,1
+P015,Jugo 5,Descripcion de Jugo 5,38.623658,200,Verduras,9461104225939,1
+P016,Lechuga 9,Descripcion de Lechuga 9,37.995430,29,Congelados,6622455443114,1
+P017,Platanos 9,Descripcion de Platanos 9,45.600511,76,Frutas,6472060098387,1
+P018,Refresco 7,Descripcion de Refresco 7,25.294551,119,Panaderia,4003287352265,1
+P019,Naranjas 9,Descripcion de Naranjas 9,2.890708,73,Dulces,7485277587656,1
+P020,Carne 9,Descripcion de Carne 9,29.911137,28,Verduras,4833421214288,1
+P021,Leche 6,Descripcion de Leche 6,18.505339,53,Verduras,9698914424938,1
+P022,Cerveza 3,Descripcion de Cerveza 3,18.897509,159,Congelados,0000166664278,1
+P023,Pescado 1,Descripcion de Pescado 1,37.545198,52,Abarrotes,5908413099991,1
+P024,Aceite 9,Descripcion de Aceite 9,21.920652,124,Verduras,2884403110827,1
+P025,Jabon 5,Descripcion de Jabon 5,15.520924,168,Congelados,9373903911461,1
+P026,Mayonesa 7,Descripcion de Mayonesa 7,22.170451,64,Embutidos,5589857308927,1
+P027,Jugo 6,Descripcion de Jugo 6,30.691631,151,Snacks,9807365489024,1
+P028,Pollo 10,Descripcion de Pollo 10,19.686193,23,Limpieza,2648536380279,1
+P029,Vino 7,Descripcion de Vino 7,12.855368,68,Abarrotes,7943302119496,1
+P030,Lentejas 2,Descripcion de Lentejas 2,48.038315,47,Panaderia,6080870127776,1
+P031,Mantequilla 3,Descripcion de Mantequilla 3,8.828442,65,Hogar,3704193018282,1
+P032,Naranjas 1,Descripcion de Naranjas 1,42.412666,175,Hogar,5465916989357,1
+P033,Pescado 8,Descripcion de Pescado 8,7.094745,169,Hogar,3649513503529,1
+P034,Agua 8,Descripcion de Agua 8,36.881391,79,Categoria 15,7056224310879,1
+P035,Arroz 1,Descripcion de Arroz 1,3.278052,64,Higiene,9903071979196,1
+P036,Manzanas 9,Descripcion de Manzanas 9,32.778581,159,Congelados,6334513569455,1
+P037,Vinagre 1,Descripcion de Vinagre 1,21.926490,115,Dulces,2562215873800,1
+P038,Cerveza 4,Descripcion de Cerveza 4,38.746320,59,Categoria 15,0045184564338,1
+P039,Cerveza 5,Descripcion de Cerveza 5,10.612747,34,Dulces,6512858130496,1
+P040,Frijoles 9,Descripcion de Frijoles 9,31.195412,35,Embutidos,9694792621106,1
+P041,Lechuga 2,Descripcion de Lechuga 2,33.049481,95,Frutas,6119139676659,1
+P042,Cafe 2,Descripcion de Cafe 2,29.571943,62,Congelados,0254553888209,1
+P043,Frijoles 4,Descripcion de Frijoles 4,11.570362,39,Categoria 15,4208613440940,1
+P044,Ketchup 10,Descripcion de Ketchup 10,1.037503,79,Lacteos,8137701564692,1
+P045,Pasta dental 9,Descripcion de Pasta dental 9,18.605096,188,Higiene,7517342488969,1
+P046,Vino 5,Descripcion de Vino 5,23.162739,173,Lacteos,9281876962814,1
+P047,Te 1,Descripcion de Te 1,7.342954,67,Verduras,1571773608979,1
+P048,Mostaza 10,Descripcion de Mostaza 10,14.320003,50,Dulces,7277749319360,1
+P049,Chocolate 3,Descripcion de Chocolate 3,30.297189,11,Hogar,6997970220841,1
+P050,Mostaza 1,Descripcion de Mostaza 1,48.363426,80,Limpieza,2230358845680,1
+P051,Atun 3,Descripcion de Atun 3,2.831785,120,Bebidas,9787071678472,1
+P052,Lechuga 8,Descripcion de Lechuga 8,14.126406,157,Limpieza,0302635414321,1
+P053,Te 4,Descripcion de Te 4,46.591971,150,Categoria 15,2179473414549,1
+P054,Aceite 9,Descripcion de Aceite 9,15.921458,168,Hogar,4259721134908,1
+P055,Agua 1,Descripcion de Agua 1,35.854569,121,Panaderia,5637235367302,1
+P056,Zanahorias 5,Descripcion de Zanahorias 5,31.489004,106,Congelados,4864393050937,1
+P057,Mantequilla 6,Descripcion de Mantequilla 6,11.213797,4,Snacks,2473683023265,1
+P058,Shampoo 6,Descripcion de Shampoo 6,41.070845,152,Abarrotes,9392659450219,1
+P059,Arroz 2,Descripcion de Arroz 2,37.426714,160,Frutas,2657979074195,1
+P060,Pañales 10,Descripcion de Pañales 10,27.396850,84,Hogar,4821737705430,1
+P061,Yogurt 4,Descripcion de Yogurt 4,32.563164,86,Embutidos,8772074486553,1
+P062,Miel 1,Descripcion de Miel 1,11.266888,154,Dulces,7081956959679,1
+P063,Toallas 8,Descripcion de Toallas 8,43.588155,195,Embutidos,2885226616468,1
+P064,Cebollas 9,Descripcion de Cebollas 9,20.568045,88,Bebidas,8442845195347,1
+P065,Cerveza 5,Descripcion de Cerveza 5,46.009899,150,Snacks,5798125937730,1
+P066,Lechuga 9,Descripcion de Lechuga 9,47.855395,14,Higiene,0168969066893,1
+P067,Naranjas 10,Descripcion de Naranjas 10,21.821034,176,Limpieza,7611014894110,1
+P068,Cafe 3,Descripcion de Cafe 3,38.965058,89,Higiene,1111623913353,1
+P069,Naranjas 7,Descripcion de Naranjas 7,33.599079,131,Carnes,5352983794736,1
+P070,Jamón 6,Descripcion de Jamón 6,20.827023,157,Bebidas,2185103339411,1
+P071,Mantequilla 1,Descripcion de Mantequilla 1,39.220010,17,Abarrotes,3313561094085,1
+P072,Aceite 5,Descripcion de Aceite 5,35.560282,88,Categoria 15,7547822945936,1
+P073,Pasta 4,Descripcion de Pasta 4,39.208078,10,Panaderia,4503775115406,1
+P074,Jamón 5,Descripcion de Jamón 5,10.118118,141,Panaderia,8542529599733,1
+P075,Avena 5,Descripcion de Avena 5,49.202341,174,Higiene,6899241323418,1
+P076,Pan 9,Descripcion de Pan 9,2.449387,120,Higiene,4352836630799,1
+P077,Cerveza 4,Descripcion de Cerveza 4,2.501211,21,Higiene,6726988922897,1
+P078,Chocolate 2,Descripcion de Chocolate 2,2.891531,72,Abarrotes,1091406822278,1
+P079,Aceite 10,Descripcion de Aceite 10,21.569808,56,Carnes,6642112983011,1
+P080,Jabon 1,Descripcion de Jabon 1,13.547595,70,Panaderia,7888700465591,1
+P081,Queso 9,Descripcion de Queso 9,2.228548,164,Frutas,6929582420210,1
+P082,Jamón 3,Descripcion de Jamón 3,42.331227,157,Bebidas,5691586258364,1
+P083,Te 3,Descripcion de Te 3,40.813364,114,Congelados,5306770376801,1
+P084,Jugo 8,Descripcion de Jugo 8,49.820074,138,Verduras,2820542135584,1
+P085,Mantequilla 10,Descripcion de Mantequilla 10,40.754364,30,Hogar,0771572957229,1
+P086,Mayonesa 4,Descripcion de Mayonesa 4,14.155461,157,Snacks,4333676384090,1
+P087,Mayonesa 3,Descripcion de Mayonesa 3,6.024282,162,Categoria 15,2208067380770,1
+P088,Zanahorias 9,Descripcion de Zanahorias 9,28.958224,65,Limpieza,3342394268814,1
+P089,Tomates 7,Descripcion de Tomates 7,31.374752,126,Limpieza,0108032625518,1
+P090,Jugo 1,Descripcion de Jugo 1,38.565304,1,Dulces,5137712192018,1
+P091,Te 8,Descripcion de Te 8,1.692319,76,Hogar,1287528539622,1
+P092,Jamón 10,Descripcion de Jamón 10,42.188663,29,Carnes,9476557314191,1
+P093,Vino 7,Descripcion de Vino 7,15.101896,142,Carnes,8505738851478,1
+P094,Atun 5,Descripcion de Atun 5,20.044047,101,Lacteos,2319072528381,1
+P095,Mantequilla 9,Descripcion de Mantequilla 9,36.347281,117,Carnes,5772070899460,1
+P096,Ketchup 4,Descripcion de Ketchup 4,2.720383,127,Frutas,7574584232002,1
+P097,Jabon 2,Descripcion de Jabon 2,13.377909,46,Hogar,4412789497180,1
+P098,Chocolate 9,Descripcion de Chocolate 9,32.384854,132,Lacteos,1927441351821,1
+P099,Cafe 3,Descripcion de Cafe 3,31.553770,45,Carnes,1484742795494,1
+P100,Cerveza 2,Descripcion de Cerveza 2,34.005430,73,Embutidos,5896459424072,1
+P101,Jamón 6,Descripcion de Jamón 6,20.154947,70,Congelados,0495230066564,1
+P102,Pañales 7,Descripcion de Pañales 7,1.997940,110,Snacks,7316249746934,1
+P103,Mantequilla 2,Descripcion de Mantequilla 2,44.296162,105,Hogar,4405727926899,1
+P104,Pollo 10,Descripcion de Pollo 10,29.096575,69,Abarrotes,2393126105594,1
+P105,Ketchup 9,Descripcion de Ketchup 9,7.549798,54,Categoria 15,4881007907146,1
+P106,Aceite 7,Descripcion de Aceite 7,39.183059,145,Bebidas,4545681630760,1
+P107,Galletas 10,Descripcion de Galletas 10,6.903883,91,Lacteos,6437881387587,1
+P108,Detergente 8,Descripcion de Detergente 8,11.399876,82,Higiene,4807667369206,1
+P109,Queso 3,Descripcion de Queso 3,18.871168,133,Hogar,4306290274711,1
+P110,Vinagre 2,Descripcion de Vinagre 2,0.879686,69,Verduras,0151643335856,1

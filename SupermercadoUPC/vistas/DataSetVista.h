@@ -54,7 +54,6 @@ public:
             menu.agregarOpcion("Generar solo clientes");
             menu.agregarOpcion("Generar solo empleados");
             menu.agregarOpcion("Generar solo proveedores");
-            menu.agregarOpcion("Generar solo ventas");
             menu.agregarOpcion("Generar dataset personalizado");
             menu.agregarOpcion("Mostrar estadisticas del dataset");
             menu.agregarOpcion("Volver al menu principal");
@@ -68,10 +67,9 @@ public:
                 case 4: generarClientes(); break;
                 case 5: generarEmpleados(); break;
                 case 6: generarProveedores(); break;
-                case 7: generarVentas(); break;
-                case 8: generarDataSetPersonalizado(); break;
-                case 9: mostrarEstadisticas(); break;
-                case 10: salir = true; break;
+                case 7: generarDataSetPersonalizado(); break;
+                case 8: mostrarEstadisticas(); break;
+                case 9: salir = true; break;
             }
         }
     }
@@ -88,8 +86,7 @@ public:
         
         generator.generarDataSetCompleto(productoController, categoriaController,
                                        clienteController, empleadoController,
-                                       proveedorController, ventaController,
-                                       carritoController);
+                                       proveedorController);
         
         Menu::mostrarExito("Dataset completo generado exitosamente");
     }
@@ -230,34 +227,6 @@ public:
         Menu::mostrarExito("Proveedores generados exitosamente");
     }
     
-    void generarVentas() {
-        Utilidades::limpiarPantalla();
-        std::cout << "===== GENERAR VENTAS =====" << std::endl;
-        
-        std::cout << "Ingrese la cantidad de ventas a generar (por defecto 30): ";
-        std::string cantidadStr;
-        std::getline(std::cin, cantidadStr);
-        
-        int cantidad = 30;
-        if (!cantidadStr.empty()) {
-            try {
-                cantidad = std::stoi(cantidadStr);
-                if (cantidad <= 0 || cantidad > 200) {
-                    throw std::invalid_argument("Cantidad fuera de rango");
-                }
-            } catch (...) {
-                Menu::mostrarError("Cantidad invalida, usando valor por defecto (30)");
-                cantidad = 30;
-            }
-        }
-        
-        Utilidades::mostrarCarga("Generando ventas", 2);
-        generator.generarVentas(ventaController, carritoController, clienteController,
-                              empleadoController, productoController, cantidad);
-        
-        Menu::mostrarExito("Ventas generadas exitosamente");
-    }
-    
     void generarDataSetPersonalizado() {
         Utilidades::limpiarPantalla();
         std::cout << "===== GENERAR DATASET PERSONALIZADO =====" << std::endl;
@@ -271,7 +240,6 @@ public:
         clientes = solicitarCantidad("clientes", 50, 1, 500);
         empleados = solicitarCantidad("empleados", 20, 1, 100);
         proveedores = solicitarCantidad("proveedores", 15, 1, 50);
-        ventas = solicitarCantidad("ventas", 30, 1, 200);
         
         std::cout << "\nResumen de la configuracion:" << std::endl;
         std::cout << "- Categorias: " << categorias << std::endl;
@@ -279,7 +247,6 @@ public:
         std::cout << "- Clientes: " << clientes << std::endl;
         std::cout << "- Empleados: " << empleados << std::endl;
         std::cout << "- Proveedores: " << proveedores << std::endl;
-        std::cout << "- Ventas: " << ventas << std::endl;
         
         if (!Menu::confirmar("\n¿Desea generar el dataset con esta configuracion?")) {
             return;
@@ -292,8 +259,6 @@ public:
         generator.generarClientes(clienteController, clientes);
         generator.generarEmpleados(empleadoController, empleados);
         generator.generarProveedores(proveedorController, proveedores);
-        generator.generarVentas(ventaController, carritoController, clienteController,
-                              empleadoController, productoController, ventas);
         
         Menu::mostrarExito("Dataset personalizado generado exitosamente");
     }

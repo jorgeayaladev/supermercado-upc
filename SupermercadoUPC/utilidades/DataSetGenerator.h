@@ -153,7 +153,7 @@ public:
         std::cout << "Generando " << cantidad << " categorias..." << std::endl;
         
         for (int i = 0; i < cantidad; i++) {
-            std::string id = "C" + std::to_string(i + 1);
+            std::string id = "C" + Utilidades::idGenerado(controller.obtenerCantidad() + 1);
             std::string nombre = (i < categorias.size()) ? categorias[i] : 
                                 ("Categoria " + std::to_string(i + 1));
             std::string descripcion = "Descripcion de " + nombre;
@@ -182,7 +182,7 @@ public:
         categoriasDisponibles.forEach(agregarCategoria);
         
         for (int i = 0; i < cantidad; i++) {
-            std::string id = "P" + std::to_string(i + 1);
+            std::string id = "P" + Utilidades::idGenerado(controller.obtenerCantidad() + 1);
             std::string nombre = seleccionarAleatorio(nombresProductos) + " " + 
                                std::to_string(generarEntero(1, 10));
             std::string descripcion = "Descripcion de " + nombre;
@@ -203,7 +203,7 @@ public:
         std::cout << "Generando " << cantidad << " clientes..." << std::endl;
         
         for (int i = 0; i < cantidad; i++) {
-            std::string id = "CL" + std::to_string(i + 1);
+            std::string id = "CL" + Utilidades::idGenerado(controller.obtenerCantidad() + 1);
             std::string nombre = seleccionarAleatorio(nombres);
             std::string apellido = seleccionarAleatorio(apellidos);
             std::string email = generarEmail(nombre, apellido);
@@ -225,7 +225,7 @@ public:
         std::cout << "Generando " << cantidad << " empleados..." << std::endl;
         
         for (int i = 0; i < cantidad; i++) {
-            std::string id = "E" + std::to_string(i + 1);
+            std::string id = "E" + Utilidades::idGenerado(controller.obtenerCantidad() + 1);
             std::string nombre = seleccionarAleatorio(nombres);
             std::string apellido = seleccionarAleatorio(apellidos);
             std::string cargo = seleccionarAleatorio(cargos);
@@ -255,7 +255,7 @@ public:
         };
         
         for (int i = 0; i < cantidad; i++) {
-            std::string id = "PR" + std::to_string(i + 1);
+            std::string id = "PR" + Utilidades::idGenerado(controller.obtenerCantidad() + 1);
             std::string nombre = (i < nombresEmpresas.size()) ? nombresEmpresas[i] :
                                ("Proveedor " + std::to_string(i + 1));
             std::string contacto = seleccionarAleatorio(nombres) + " " + seleccionarAleatorio(apellidos);
@@ -281,104 +281,33 @@ public:
         std::cout << "Proveedores generados exitosamente." << std::endl;
     }
     
-    // Generar ventas simuladas
-    void generarVentas(VentaController& ventaController, CarritoController& carritoController,
-                      ClienteController& clienteController, EmpleadoController& empleadoController,
-                      ProductoController& productoController, int cantidad = 30) {
-        std::cout << "Generando " << cantidad << " ventas..." << std::endl;
-        
-        // Obtener listas de clientes y empleados
-        std::vector<std::string> clientesIds;
-        auto agregarClienteId = [&clientesIds](const Cliente& c) {
-            if (c.isActivo()) {
-                clientesIds.push_back(c.getId());
-            }
-        };
-        clienteController.obtenerTodos().forEach(agregarClienteId);
-        
-        std::vector<std::string> empleadosIds;
-        auto agregarEmpleadoId = [&empleadosIds](const Empleado& e) {
-            if (e.isActivo()) {
-                empleadosIds.push_back(e.getId());
-            }
-        };
-        empleadoController.obtenerTodos().forEach(agregarEmpleadoId);
-        
-        std::vector<std::string> productosIds;
-        auto agregarProductoId = [&productosIds](const Producto& p) {
-            if (p.isDisponible() && p.getStock() > 0) {
-                productosIds.push_back(p.getId());
-            }
-        };
-        productoController.obtenerTodos().forEach(agregarProductoId);
-        
-        if (clientesIds.empty() || empleadosIds.empty() || productosIds.empty()) {
-            std::cout << "Error: No hay suficientes datos para generar ventas." << std::endl;
-            return;
-        }
-        
-        for (int i = 0; i < cantidad; i++) {
-            std::string clienteId = seleccionarAleatorio(clientesIds);
-            std::string empleadoId = seleccionarAleatorio(empleadosIds);
-            
-            // Crear carrito
-            Carrito* carrito = carritoController.crear(clienteId);
-            if (!carrito) continue;
-            
-            // Agregar productos aleatorios al carrito
-            int numProductos = generarEntero(1, 8);
-            for (int j = 0; j < numProductos; j++) {
-                std::string productoId = seleccionarAleatorio(productosIds);
-                int cantidad = generarEntero(1, 5);
-                carritoController.agregarProducto(carrito->getId(), productoId, cantidad);
-            }
-            
-            // Aplicar descuento aleatorio (30% de probabilidad)
-            if (generarEntero(1, 100) <= 30) {
-                double descuento = generarDecimal(5, 20);
-                carritoController.aplicarDescuento(carrito->getId(), descuento);
-            }
-            
-            // Aplicar impuesto
-            carritoController.aplicarImpuesto(carrito->getId(), 18.0); // IGV en Perú
-            
-            // Finalizar carrito
-            if (carritoController.finalizar(carrito->getId())) {
-                // Crear venta
-                std::string metodo = seleccionarAleatorio(metodoPago);
-                ventaController.crear(*carrito, empleadoId, metodo);
-            }
-        }
-        
-        std::cout << "Ventas generadas exitosamente." << std::endl;
-    }
-    
     // Generar dataset completo
     void generarDataSetCompleto(ProductoController& productoController,
                                CategoriaController& categoriaController,
                                ClienteController& clienteController,
                                EmpleadoController& empleadoController,
-                               ProveedorController& proveedorController,
-                               VentaController& ventaController,
-                               CarritoController& carritoController) {
-        std::cout << "=== GENERANDO DATASET COMPLETO ===" << std::endl;
+                               ProveedorController& proveedorController) {
+
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "GENERANDO DATASET COMPLETO" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         
         generarCategorias(categoriaController, 15);
         generarProductos(productoController, categoriaController, 100);
         generarClientes(clienteController, 50);
         generarEmpleados(empleadoController, 20);
         generarProveedores(proveedorController, 15);
-        generarVentas(ventaController, carritoController, clienteController, 
-                     empleadoController, productoController, 30);
         
-        std::cout << "=== DATASET COMPLETO GENERADO ===" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
+        std::cout << "DATASET COMPLETO GENERADO" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
         std::cout << "Resumen:" << std::endl;
         std::cout << "- Categorias: 15" << std::endl;
         std::cout << "- Productos: 100" << std::endl;
         std::cout << "- Clientes: 50" << std::endl;
         std::cout << "- Empleados: 20" << std::endl;
         std::cout << "- Proveedores: 15" << std::endl;
-        std::cout << "- Ventas: 30" << std::endl;
+        std::cout << Utilidades::generarLinea('=', 100) << std::endl;
     }
     
     // Limpiar todos los datos
